@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/evilmartians/devtools-pmf/schema/company.schema.json",
+  "title": "DevTools PMF company file",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["company", "slug", "url", "sub_industry", "gtm", "metrics"],
+  "properties": {
+    "company": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "url": { "type": "string", "minLength": 1 },
+    "sub_industry": { "type": "string", "enum": ["tooling", "infra", "security"] },
+    "gtm": { "type": "string", "enum": ["PLG", "Sales-assisted", "Enterprise"] },
+    "verified_at": { "type": "string" },
+    "metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/metric" }
+    }
+  },
+  "$defs": {
+    "metric": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field", "value", "tier", "source_type"],
+      "properties": {
+        "field": {
+          "type": "string",
+          "enum": ["arr", "funding_round", "ttfv", "retention", "nrr", "free_to_paid", "organic"]
+        },
+        "value": { "type": "string", "minLength": 1 },
+        "as_of": { "type": "string" },
+        "tier": { "type": "string", "enum": ["Verified", "Reported", "Estimated"] },
+        "source_type": {
+          "type": "string",
+          "enum": ["filing", "press", "spokesperson", "journalism", "aggregator", "estimate"]
+        },
+        "source_url": { "type": "string" },
+        "attribution": { "type": "string" },
+        "note": { "type": "string" },
+        "moved_the_needle": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "allOf": [
+        {
+          "comment": "Verified and Reported data points must carry a real source URL.",
+          "if": { "properties": { "tier": { "enum": ["Verified", "Reported"] } } },
+          "then": {
+            "required": ["source_url"],
+            "properties": { "source_url": { "type": "string", "format": "uri", "minLength": 1 } }
+          }
+        }
+      ]
+    }
+  }
+}

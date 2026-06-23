@@ -1,0 +1,112 @@
+name: Add or update a data point
+description: Contribute a PMF metric for a devtools, infrastructure, or security company.
+title: "[data] <company> — <metric>"
+labels: ["data-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to DevTools PMF Benchmarks. Fill in one metric per submission.
+        A maintainer will turn this into a data file. Founders submitting their own company's
+        numbers: you can upgrade your company from `Estimated` to `Verified` by adding a real source.
+  - type: input
+    id: company
+    attributes:
+      label: Company
+      placeholder: Acme Inc.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Company URL
+      placeholder: acme.com
+    validations:
+      required: true
+  - type: dropdown
+    id: sub_industry
+    attributes:
+      label: Sub-industry
+      options: [tooling, infra, security]
+    validations:
+      required: true
+  - type: dropdown
+    id: gtm
+    attributes:
+      label: GTM model
+      options: [PLG, Sales-assisted, Enterprise]
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: Metric
+      options:
+        - arr
+        - funding_round
+        - ttfv
+        - retention
+        - nrr
+        - free_to_paid
+        - organic
+    validations:
+      required: true
+  - type: input
+    id: value
+    attributes:
+      label: Value
+      description: As a string. Include units. Banded or anonymized is fine (e.g. "3-5%").
+      placeholder: "140%"
+    validations:
+      required: true
+  - type: input
+    id: as_of
+    attributes:
+      label: As of (date)
+      placeholder: "2026-03 or 2026"
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Provenance tier
+      description: See CONTRIBUTING.md. Verified and Reported require a source URL below.
+      options:
+        - "Verified (primary source: filing, official post, or named spokesperson on record)"
+        - "Reported (credible secondary journalism)"
+        - "Estimated (aggregator, internal estimate, or unsourced)"
+    validations:
+      required: true
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source type
+      options: [filing, press, spokesperson, journalism, aggregator, estimate]
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: Required for Verified and Reported. A working link to the primary or journalistic source.
+      placeholder: "https://..."
+  - type: input
+    id: attribution
+    attributes:
+      label: Attribution
+      placeholder: "Who or what said it, e.g. 'CEO on X, Mar 2026' or 'Q4 FY2025 10-K'"
+  - type: textarea
+    id: moved_the_needle
+    attributes:
+      label: What moved the needle (optional)
+      description: The story behind the number. This is what powers the DevTools Cookbook.
+      placeholder: "Free-to-paid jumped after we made the Tab feature default-on..."
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: "If I marked this Verified or Reported, I included a working source URL."
+          required: true
+        - label: "This data is accurate to the best of my knowledge."
+          required: true
