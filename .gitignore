@@ -1,4 +1,8 @@
 node_modules/
 build/
+dist/
+.astro/
+site/src/data/cookbook.json
 *.log
 .DS_Store
+/compass/

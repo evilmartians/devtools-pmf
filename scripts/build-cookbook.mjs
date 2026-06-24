@@ -1,6 +1,6 @@
 // Generates the DevTools Cookbook from the plays in data/*.yml.
-// The Cookbook is a view of the dataset: every recipe is a sourced "play",
-// and tags become the A-Z cross-reference index. Output: cookbook/README.md.
+// Each recipe leads with its transferable Learning; the company is the proof.
+// Grouped by goal, with an A-Z tag cross-reference. Output: cookbook/README.md.
 // Run: npm run build:cookbook
 
 import fs from "node:fs";
@@ -13,20 +13,20 @@ const dir = path.join(root, "data");
 const outDir = path.join(root, "cookbook");
 fs.mkdirSync(outDir, { recursive: true });
 
-const CATEGORY_LABEL = { tooling: "Tooling", infra: "Infrastructure", security: "Security" };
+const GOAL_ORDER = ["Acquisition", "Activation", "Conversion", "Retention", "Expansion", "Revenue"];
 
-// Collect every play across all companies.
 const recipes = [];
 for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"))) {
   const doc = yaml.load(fs.readFileSync(path.join(dir, f), "utf8"));
   for (const p of doc.plays || []) {
     recipes.push({
       company: doc.company,
-      url: doc.url,
-      sub_industry: doc.sub_industry,
+      url: (doc.url || "").replace(/^https?:\/\//, ""),
+      goal: p.goal || "Acquisition",
       title: p.title,
+      learning: p.learning || "",
+      when_it_works: p.when_it_works || "",
       summary: p.summary,
-      metric_moved: p.metric_moved || "",
       result: p.result || "",
       tier: p.tier,
       source_url: p.source_url || "",
@@ -36,73 +36,57 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".yml") || f.endsWi
   }
 }
 
-// Order recipes by category, then company, then title; assign stable ids.
-const CAT_ORDER = { tooling: 0, infra: 1, security: 2 };
 recipes.sort((a, b) =>
-  (CAT_ORDER[a.sub_industry] - CAT_ORDER[b.sub_industry]) ||
+  (GOAL_ORDER.indexOf(a.goal) - GOAL_ORDER.indexOf(b.goal)) ||
   a.company.localeCompare(b.company) ||
   a.title.localeCompare(b.title)
 );
 recipes.forEach((r, i) => (r.id = `recipe-${i + 1}`));
 
-// Build the tag index.
+// Keep only tags used by >= 3 recipes (drop the agent-invented long tail).
+const tagFreq = new Map();
+for (const r of recipes) for (const t of r.tags) tagFreq.set(t, (tagFreq.get(t) || 0) + 1);
+for (const r of recipes) r.tags = r.tags.filter((t) => tagFreq.get(t) >= 3);
 const byTag = new Map();
 for (const r of recipes) for (const t of r.tags) {
   if (!byTag.has(t)) byTag.set(t, []);
   byTag.get(t).push(r);
 }
 const tagsSorted = [...byTag.keys()].sort();
-
 const companies = new Set(recipes.map((r) => r.company));
-const md = [];
 
+const md = [];
 md.push("# The DevTools Cookbook");
 md.push("");
-md.push("Reusable growth and product-market-fit recipes from real developer tools, infrastructure, and security companies. Every recipe is a documented play with a source. This file is generated from the dataset in [`data/`](../data); edit the plays there, not here.");
+md.push("Reusable growth and product-market-fit recipes from real developer tools, infrastructure, and security companies. Each recipe leads with the transferable play and names the company that ran it as proof. Generated from [`data/`](../data); edit the plays there, not here.");
 md.push("");
 md.push(`**${recipes.length} recipes** from **${companies.size} companies**, cross-referenced by **${tagsSorted.length} tags**.`);
 md.push("");
 
-// ---- Index by tag (the A-Z cross-reference) ----
 md.push("## Index by tag");
 md.push("");
-md.push("Jump to every recipe that used a given tactic or channel.");
-md.push("");
 for (const t of tagsSorted) {
-  const list = byTag.get(t);
-  md.push(`### \`${t}\` <sup>${list.length}</sup>`);
+  md.push(`### \`${t}\` <sup>${byTag.get(t).length}</sup>`);
   md.push("");
-  for (const r of list) md.push(`- [${r.title} — ${r.company}](#${r.id})`);
+  for (const r of byTag.get(t)) md.push(`- [${r.title} — ${r.company}](#${r.id})`);
   md.push("");
 }
 
-// ---- Recipes, grouped by category ----
 md.push("## Recipes");
 md.push("");
-let currentCat = null;
+let currentGoal = null;
 for (const r of recipes) {
-  if (r.sub_industry !== currentCat) {
-    currentCat = r.sub_industry;
-    md.push(`### ${CATEGORY_LABEL[currentCat] || currentCat}`);
-    md.push("");
-  }
+  if (r.goal !== currentGoal) { currentGoal = r.goal; md.push(`### ${currentGoal}`); md.push(""); }
   md.push(`<a id="${r.id}"></a>`);
   md.push("");
   md.push(`#### ${r.title}`);
   md.push("");
-  const meta = [`**[${r.company}](https://${r.url.replace(/^https?:\/\//, "")})**`];
-  if (r.metric_moved) meta.push(`moved: \`${r.metric_moved}\``);
-  meta.push(`_${r.tier}_`);
-  md.push(meta.join(" · "));
-  md.push("");
-  md.push(r.summary);
+  if (r.learning) { md.push(`**The play:** ${r.learning}`); md.push(""); }
+  md.push(`**How [${r.company}](https://${r.url}) did it** _(${r.tier})_ — ${r.summary}`);
   md.push("");
   if (r.result) md.push(`**Result:** ${r.result}`);
-  if (r.source_url) {
-    md.push(`**Source:** [${r.attribution || "link"}](${r.source_url})`);
-  } else if (r.attribution) {
-    md.push(`**Source:** ${r.attribution} _(unlinked)_`);
-  }
+  if (r.when_it_works) md.push(`**When it works:** ${r.when_it_works}`);
+  if (r.source_url) md.push(`**Source:** [${r.attribution || "link"}](${r.source_url})`);
   md.push(`**Tags:** ${r.tags.map((t) => `\`${t}\``).join(" ")}`);
   md.push("");
   md.push("---");

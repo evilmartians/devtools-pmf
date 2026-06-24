@@ -1,0 +1,447 @@
+---
+import "../styles/global.css";
+import data from "../data/cookbook.json";
+
+// The PMF Compass section on the Evil Martians homepage.
+const BENCHMARK_URL = "https://evilmartians.com/#pmf-compass";
+const REPO_URL = "https://github.com/evilmartians/devtools-pmf";
+const ISSUE_URL = `${REPO_URL}/issues/new?template=add-data-point.yml`;
+
+const getUsers = data.tracks.filter((t) => t.group === "Get users");
+const grow = data.tracks.filter((t) => t.group === "Convert & grow");
+
+// Group the (track-sorted) recipes into track chapters.
+const chapters = data.tracks
+  .map((t) => ({ ...t, items: data.recipes.filter((r) => r.track === t.track) }))
+  .filter((c) => c.items.length);
+const tierClass = (t) => (t || "estimated").toLowerCase();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The DevTools Cookbook — Field Manual, Vol. 2026</title>
+    <meta name="description" content="190 sourced product-market-fit recipes from developer tools, infrastructure, and security companies. Filter by your goal; each is a transferable play. By Evil Martians." />
+    <link rel="preload" href="/fonts/grotesk-expanded-ultrablack.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/martian-mono-700.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body>
+    <!-- ====================== HERO ====================== -->
+    <header class="hero">
+      <div class="sky" aria-hidden="true">
+        <div class="stars"></div>
+        <div class="sun"></div>
+        <div class="grid"></div>
+        <div class="haze"></div>
+      </div>
+      <div class="hero-inner wrap">
+        <p class="kicker">Field Manual · Vol. 2026 · Evil Martians</p>
+        <h1 class="cover-title">
+          <span class="ct-small">The DevTools</span>
+          <span class="ct-big foil">Cookbook</span>
+        </h1>
+        <p class="cover-sub mono">{data.stats.recipes} sourced recipes for product-market fit</p>
+        <div class="stats">
+          <div class="stat"><span class="snum">{data.stats.recipes}</span><span class="slabel mono">Recipes</span></div>
+          <div class="stat"><span class="snum">{data.stats.companies}</span><span class="slabel mono">Companies</span></div>
+          <div class="stat"><span class="snum">{data.stats.tactics}</span><span class="slabel mono">Tactics</span></div>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#recipes">Find your recipe</a>
+          <a class="btn btn-ghost" href={BENCHMARK_URL}>Test your company →</a>
+        </div>
+      </div>
+      <div class="scroll-cue mono" aria-hidden="true">▾ open the book</div>
+    </header>
+
+    <main>
+      <!-- ====================== FOREWORD ====================== -->
+      <section class="foreword wrap">
+        <p class="kicker">Foreword</p>
+        <h2 class="section-title">Each recipe is a play you can run</h2>
+        <div class="fw-grid">
+          <p class="fw-lede">
+            <span class="dropcap">N</span>obody discloses the move that worked. This book separates the
+            tactic you can copy from the anecdote you cannot. Every recipe leads with the transferable play,
+            backs it with the company that ran it, and tells you when it works, so you can judge whether it
+            fits you before you spend a week on it.
+          </p>
+          <div class="legend">
+            <p class="legend-h mono">Provenance</p>
+            <div class="legend-row"><span class="stamp verified">Verified</span><span>Primary source: filing, official post, or a named spokesperson on record.</span></div>
+            <div class="legend-row"><span class="stamp reported">Reported</span><span>A single credible secondary source, e.g. trade journalism.</span></div>
+            <div class="legend-row"><span class="stamp estimated">Estimated</span><span>Well-documented lore without a clean primary link.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== RECIPES (filter-first) ====================== -->
+      <section id="recipes" class="recipes">
+        <div class="wrap">
+          <p class="kicker">The Recipes</p>
+          <h2 class="section-title">Find your recipe</h2>
+          <p class="recipes-lede">Pick what you're trying to do, narrow by your specifics, and get the plays that moved it.</p>
+
+          <div class="deck">
+            <div class="frow">
+              <span class="flabel mono">Get users</span>
+              <div class="fchips">
+                {getUsers.map((t) => (
+                  <button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>
+                ))}
+              </div>
+            </div>
+            <div class="frow">
+              <span class="flabel mono">Grow &amp; keep</span>
+              <div class="fchips">
+                {grow.map((t) => (
+                  <button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>
+                ))}
+              </div>
+            </div>
+            <div class="frow">
+              <span class="flabel mono">Motion</span>
+              <div class="fchips">
+                {data.motions.map((m) => (<button class="fchip" data-facet="gtm" data-val={m} type="button">{m}</button>))}
+              </div>
+            </div>
+            <div class="frow">
+              <span class="flabel mono">Category</span>
+              <div class="fchips">
+                {data.categories.map((c) => (<button class="fchip" data-facet="cat" data-val={c.key} type="button">{c.label}</button>))}
+              </div>
+            </div>
+          </div>
+
+          <div class="controls">
+            <input id="search" class="search" type="search" placeholder="Search plays, companies, tactics…" autocomplete="off" aria-label="Search recipes" />
+            <div class="controls-right">
+              <span id="count" class="mono"></span>
+              <button id="clear" class="clearbtn mono" type="button" hidden>reset ✕</button>
+            </div>
+          </div>
+          <p id="synth" class="synth mono" hidden></p>
+
+          {chapters.map((ch) => (
+            <div class="catgroup" data-track={ch.track}>
+              <div class="catdivider">
+                <span class="cd-no mono">Chapter</span>
+                <span class="cd-label">{ch.track}</span>
+                <span class="cd-blurb">{ch.blurb}</span>
+                <span class="cd-count mono">{ch.items.length}</span>
+              </div>
+              <div class="grid-cards">
+                {ch.items.map((r) => (
+                  <article class="recipe" data-id={r.id} data-track={r.track} data-gtm={r.gtm} data-cat={r.sub_industry} data-tags={r.tags.join(" ")} data-text={(r.company + " " + r.title + " " + r.learning + " " + r.summary + " " + r.tags.join(" ")).toLowerCase()}>
+                    <div class="r-top">
+                      <span class="rno mono">No. {r.no}</span>
+                      <span class={`stamp ${tierClass(r.tier)}`}>{r.tier}</span>
+                    </div>
+                    <h3 class="rtitle">{r.title}</h3>
+                    {r.learning && (
+                      <div class="r-learn">
+                        <span class="r-learn-l mono">The play</span>
+                        <p>{r.learning}</p>
+                      </div>
+                    )}
+                    <div class="r-proof">
+                      <p class="r-proof-l mono">How <a href={`https://${r.url}`} target="_blank" rel="noopener">{r.company}</a> did it<span class="rgtm">{r.gtm}</span></p>
+                      <p class="rsum">{r.summary}</p>
+                      {r.result && (<p class="rres"><span class="rres-l mono">Result</span> {r.result}</p>)}
+                    </div>
+                    {r.when_it_works && (
+                      <p class="r-when"><span class="r-when-l mono">When it works</span> {r.when_it_works}</p>
+                    )}
+                    <div class="r-foot">
+                      <div class="rtags">
+                        {r.tags.map((t) => (<button class="tag-mini" data-tag={t} type="button">{t}</button>))}
+                      </div>
+                      {r.source_url
+                        ? <a class="rsrc mono" href={r.source_url} target="_blank" rel="noopener" title={r.attribution}>Source ↗</a>
+                        : <span class="rsrc mono dim" title={r.attribution}>lore</span>}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+
+          <p id="empty" class="empty" hidden>No plays match that combination. <button id="empty-clear" class="linklike">Reset the filters.</button></p>
+          <p class="caveat">These are plays that worked for these companies. Treat them as leads to test, not guarantees.</p>
+        </div>
+      </section>
+
+      <!-- ====================== TACTIC CROSS-REFERENCE ====================== -->
+      <section class="appendix wrap">
+        <p class="kicker">Appendix A</p>
+        <h2 class="section-title">Or browse by tactic</h2>
+        <p class="appendix-lede">Every recipe is cross-referenced. Pick a tactic or channel to filter the book.</p>
+        <div class="tagcloud">
+          {data.tags.map((t) => (
+            <button class="tagchip" data-facet="tag" data-val={t.tag} type="button">{t.tag}<sup>{t.count}</sup></button>
+          ))}
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="foot">
+      <div class="wrap foot-inner">
+        <div>
+          <p class="foot-title">The DevTools Cookbook</p>
+          <p class="foot-sub mono">A companion to the DevTools PMF Benchmarks · generated {data.generatedAt}</p>
+        </div>
+        <nav class="foot-nav mono">
+          <a href={BENCHMARK_URL}>Test your company →</a>
+          <a href={ISSUE_URL}>Contribute a recipe</a>
+          <a href={REPO_URL}>Source on GitHub</a>
+        </nav>
+        <p class="foot-mark mono">Made by <a href="https://evilmartians.com">Evil Martians</a> · data CC BY 4.0</p>
+      </div>
+    </footer>
+
+    <script>
+      const recipes = Array.from(document.querySelectorAll(".recipe"));
+      const groups = Array.from(document.querySelectorAll(".catgroup"));
+      const facetBtns = Array.from(document.querySelectorAll("[data-facet]"));
+      const search = document.getElementById("search");
+      const countEl = document.getElementById("count");
+      const synthEl = document.getElementById("synth");
+      const clearBtn = document.getElementById("clear");
+      const emptyEl = document.getElementById("empty");
+      const total = recipes.length;
+
+      const TRACK_VERB = {
+        "Open-source": "drive open-source adoption", "Launches": "win attention with launches",
+        "Community": "grow your community", "Content & SEO": "pull demand with content",
+        "Word-of-mouth": "spread by word of mouth", "Activation": "activate users",
+        "Conversion": "convert to paid", "Retention": "keep customers",
+        "Expansion": "expand accounts", "Revenue": "grow revenue",
+      };
+      const CAT_LABEL = { tooling: "tooling", infra: "infrastructure", security: "security" };
+
+      const state = { track: null, gtm: null, cat: null, tag: null };
+      let query = "";
+
+      function matches(el) {
+        if (state.track && el.dataset.track !== state.track) return false;
+        if (state.gtm && el.dataset.gtm !== state.gtm) return false;
+        if (state.cat && el.dataset.cat !== state.cat) return false;
+        if (state.tag && !el.dataset.tags.split(" ").includes(state.tag)) return false;
+        if (query && !el.dataset.text.includes(query)) return false;
+        return true;
+      }
+
+      function sentence(n) {
+        const verb = state.track ? TRACK_VERB[state.track] : null;
+        let s = verb ? `${n} ${n === 1 ? "play" : "plays"} to ${verb}` : `${n} ${n === 1 ? "play" : "plays"}`;
+        const who = [];
+        if (state.gtm) who.push(state.gtm);
+        if (state.cat) who.push(CAT_LABEL[state.cat]);
+        if (who.length) s += ` for ${who.join(" ")} companies`;
+        if (state.tag) s += ` · tactic: ${state.tag}`;
+        return s;
+      }
+
+      function apply() {
+        let visible = 0;
+        for (const el of recipes) {
+          const show = matches(el);
+          el.classList.toggle("is-hidden", !show);
+          if (show) visible++;
+        }
+        for (const g of groups) g.classList.toggle("is-hidden", !g.querySelector(".recipe:not(.is-hidden)"));
+        for (const b of facetBtns) b.classList.toggle("is-active", state[b.dataset.facet] === b.dataset.val);
+        const active = state.track || state.gtm || state.cat || state.tag || query;
+        countEl.textContent = active ? `${visible} / ${total}` : `${total} plays`;
+        clearBtn.hidden = !active;
+        synthEl.hidden = !active;
+        synthEl.textContent = active ? "→ " + sentence(visible) : "";
+        emptyEl.hidden = visible !== 0;
+      }
+
+      function setFacet(facet, val, scroll) {
+        state[facet] = state[facet] === val ? null : val;
+        apply();
+        if (scroll && state[facet]) document.getElementById("recipes").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      facetBtns.forEach((b) => b.addEventListener("click", () => setFacet(b.dataset.facet, b.dataset.val, b.dataset.facet === "track" || b.dataset.facet === "tag")));
+      document.querySelectorAll(".tag-mini").forEach((c) => c.addEventListener("click", () => setFacet("tag", c.dataset.tag, true)));
+      search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); apply(); });
+      function clearAll() { state.track = state.gtm = state.cat = state.tag = null; query = ""; search.value = ""; apply(); }
+      clearBtn.addEventListener("click", clearAll);
+      document.getElementById("empty-clear").addEventListener("click", clearAll);
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") clearAll(); });
+      apply();
+    </script>
+
+    <style>
+      /* ---------------- HERO ---------------- */
+      .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding: 7vh 0 9vh; }
+      .sky { position: absolute; inset: 0; z-index: -1; }
+      .stars {
+        position: absolute; inset: 0; height: 70%;
+        background-image:
+          radial-gradient(1.4px 1.4px at 12% 22%, #fff, transparent),
+          radial-gradient(1.2px 1.2px at 33% 12%, rgba(255,255,255,.8), transparent),
+          radial-gradient(1.3px 1.3px at 58% 28%, rgba(255,255,255,.7), transparent),
+          radial-gradient(1.5px 1.5px at 78% 14%, #fff, transparent),
+          radial-gradient(1.1px 1.1px at 88% 33%, rgba(255,255,255,.7), transparent),
+          radial-gradient(1.2px 1.2px at 22% 38%, rgba(255,255,255,.6), transparent);
+        opacity: 0.8;
+      }
+      .sun {
+        position: absolute; left: 50%; bottom: 15%; width: min(470px, 68vw); aspect-ratio: 1;
+        transform: translateX(-50%); border-radius: 50%;
+        background: linear-gradient(180deg, #ffd884 0%, var(--gold) 22%, var(--ember) 56%, var(--red) 100%);
+        filter: drop-shadow(0 0 70px rgba(228, 60, 12, 0.45)); opacity: 0.76;
+      }
+      .sun::after {
+        content: ""; position: absolute; inset: 0; border-radius: 50%;
+        background: repeating-linear-gradient(180deg, transparent 0 6px, var(--void) 6px 9px);
+        -webkit-mask-image: linear-gradient(180deg, transparent 46%, #000 60%);
+        mask-image: linear-gradient(180deg, transparent 46%, #000 60%);
+      }
+      .grid {
+        position: absolute; left: 50%; bottom: 0; width: 240%; height: 52vh;
+        transform: translateX(-50%) perspective(300px) rotateX(74deg); transform-origin: bottom center;
+        background-image:
+          linear-gradient(rgba(255, 46, 132, 0.55) 1.5px, transparent 1.5px),
+          linear-gradient(90deg, rgba(228, 60, 12, 0.5) 1.5px, transparent 1.5px);
+        background-size: 64px 64px;
+        -webkit-mask-image: linear-gradient(transparent, #000 38%, #000 100%);
+        mask-image: linear-gradient(transparent, #000 38%, #000 100%);
+        animation: gridmove 5.5s linear infinite;
+      }
+      @keyframes gridmove { from { background-position: 0 0, 0 0; } to { background-position: 0 64px, 0 0; } }
+      .haze { position: absolute; inset: 0; background:
+        radial-gradient(56% 44% at 50% 45%, rgba(5,3,4,0.74), transparent 72%),
+        radial-gradient(86% 52% at 50% 80%, transparent, var(--void) 92%); }
+
+      .hero-inner { position: relative; text-align: center; text-shadow: 0 2px 16px rgba(0,0,0,0.62); }
+      .cover-title { margin: 1.2rem 0 0.4rem; font-family: var(--font-display); text-transform: uppercase; line-height: 0.82; letter-spacing: 0.005em; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)) drop-shadow(0 0 40px rgba(228,60,12,0.35)); }
+      .ct-small { display: block; font-family: var(--font-head); font-size: clamp(1.1rem, 3.4vw, 2.1rem); letter-spacing: 0.16em; color: var(--paper); opacity: 0.9; }
+      .ct-big { display: block; font-size: clamp(2.6rem, 10.2vw, 8.4rem); }
+      .cover-sub { color: var(--paper); margin: 0.4rem 0 0; letter-spacing: 0.28em; }
+      .stats { display: flex; justify-content: center; gap: clamp(1.6rem, 6vw, 4rem); margin: 2.4rem 0 0; }
+      .stat { display: flex; flex-direction: column; align-items: center; }
+      .snum { font-family: var(--font-head); font-size: clamp(1.8rem, 5vw, 3rem); color: var(--red); line-height: 1; }
+      .slabel { color: var(--paper-faint); margin-top: 0.45rem; }
+      .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.6rem; }
+      .btn { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.74rem; font-weight: 700; padding: 0.95em 1.5em; border-radius: 3px; border: 1.5px solid var(--red); transition: transform .15s var(--ease), background .2s, color .2s; cursor: pointer; }
+      .btn-primary { background: var(--red); color: var(--paper); }
+      .btn-primary:hover { transform: translateY(-2px); text-decoration: none; box-shadow: 0 8px 30px rgba(228,60,12,.4); }
+      .btn-ghost { background: transparent; color: var(--paper); }
+      .btn-ghost:hover { background: rgba(228,60,12,.16); transform: translateY(-2px); text-decoration: none; }
+      .scroll-cue { position: absolute; bottom: 2.4rem; left: 0; right: 0; text-align: center; color: var(--paper-faint); animation: bob 2.4s ease-in-out infinite; }
+      @keyframes bob { 50% { transform: translateY(6px); } }
+
+      /* ---------------- SECTION SHELL ---------------- */
+      section { padding-block: clamp(3.5rem, 9vw, 7rem); position: relative; }
+      .section-title { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.6rem, 4.2vw, 2.8rem); letter-spacing: 0.02em; margin: 0.5rem 0 0; line-height: 1.02; max-width: 20ch; }
+
+      /* ---------------- FOREWORD ---------------- */
+      .foreword { border-top: 1px solid var(--line); }
+      .fw-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 5vw, 4rem); margin-top: 2rem; align-items: start; }
+      .fw-lede { font-size: 1.18rem; line-height: 1.7; margin: 0; }
+      .dropcap { float: left; font-family: var(--font-display); color: var(--red); font-size: 3.6rem; line-height: 0.8; padding: 0.05em 0.12em 0 0; }
+      .legend { border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem; background: rgba(20,12,17,0.6); }
+      .legend-h { color: var(--red); margin: 0 0 1rem; }
+      .legend-row { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: center; margin-bottom: 0.85rem; font-size: 0.92rem; color: var(--paper-dim); }
+      .legend-row .stamp { justify-self: start; }
+
+      /* ---------------- RECIPES + FILTER DECK ---------------- */
+      .recipes { border-top: 1px solid var(--line); }
+      .recipes-lede { color: var(--paper-dim); margin: 0.8rem 0 2rem; max-width: 52ch; }
+      .deck { border: 1px solid var(--line-strong); border-radius: 8px; padding: 1.3rem 1.4rem; background: linear-gradient(180deg, rgba(29,17,23,0.6), rgba(12,7,9,0.5)); display: grid; gap: 0.9rem; }
+      .frow { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; align-items: start; }
+      .flabel { color: var(--red); padding-top: 0.55em; }
+      .fchips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+      .fchip { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--paper-dim); background: rgba(8,5,6,0.7); border: 1px solid var(--line-strong); padding: 0.5em 0.8em; border-radius: 4px; cursor: pointer; transition: all .15s var(--ease); }
+      .fchip sup { color: var(--red); margin-left: 0.3em; font-size: 0.72em; }
+      .fchip:hover { color: var(--paper); border-color: var(--red); transform: translateY(-1px); }
+      .fchip.is-active { background: var(--red); color: var(--paper); border-color: var(--red); box-shadow: 0 6px 20px rgba(228,60,12,.3); }
+      .fchip.is-active sup { color: var(--paper); }
+
+      .controls { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; position: sticky; top: 0; z-index: 5; padding: 1rem 0; margin: 1.4rem 0 0.2rem; background: linear-gradient(var(--void), rgba(5,3,4,0.86)); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+      .search { flex: 1; min-width: 240px; background: rgba(20,12,17,0.8); border: 1px solid var(--line-strong); color: var(--paper); font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; padding: 0.8em 1em; border-radius: 4px; }
+      .search:focus { outline: none; border-color: var(--red); }
+      .controls-right { display: flex; align-items: center; gap: 1rem; }
+      #count { color: var(--paper-faint); }
+      .clearbtn { color: var(--red); background: none; border: none; cursor: pointer; }
+      .synth { color: var(--paper); margin: 0.4rem 0 0; letter-spacing: 0.06em; }
+
+      .catgroup.is-hidden, .recipe.is-hidden { display: none; }
+      .catdivider { display: flex; align-items: baseline; gap: 1rem; margin: 2.8rem 0 1.4rem; border-bottom: 1.5px solid var(--line-strong); padding-bottom: 0.7rem; flex-wrap: wrap; }
+      .cd-no { color: var(--red); }
+      .cd-label { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: 0.04em; }
+      .cd-blurb { color: var(--paper-dim); font-size: 0.92rem; }
+      .cd-count { color: var(--paper-faint); margin-left: auto; }
+
+      /* masonry so variable-height cards pack tightly */
+      .grid-cards { column-width: 350px; column-gap: 1.1rem; }
+      .recipe { break-inside: avoid; display: block; margin-bottom: 1.1rem; position: relative; background: linear-gradient(180deg, rgba(29,17,23,0.9), rgba(12,7,9,0.9)); border: 1px solid var(--line); border-radius: 8px; padding: 1.3rem; transition: border-color .18s, box-shadow .18s, transform .18s; }
+      .recipe::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, var(--red), var(--gold)); opacity: 0; transition: opacity .2s; border-radius: 8px 8px 0 0; }
+      .recipe:hover { border-color: var(--line-strong); box-shadow: 0 14px 40px rgba(0,0,0,0.5); transform: translateY(-2px); }
+      .recipe:hover::before { opacity: 1; }
+      .r-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+      .rno { color: var(--paper-faint); }
+      .rtitle { font-family: var(--font-head); font-size: 1.16rem; line-height: 1.12; margin: 0 0 0.9rem; text-transform: uppercase; letter-spacing: 0.01em; }
+
+      .r-learn { border-left: 2px solid var(--red); background: rgba(228,60,12,0.07); padding: 0.7rem 0.9rem; border-radius: 0 4px 4px 0; margin-bottom: 1rem; }
+      .r-learn-l { color: var(--red); display: block; margin-bottom: 0.35rem; }
+      .r-learn p { margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--paper); }
+
+      .r-proof-l { color: var(--paper-faint); display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem; }
+      .r-proof-l a { color: var(--cyan); }
+      .rgtm { color: var(--paper-faint); font-size: 0.92em; padding: 0.1em 0.5em; border: 1px solid var(--line); border-radius: 2px; }
+      .rsum { color: var(--paper-dim); font-size: 0.9rem; margin: 0 0 0.7rem; }
+      .rres { font-size: 0.86rem; color: var(--paper); margin: 0; padding-left: 0.75rem; border-left: 2px solid var(--line-strong); }
+      .rres-l { color: var(--red); display: block; margin-bottom: 0.15rem; font-size: 0.58rem; }
+
+      .r-when { font-size: 0.82rem; color: var(--paper-faint); margin: 0.9rem 0 0; line-height: 1.45; }
+      .r-when-l { color: var(--gold); display: block; margin-bottom: 0.2rem; font-size: 0.58rem; }
+
+      .r-foot { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 0.8rem; }
+      .rtags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+      .tag-mini { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.04em; color: var(--paper-faint); background: none; border: 1px solid var(--line); padding: 0.28em 0.5em; border-radius: 2px; cursor: pointer; transition: all .15s; }
+      .tag-mini:hover { color: var(--paper); border-color: var(--red); }
+      .rsrc { white-space: nowrap; font-size: 0.62rem; }
+      .rsrc.dim { color: var(--paper-faint); }
+
+      .empty { text-align: center; color: var(--paper-dim); padding: 3rem 0; }
+      .caveat { text-align: center; color: var(--paper-faint); font-size: 0.85rem; margin-top: 3rem; font-style: italic; }
+      .linklike { background: none; border: none; color: var(--red); cursor: pointer; font: inherit; text-decoration: underline; }
+
+      /* ---------------- TACTIC INDEX ---------------- */
+      .appendix { border-top: 1px solid var(--line); }
+      .appendix-lede { color: var(--paper-dim); margin: 0.8rem 0 2rem; max-width: 52ch; }
+      .tagcloud { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+      .tagchip { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--paper-dim); background: rgba(20,12,17,0.7); border: 1px solid var(--line-strong); padding: 0.5em 0.8em; border-radius: 3px; cursor: pointer; transition: all .15s var(--ease); }
+      .tagchip sup { color: var(--red); margin-left: 0.3em; font-size: 0.7em; }
+      .tagchip:hover { color: var(--paper); border-color: var(--red); transform: translateY(-1px); }
+      .tagchip.is-active { background: var(--red); color: var(--paper); border-color: var(--red); }
+      .tagchip.is-active sup { color: var(--paper); }
+
+      /* ---------------- FOOTER ---------------- */
+      .foot { border-top: 1px solid var(--line-strong); padding-block: 3rem; background: var(--void); }
+      .foot-inner { display: flex; flex-wrap: wrap; gap: 1.6rem; justify-content: space-between; align-items: center; }
+      .foot-title { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.04em; margin: 0; }
+      .foot-sub { color: var(--paper-faint); margin: 0.3rem 0 0; font-size: 0.62rem; }
+      .foot-nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+      .foot-nav a { color: var(--paper-dim); font-size: 0.7rem; }
+      .foot-nav a:hover { color: var(--red); }
+      .foot-mark { color: var(--paper-faint); font-size: 0.62rem; width: 100%; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+
+      @media (max-width: 760px) {
+        .fw-grid { grid-template-columns: 1fr; }
+        .stats { gap: 1.4rem; }
+        .frow { grid-template-columns: 1fr; gap: 0.4rem; }
+        .flabel { padding-top: 0; }
+      }
+    </style>
+  </body>
+</html>
