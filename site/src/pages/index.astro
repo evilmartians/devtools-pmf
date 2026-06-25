@@ -7,8 +7,9 @@ const BENCHMARK_URL = "https://evilmartians.com/#pmf-compass";
 const CONTACT_URL = "https://evilmartians.com/contact-us";
 const REPO_URL = "https://github.com/evilmartians/devtools-pmf";
 const ISSUE_URL = `${REPO_URL}/issues/new?template=add-data-point.yml`;
-// Set to the final deploy domain before launch (must match `site` in astro.config.mjs).
-const SITE_URL = "https://devtools-pmf.evilmartians.com";
+// Current deploy domain (must match `site` in astro.config.mjs). Switch to a
+// custom domain here + in astro.config + in Netlify when you set one up.
+const SITE_URL = "https://devtools-pmf.netlify.app";
 // Pre-launch: keep the preview out of search results. Flip to false at public launch.
 const NOINDEX = true;
 const OG_IMAGE = `${SITE_URL}/og.png`;

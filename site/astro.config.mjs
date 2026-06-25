@@ -7,7 +7,7 @@ import { defineConfig } from "astro/config";
 // also set `base: "/devtools-pmf"` and update the absolute /fonts and /og.png
 // references (CSS + <head>) to include the base, or they will 404.
 export default defineConfig({
-  site: "https://devtools-pmf.evilmartians.com",
+  site: "https://devtools-pmf.netlify.app",
   output: "static",
   compressHTML: true,
 });

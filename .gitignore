@@ -6,3 +6,6 @@ site/src/data/cookbook.json
 *.log
 .DS_Store
 /compass/
+
+# Local Netlify folder
+.netlify
