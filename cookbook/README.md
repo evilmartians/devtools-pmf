@@ -2,11 +2,11 @@
 
 Reusable growth and product-market-fit recipes from real developer tools, infrastructure, and security companies. Each recipe leads with the transferable play and names the company that ran it as proof. Generated from [`data/`](../data); edit the plays there, not here.
 
-**190 recipes** from **67 companies**, cross-referenced by **41 tags**.
+**198 recipes** from **67 companies**, cross-referenced by **47 tags**.
 
 ## Index by tag
 
-### `bottom-up-plg` <sup>72</sup>
+### `bottom-up-plg` <sup>74</sup>
 
 - [Acqui-hire your way into the developer daily workflow — 1Password](#recipe-1)
 - [Bundle a free family plan into every paid seat — 1Password](#recipe-2)
@@ -18,48 +18,48 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Treat an unprompted foreign surge as your wedge signal — CodeRabbit](#recipe-20)
 - [Open-source the core to flip selling into inbound — Confluent](#recipe-22)
 - [Engineer a free-tier loop that walks the tool into teams — Cursor](#recipe-23)
-- [Open the beta wide instead of hand-picking alpha customers — Datadog](#recipe-25)
-- [Open the community Slack before you incorporate — dbt Labs](#recipe-29)
-- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-32)
-- [Buy a developer community as a funnel, but own its upkeep — Fastly](#recipe-35)
-- [Ship your #1 community ask as a usable free tier — Fastly](#recipe-37)
-- [Let users publish templates that Google indexes — Figma](#recipe-40)
-- [Run a year-long invite-gated preview to build proof and demand — GitHub Copilot](#recipe-45)
-- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-48)
-- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-49)
-- [Be the one repository that holds every package format — JFrog](#recipe-57)
-- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-61)
-- [Become the bundled default in Linux distros — MariaDB](#recipe-67)
-- [Demo your product inside each language community's meetup — MongoDB](#recipe-71)
-- [Open-source the core as a free marketing channel — MongoDB](#recipe-72)
-- [Embed as the default DB inside other platforms — Neon](#recipe-73)
-- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-74)
-- [Ship git-like branching as the wedge feature — Neon](#recipe-75)
-- [Put your brand inside the artifact users share — ngrok](#recipe-79)
-- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-81)
-- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-85)
-- [Ship a free OSS tool a month before your paid product — Resend](#recipe-92)
-- [Make one install replace every per-tool integration — Segment](#recipe-96)
-- [Embed your engine as a platform's default scanner — Semgrep](#recipe-98)
-- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-100)
-- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-101)
-- [Generate one SEO landing page per open-source package — Snyk](#recipe-103)
-- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-104)
-- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-105)
-- [Become the default backend AI app builders auto-provision — Supabase](#recipe-107)
-- [Build your engine as OSS inside a big employer first — Temporal](#recipe-110)
-- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-112)
-- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-113)
-- [Wait for the "can you host this for me?" email — Unleash](#recipe-114)
-- [Give away the framework, sell the painful part — Vercel](#recipe-117)
-- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-118)
-- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-119)
-- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-123)
-- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-128)
-- [Make switching a one-line YAML change — Blacksmith](#recipe-129)
-- [Put a working app behind a bare prompt box, no signup — Bolt.new](#recipe-130)
-- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-131)
-- [Fork the incumbent, import its setup in one click — Cursor](#recipe-132)
+- [Open the beta wide instead of hand-picking alpha customers — Datadog](#recipe-24)
+- [Open the community Slack before you incorporate — dbt Labs](#recipe-28)
+- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-31)
+- [Buy a developer community as a funnel, but own its upkeep — Fastly](#recipe-34)
+- [Ship your #1 community ask as a usable free tier — Fastly](#recipe-36)
+- [Let users publish templates that Google indexes — Figma](#recipe-39)
+- [Run a year-long invite-gated preview to build proof and demand — GitHub Copilot](#recipe-44)
+- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-47)
+- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-48)
+- [Be the one repository that holds every package format — JFrog](#recipe-56)
+- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-60)
+- [Become the bundled default in Linux distros — MariaDB](#recipe-66)
+- [Demo your product inside each language community's meetup — MongoDB](#recipe-70)
+- [Open-source the core as a free marketing channel — MongoDB](#recipe-71)
+- [Embed as the default DB inside other platforms — Neon](#recipe-72)
+- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-73)
+- [Ship git-like branching as the wedge feature — Neon](#recipe-74)
+- [Put your brand inside the artifact users share — ngrok](#recipe-78)
+- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-80)
+- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-84)
+- [Ship a free OSS tool a month before your paid product — Resend](#recipe-91)
+- [Make one install replace every per-tool integration — Segment](#recipe-95)
+- [Embed your engine as a platform's default scanner — Semgrep](#recipe-97)
+- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-99)
+- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-100)
+- [Generate one SEO landing page per open-source package — Snyk](#recipe-102)
+- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-103)
+- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-104)
+- [Become the default backend AI app builders auto-provision — Supabase](#recipe-106)
+- [Build your engine as OSS inside a big employer first — Temporal](#recipe-109)
+- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-111)
+- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-112)
+- [Wait for the "can you host this for me?" email — Unleash](#recipe-113)
+- [Give away the framework, sell the painful part — Vercel](#recipe-116)
+- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-117)
+- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-118)
+- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-122)
+- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-127)
+- [Make switching a one-line YAML change — Blacksmith](#recipe-128)
+- [Put a working app behind a bare prompt box, no signup — Bolt.new](#recipe-129)
+- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-130)
+- [Fork the incumbent, import its setup in one click — Cursor](#recipe-131)
 - [Default-on your free tier inside the editor users already run — GitHub Copilot](#recipe-134)
 - [Make the free tier need no credit card and stand up in 3 minutes — MongoDB](#recipe-138)
 - [Ship one binary that works in seconds — ngrok](#recipe-139)
@@ -70,40 +70,42 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Replace your free tier with a $5 qualifying entry plan — PlanetScale](#recipe-155)
 - [Deliberately hold the bottom of the market with a free tier — Tailscale](#recipe-157)
 - [Match a new account's first deposit, up to $100 — Vultr](#recipe-158)
-- [Neutralize the integration objection by going HTTP-first — Tines](#recipe-162)
-- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-167)
-- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-168)
-- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-169)
-- [Price per event, not per host or cardinality — Honeycomb](#recipe-170)
-- [Make the product get bought, not sold, by developers — JFrog](#recipe-171)
-- [Pull the 5 buyers per account the product already converted — Snyk](#recipe-178)
-- [Price per API call so spend grows with the app — Twilio](#recipe-179)
-- [Charge the developer, not the ops buyer above them — Docker](#recipe-183)
-- [Layer consumption pricing onto a dormant free base — Replit](#recipe-186)
+- [Codify one opinionated workflow into the product — Linear](#recipe-163)
+- [Define activation as a repeated fix, then chase it — Snyk](#recipe-165)
+- [Neutralize the integration objection by going HTTP-first — Tines](#recipe-168)
+- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-174)
+- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-175)
+- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-176)
+- [Price per event, not per host or cardinality — Honeycomb](#recipe-177)
+- [Make the product get bought, not sold, by developers — JFrog](#recipe-178)
+- [Pull the 5 buyers per account the product already converted — Snyk](#recipe-185)
+- [Price per API call so spend grows with the app — Twilio](#recipe-186)
+- [Charge the developer, not the ops buyer above them — Docker](#recipe-191)
+- [Layer consumption pricing onto a dormant free base — Replit](#recipe-194)
 
 ### `category-creation` <sup>12</sup>
 
 - [Name the unnamed problem with analysts, then own it — Astrix Security](#recipe-6)
-- [Adopt the job title your community already coined — dbt Labs](#recipe-26)
-- [Invite your competitors to moderate your community — dbt Labs](#recipe-27)
-- [Open-source your runtime to make your standard the default — Fastly](#recipe-36)
-- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-53)
-- [Fund a new category by ripping out VDI and VPN — Island](#recipe-56)
-- [Convene a conference that names your category — LangChain](#recipe-58)
-- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-83)
-- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-100)
-- [Anchor on 'price you see is price you pay' against hyperscalers — Vultr](#recipe-121)
-- [Re-anchor your category onto the dominant funding wave — Astrix Security](#recipe-181)
-- [Reframe a commodity product into the security budget — Rubrik](#recipe-188)
+- [Adopt the job title your community already coined — dbt Labs](#recipe-25)
+- [Invite your competitors to moderate your community — dbt Labs](#recipe-26)
+- [Open-source your runtime to make your standard the default — Fastly](#recipe-35)
+- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-52)
+- [Fund a new category by ripping out VDI and VPN — Island](#recipe-55)
+- [Convene a conference that names your category — LangChain](#recipe-57)
+- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-82)
+- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-99)
+- [Anchor on 'price you see is price you pay' against hyperscalers — Vultr](#recipe-120)
+- [Re-anchor your category onto the dominant funding wave — Astrix Security](#recipe-188)
+- [Reframe a commodity product into the security budget — Rubrik](#recipe-196)
 
 ### `changelog-marketing` <sup>6</sup>
 
-- [Send each user a personal Spotify-style year-in-review — Framer](#recipe-42)
-- [Turn each quarterly release into its own news cycle — LangChain](#recipe-59)
-- [Ship a public weekly changelog before you have users — Linear](#recipe-62)
-- [Recruit the users who requested a feature as its launch-day beta testers — Resend](#recipe-91)
-- [Manufacture a quarterly demo-day with daily ships — Supabase](#recipe-108)
-- [Re-anchor your category onto the dominant funding wave — Astrix Security](#recipe-181)
+- [Send each user a personal Spotify-style year-in-review — Framer](#recipe-41)
+- [Turn each quarterly release into its own news cycle — LangChain](#recipe-58)
+- [Ship a public weekly changelog before you have users — Linear](#recipe-61)
+- [Recruit the users who requested a feature as its launch-day beta testers — Resend](#recipe-90)
+- [Manufacture a quarterly demo-day with daily ships — Supabase](#recipe-107)
+- [Re-anchor your category onto the dominant funding wave — Astrix Security](#recipe-188)
 
 ### `community-led` <sup>52</sup>
 
@@ -112,64 +114,64 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Treat an unprompted foreign surge as your wedge signal — CodeRabbit](#recipe-20)
 - [Launch a single-project conference to corral your community — Confluent](#recipe-21)
 - [Engineer a free-tier loop that walks the tool into teams — Cursor](#recipe-23)
-- [Adopt the job title your community already coined — dbt Labs](#recipe-26)
-- [Invite your competitors to moderate your community — dbt Labs](#recipe-27)
-- [Let your customers' hiring needs sell for you — dbt Labs](#recipe-28)
-- [Open the community Slack before you incorporate — dbt Labs](#recipe-29)
-- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-32)
-- [Buy a developer community as a funnel, but own its upkeep — Fastly](#recipe-35)
-- [Crowdsource your conference agenda by open CFP — Figma](#recipe-38)
-- [Give students the full paid plan, then harvest at work — Figma](#recipe-39)
-- [Let users publish templates that Google indexes — Figma](#recipe-40)
-- [Send each user a personal Spotify-style year-in-review — Framer](#recipe-42)
-- [Take 0% of template sales, pay 50% referral — Framer](#recipe-43)
-- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-44)
-- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-47)
-- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-48)
-- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-49)
-- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-50)
-- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-51)
-- [Run a monthly live-hacking webinar with zero sales pitch — Huntress](#recipe-54)
-- [Convene a conference that names your category — LangChain](#recipe-58)
-- [Turn each quarterly release into its own news cycle — LangChain](#recipe-59)
-- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-64)
-- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-65)
-- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-66)
-- [Demo your product inside each language community's meetup — MongoDB](#recipe-71)
-- [Be the tool people reach for on stage — ngrok](#recipe-78)
-- [Make your full handbook public before your second hire — PostHog](#recipe-82)
-- [Pay template creators 25% of the compute they drive — Railway](#recipe-86)
-- [Personally greet every Discord signup for 18 months — Railway](#recipe-87)
-- [Recruit the users who requested a feature as its launch-day beta testers — Resend](#recipe-91)
-- [Let destination vendors build their own catalog integrations — Segment](#recipe-95)
-- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-97)
-- [Author your own license to block cloud free-riders — Sentry](#recipe-99)
-- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-105)
-- [Manufacture a quarterly demo-day with daily ships — Supabase](#recipe-108)
-- [Build your engine as OSS inside a big employer first — Temporal](#recipe-110)
-- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-113)
-- [Wait for the "can you host this for me?" email — Unleash](#recipe-114)
-- [Win one tight founder network until you're the default — Vanta](#recipe-115)
-- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-119)
-- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-120)
-- [Open-source a tool that grades your competitors — Wallarm](#recipe-124)
-- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-126)
+- [Adopt the job title your community already coined — dbt Labs](#recipe-25)
+- [Invite your competitors to moderate your community — dbt Labs](#recipe-26)
+- [Let your customers' hiring needs sell for you — dbt Labs](#recipe-27)
+- [Open the community Slack before you incorporate — dbt Labs](#recipe-28)
+- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-31)
+- [Buy a developer community as a funnel, but own its upkeep — Fastly](#recipe-34)
+- [Crowdsource your conference agenda by open CFP — Figma](#recipe-37)
+- [Give students the full paid plan, then harvest at work — Figma](#recipe-38)
+- [Let users publish templates that Google indexes — Figma](#recipe-39)
+- [Send each user a personal Spotify-style year-in-review — Framer](#recipe-41)
+- [Take 0% of template sales, pay 50% referral — Framer](#recipe-42)
+- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-43)
+- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-46)
+- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-47)
+- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-48)
+- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-49)
+- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-50)
+- [Run a monthly live-hacking webinar with zero sales pitch — Huntress](#recipe-53)
+- [Convene a conference that names your category — LangChain](#recipe-57)
+- [Turn each quarterly release into its own news cycle — LangChain](#recipe-58)
+- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-63)
+- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-64)
+- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-65)
+- [Demo your product inside each language community's meetup — MongoDB](#recipe-70)
+- [Be the tool people reach for on stage — ngrok](#recipe-77)
+- [Make your full handbook public before your second hire — PostHog](#recipe-81)
+- [Pay template creators 25% of the compute they drive — Railway](#recipe-85)
+- [Personally greet every Discord signup for 18 months — Railway](#recipe-86)
+- [Recruit the users who requested a feature as its launch-day beta testers — Resend](#recipe-90)
+- [Let destination vendors build their own catalog integrations — Segment](#recipe-94)
+- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-96)
+- [Author your own license to block cloud free-riders — Sentry](#recipe-98)
+- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-104)
+- [Manufacture a quarterly demo-day with daily ships — Supabase](#recipe-107)
+- [Build your engine as OSS inside a big employer first — Temporal](#recipe-109)
+- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-112)
+- [Wait for the "can you host this for me?" email — Unleash](#recipe-113)
+- [Win one tight founder network until you're the default — Vanta](#recipe-114)
+- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-118)
+- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-119)
+- [Open-source a tool that grades your competitors — Wallarm](#recipe-123)
+- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-125)
 - [Manually activate first-night signups to mine roadmap feedback — Tailscale](#recipe-142)
 - [DM 600 OSS users in one month to mine the roadmap — Temporal](#recipe-143)
 - [Seed onboarding with a one-click prebuilt workflow library — Tines](#recipe-144)
-- [Turn your users into your detection R&D team — Sublime Security](#recipe-161)
-- [Make the product get bought, not sold, by developers — JFrog](#recipe-171)
+- [Turn your users into your detection R&D team — Sublime Security](#recipe-166)
+- [Make the product get bought, not sold, by developers — JFrog](#recipe-178)
 
 ### `conference-talk` <sup>8</sup>
 
 - [Name the unnamed problem with analysts, then own it — Astrix Security](#recipe-6)
 - [Launch a single-project conference to corral your community — Confluent](#recipe-21)
-- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-30)
-- [Crowdsource your conference agenda by open CFP — Figma](#recipe-38)
-- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-51)
-- [Convene a conference that names your category — LangChain](#recipe-58)
-- [Demo your product inside each language community's meetup — MongoDB](#recipe-71)
-- [Be the tool people reach for on stage — ngrok](#recipe-78)
+- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-29)
+- [Crowdsource your conference agenda by open CFP — Figma](#recipe-37)
+- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-50)
+- [Convene a conference that names your category — LangChain](#recipe-57)
+- [Demo your product inside each language community's meetup — MongoDB](#recipe-70)
+- [Be the tool people reach for on stage — ngrok](#recipe-77)
 
 ### `content-seo` <sup>14</sup>
 
@@ -178,44 +180,51 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Sell a CFO-legible cost cut, not better monitoring — Chronosphere](#recipe-14)
 - [Give away your best paid feature to manufacture a launch moment — Cloudflare](#recipe-16)
 - [Treat an unprompted foreign surge as your wedge signal — CodeRabbit](#recipe-20)
-- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-31)
-- [Let users publish templates that Google indexes — Figma](#recipe-40)
-- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-46)
-- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-53)
-- [Ship a free risk-rating database as your wedge — Netskope](#recipe-77)
-- [Generate one SEO landing page per open-source package — Snyk](#recipe-103)
-- [Anchor your category to a tool every dev already knows — Supabase](#recipe-106)
-- [Engineer your docs so the LLM names you — Vercel](#recipe-116)
-- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-126)
+- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-30)
+- [Let users publish templates that Google indexes — Figma](#recipe-39)
+- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-45)
+- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-52)
+- [Ship a free risk-rating database as your wedge — Netskope](#recipe-76)
+- [Generate one SEO landing page per open-source package — Snyk](#recipe-102)
+- [Anchor your category to a tool every dev already knows — Supabase](#recipe-105)
+- [Engineer your docs so the LLM names you — Vercel](#recipe-115)
+- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-125)
+
+### `data-gravity` <sup>4</sup>
+
+- [Auto-correlate telemetry so adding products deepens lock-in — Datadog](#recipe-160)
+- [Make customers rewrite the app, not just move the data — MongoDB](#recipe-164)
+- [Promise backward compatibility forever, never break old clients — Tailscale](#recipe-167)
+- [Turn a yearly audit into hourly monitoring — Vanta](#recipe-170)
 
 ### `default-on` <sup>18</sup>
 
 - [Make your biggest cost center the unmetered free hook — Cloudflare](#recipe-17)
 - [Run your full paid product on every public PR — CodeRabbit](#recipe-18)
-- [Make one default feature an instant wow on install — Cursor](#recipe-24)
-- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-41)
-- [Auto-generate an MCP server from every customer's docs — Mintlify](#recipe-69)
-- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-74)
-- [Put your brand inside the artifact users share — ngrok](#recipe-79)
-- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-80)
-- [Embed your engine as a platform's default scanner — Semgrep](#recipe-98)
-- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-102)
-- [Become the default backend AI app builders auto-provision — Supabase](#recipe-107)
-- [Make switching a one-line YAML change — Blacksmith](#recipe-129)
-- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-131)
-- [Fork the incumbent, import its setup in one click — Cursor](#recipe-132)
+- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-40)
+- [Auto-generate an MCP server from every customer's docs — Mintlify](#recipe-68)
+- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-73)
+- [Put your brand inside the artifact users share — ngrok](#recipe-78)
+- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-79)
+- [Embed your engine as a platform's default scanner — Semgrep](#recipe-97)
+- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-101)
+- [Become the default backend AI app builders auto-provision — Supabase](#recipe-106)
+- [Make switching a one-line YAML change — Blacksmith](#recipe-128)
+- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-130)
+- [Fork the incumbent, import its setup in one click — Cursor](#recipe-131)
+- [Make one default feature an instant wow on install — Cursor](#recipe-132)
 - [Let partners build a third of your integration catalog — Datadog](#recipe-133)
 - [Default-on your free tier inside the editor users already run — GitHub Copilot](#recipe-134)
 - [Make your paid product one env var away from the free framework — LangChain](#recipe-154)
-- [Ship one agent so upsells need zero redeployment — CrowdStrike](#recipe-165)
+- [Ship one agent so upsells need zero redeployment — CrowdStrike](#recipe-172)
 
 ### `design-partners` <sup>10</sup>
 
 - [Embed your engine inside a partner's installed base — Baseten](#recipe-7)
-- [Run a year-long invite-gated preview to build proof and demand — GitHub Copilot](#recipe-45)
-- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-61)
-- [Make your chip vendor both investor and co-marketer — Vultr](#recipe-122)
-- [Have founders sell to CISOs until first millions, then hire a CRO — Wiz](#recipe-125)
+- [Run a year-long invite-gated preview to build proof and demand — GitHub Copilot](#recipe-44)
+- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-60)
+- [Make your chip vendor both investor and co-marketer — Vultr](#recipe-121)
+- [Have founders sell to CISOs until first millions, then hire a CRO — Wiz](#recipe-124)
 - [Work inside early customers' offices one day a week — Huntress](#recipe-135)
 - [Hand-migrate and edit early customers' docs yourself — Mintlify](#recipe-137)
 - [DM 600 OSS users in one month to mine the roadmap — Temporal](#recipe-143)
@@ -234,108 +243,114 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Ship a free GitHub Action before the SaaS — CodeRabbit](#recipe-19)
 - [Launch a single-project conference to corral your community — Confluent](#recipe-21)
 - [Open-source the core to flip selling into inbound — Confluent](#recipe-22)
-- [Make one default feature an instant wow on install — Cursor](#recipe-24)
-- [Let your customers' hiring needs sell for you — dbt Labs](#recipe-28)
-- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-31)
-- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-32)
-- [Repackage your proprietary dataset as a free dev tool — Endor Labs](#recipe-34)
-- [Open-source your runtime to make your standard the default — Fastly](#recipe-36)
-- [Ship your #1 community ask as a usable free tier — Fastly](#recipe-37)
-- [Crowdsource your conference agenda by open CFP — Figma](#recipe-38)
-- [Give students the full paid plan, then harvest at work — Figma](#recipe-39)
-- [Take 0% of template sales, pay 50% referral — Framer](#recipe-43)
-- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-46)
-- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-47)
-- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-51)
-- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-52)
-- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-53)
-- [Convene a conference that names your category — LangChain](#recipe-58)
-- [Turn each quarterly release into its own news cycle — LangChain](#recipe-59)
-- [Ship a public weekly changelog before you have users — Linear](#recipe-62)
-- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-64)
-- [Demo your product inside each language community's meetup — MongoDB](#recipe-71)
-- [Open-source the core as a free marketing channel — MongoDB](#recipe-72)
-- [Ship git-like branching as the wedge feature — Neon](#recipe-75)
-- [Be the tool people reach for on stage — ngrok](#recipe-78)
-- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-80)
-- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-83)
-- [Launch with a raw phone demo, not a campaign — Replit](#recipe-90)
-- [Launch the throwaway utility you already open-sourced — Segment](#recipe-94)
-- [Make one install replace every per-tool integration — Segment](#recipe-96)
-- [Author your own license to block cloud free-riders — Sentry](#recipe-99)
-- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-100)
-- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-109)
-- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-112)
-- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-113)
-- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-120)
-- [Anchor on 'price you see is price you pay' against hyperscalers — Vultr](#recipe-121)
-- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-123)
-- [Open-source a tool that grades your competitors — Wallarm](#recipe-124)
+- [Let your customers' hiring needs sell for you — dbt Labs](#recipe-27)
+- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-30)
+- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-31)
+- [Repackage your proprietary dataset as a free dev tool — Endor Labs](#recipe-33)
+- [Open-source your runtime to make your standard the default — Fastly](#recipe-35)
+- [Ship your #1 community ask as a usable free tier — Fastly](#recipe-36)
+- [Crowdsource your conference agenda by open CFP — Figma](#recipe-37)
+- [Give students the full paid plan, then harvest at work — Figma](#recipe-38)
+- [Take 0% of template sales, pay 50% referral — Framer](#recipe-42)
+- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-45)
+- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-46)
+- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-50)
+- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-51)
+- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-52)
+- [Convene a conference that names your category — LangChain](#recipe-57)
+- [Turn each quarterly release into its own news cycle — LangChain](#recipe-58)
+- [Ship a public weekly changelog before you have users — Linear](#recipe-61)
+- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-63)
+- [Demo your product inside each language community's meetup — MongoDB](#recipe-70)
+- [Open-source the core as a free marketing channel — MongoDB](#recipe-71)
+- [Ship git-like branching as the wedge feature — Neon](#recipe-74)
+- [Be the tool people reach for on stage — ngrok](#recipe-77)
+- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-79)
+- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-82)
+- [Launch with a raw phone demo, not a campaign — Replit](#recipe-89)
+- [Launch the throwaway utility you already open-sourced — Segment](#recipe-93)
+- [Make one install replace every per-tool integration — Segment](#recipe-95)
+- [Author your own license to block cloud free-riders — Sentry](#recipe-98)
+- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-99)
+- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-108)
+- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-111)
+- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-112)
+- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-119)
+- [Anchor on 'price you see is price you pay' against hyperscalers — Vultr](#recipe-120)
+- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-122)
+- [Open-source a tool that grades your competitors — Wallarm](#recipe-123)
+- [Make one default feature an instant wow on install — Cursor](#recipe-132)
 - [Ship one binary that works in seconds — ngrok](#recipe-139)
 - [Make every shared artifact a live product demo — Semgrep](#recipe-141)
 - [Sell a contractual CVE SLA the CISO can't ignore — Chainguard](#recipe-150)
-- [Turn your users into your detection R&D team — Sublime Security](#recipe-161)
-- [Neutralize the integration objection by going HTTP-first — Tines](#recipe-162)
+- [Turn your users into your detection R&D team — Sublime Security](#recipe-166)
+- [Neutralize the integration objection by going HTTP-first — Tines](#recipe-168)
 
 ### `distribution` <sup>4</sup>
 
-- [Sell through the channel that already owns SMB trust — Huntress](#recipe-55)
-- [Make partners self-serve onboarding so they lead with you — LogicMonitor](#recipe-63)
-- [Become the bundled default in Linux distros — MariaDB](#recipe-67)
-- [Become the default backend AI app builders auto-provision — Supabase](#recipe-107)
+- [Sell through the channel that already owns SMB trust — Huntress](#recipe-54)
+- [Make partners self-serve onboarding so they lead with you — LogicMonitor](#recipe-62)
+- [Become the bundled default in Linux distros — MariaDB](#recipe-66)
+- [Become the default backend AI app builders auto-provision — Supabase](#recipe-106)
 
 ### `docs-as-marketing` <sup>17</sup>
 
 - [Publish the reverse-engineering teardown that wins HN — Blacksmith](#recipe-9)
 - [Publish case studies with full before-and-after metric tables — Chronosphere](#recipe-13)
-- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-46)
-- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-53)
-- [Auto-generate an MCP server from every customer's docs — Mintlify](#recipe-69)
-- [Rebuild a prospect's docs, then cold-email the finished version — Mintlify](#recipe-70)
-- [Ship a free risk-rating database as your wedge — Netskope](#recipe-77)
-- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-80)
-- [Make your full handbook public before your second hire — PostHog](#recipe-82)
-- [Be the deploy target LLMs name by default — Render](#recipe-88)
-- [Ship a migration kit the day the incumbent breaks — Render](#recipe-89)
-- [Generate one SEO landing page per open-source package — Snyk](#recipe-103)
-- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-109)
-- [Engineer your docs so the LLM names you — Vercel](#recipe-116)
-- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-128)
+- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-45)
+- [Write the category's canonical O'Reilly book — Honeycomb](#recipe-52)
+- [Auto-generate an MCP server from every customer's docs — Mintlify](#recipe-68)
+- [Rebuild a prospect's docs, then cold-email the finished version — Mintlify](#recipe-69)
+- [Ship a free risk-rating database as your wedge — Netskope](#recipe-76)
+- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-79)
+- [Make your full handbook public before your second hire — PostHog](#recipe-81)
+- [Be the deploy target LLMs name by default — Render](#recipe-87)
+- [Ship a migration kit the day the incumbent breaks — Render](#recipe-88)
+- [Generate one SEO landing page per open-source package — Snyk](#recipe-102)
+- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-108)
+- [Engineer your docs so the LLM names you — Vercel](#recipe-115)
+- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-127)
 - [Make every shared artifact a live product demo — Semgrep](#recipe-141)
 - [Seed onboarding with a one-click prebuilt workflow library — Tines](#recipe-144)
 
 ### `drop-in-replacement` <sup>3</sup>
 
-- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-68)
-- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-120)
-- [Make switching a one-line YAML change — Blacksmith](#recipe-129)
+- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-67)
+- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-119)
+- [Make switching a one-line YAML change — Blacksmith](#recipe-128)
 
 ### `enterprise` <sup>3</sup>
 
-- [Fund a new category by ripping out VDI and VPN — Island](#recipe-56)
-- [Have founders sell to CISOs until first millions, then hire a CRO — Wiz](#recipe-125)
-- [Route enterprise deals through cloud marketplaces to skip procurement — Wiz](#recipe-190)
+- [Fund a new category by ripping out VDI and VPN — Island](#recipe-55)
+- [Have founders sell to CISOs until first millions, then hire a CRO — Wiz](#recipe-124)
+- [Route enterprise deals through cloud marketplaces to skip procurement — Wiz](#recipe-198)
 
 ### `enterprise-gtm` <sup>3</sup>
 
-- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-126)
-- [Track champions who buy you again at their next job — Zscaler](#recipe-127)
-- [Sell swappable bundles and publish a full-stack cohort — Zscaler](#recipe-180)
+- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-125)
+- [Track champions who buy you again at their next job — Zscaler](#recipe-126)
+- [Sell swappable bundles and publish a full-stack cohort — Zscaler](#recipe-187)
+
+### `enterprise-sales` <sup>3</sup>
+
+- [Make customers rewrite the app, not just move the data — MongoDB](#recipe-164)
+- [Land one regulated workload, expand to full cloud coverage — Rad Security](#recipe-182)
+- [Attach a security feature to move the buyer up the org chart — Rubrik](#recipe-183)
 
 ### `founder-led-sales` <sup>24</sup>
 
 - [Sell with a free risk report that surfaces live threats — Abnormal AI](#recipe-4)
 - [Lead with a free scan that surfaces unknown risk — Astrix Security](#recipe-5)
 - [Open-source the infra core, leave when the community outgrows you — Chronosphere](#recipe-12)
-- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-61)
-- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-64)
-- [Rebuild a prospect's docs, then cold-email the finished version — Mintlify](#recipe-70)
-- [Engineer third-party proof to de-risk seven-figure deals — Netskope](#recipe-76)
-- [Personally greet every Discord signup for 18 months — Railway](#recipe-87)
-- [Launch with a raw phone demo, not a campaign — Replit](#recipe-90)
-- [Harvest roadmap gaps from buyer-intent marketplaces — Sedai](#recipe-93)
-- [Have founders sell to CISOs until first millions, then hire a CRO — Wiz](#recipe-125)
-- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-126)
+- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-60)
+- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-63)
+- [Rebuild a prospect's docs, then cold-email the finished version — Mintlify](#recipe-69)
+- [Engineer third-party proof to de-risk seven-figure deals — Netskope](#recipe-75)
+- [Personally greet every Discord signup for 18 months — Railway](#recipe-86)
+- [Launch with a raw phone demo, not a campaign — Replit](#recipe-89)
+- [Harvest roadmap gaps from buyer-intent marketplaces — Sedai](#recipe-92)
+- [Have founders sell to CISOs until first millions, then hire a CRO — Wiz](#recipe-124)
+- [Run a peer-CXO forum so buyers sell each other — Zscaler](#recipe-125)
 - [Work inside early customers' offices one day a week — Huntress](#recipe-135)
 - [Hand-migrate and edit early customers' docs yourself — Mintlify](#recipe-137)
 - [Manually activate first-night signups to mine roadmap feedback — Tailscale](#recipe-142)
@@ -344,10 +359,10 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Turn agentless deploy into a 15-minute live demo — Wiz](#recipe-148)
 - [Sell a contractual CVE SLA the CISO can't ignore — Chainguard](#recipe-150)
 - [Make the POC run on the buyer's live production cloud — Sedai](#recipe-156)
-- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-168)
-- [Attach a security feature to move the buyer up the org chart — Rubrik](#recipe-176)
-- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-185)
-- [Reframe a commodity product into the security budget — Rubrik](#recipe-188)
+- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-175)
+- [Attach a security feature to move the buyer up the org chart — Rubrik](#recipe-183)
+- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-193)
+- [Reframe a commodity product into the security budget — Rubrik](#recipe-196)
 
 ### `free-tier` <sup>38</sup>
 
@@ -357,26 +372,26 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Make your biggest cost center the unmetered free hook — Cloudflare](#recipe-17)
 - [Run your full paid product on every public PR — CodeRabbit](#recipe-18)
 - [Engineer a free-tier loop that walks the tool into teams — Cursor](#recipe-23)
-- [Ship your #1 community ask as a usable free tier — Fastly](#recipe-37)
-- [Give students the full paid plan, then harvest at work — Figma](#recipe-39)
-- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-41)
-- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-44)
-- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-49)
-- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-65)
-- [Open-source the core as a free marketing channel — MongoDB](#recipe-72)
-- [Embed as the default DB inside other platforms — Neon](#recipe-73)
-- [Put your brand inside the artifact users share — ngrok](#recipe-79)
-- [Give away the detection, sell applying it to their workloads — Rad Security](#recipe-84)
-- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-85)
-- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-101)
-- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-104)
-- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-112)
-- [Give away the framework, sell the painful part — Vercel](#recipe-117)
-- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-118)
-- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-119)
-- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-120)
-- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-123)
-- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-128)
+- [Ship your #1 community ask as a usable free tier — Fastly](#recipe-36)
+- [Give students the full paid plan, then harvest at work — Figma](#recipe-38)
+- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-40)
+- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-43)
+- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-48)
+- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-64)
+- [Open-source the core as a free marketing channel — MongoDB](#recipe-71)
+- [Embed as the default DB inside other platforms — Neon](#recipe-72)
+- [Put your brand inside the artifact users share — ngrok](#recipe-78)
+- [Give away the detection, sell applying it to their workloads — Rad Security](#recipe-83)
+- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-84)
+- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-100)
+- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-103)
+- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-111)
+- [Give away the framework, sell the painful part — Vercel](#recipe-116)
+- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-117)
+- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-118)
+- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-119)
+- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-122)
+- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-127)
 - [Default-on your free tier inside the editor users already run — GitHub Copilot](#recipe-134)
 - [Make the free tier need no credit card and stand up in 3 minutes — MongoDB](#recipe-138)
 - [Ship one binary that works in seconds — ngrok](#recipe-139)
@@ -385,64 +400,64 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Segment monetization by money-vs-time, not by feature — Grafana Labs](#recipe-152)
 - [Make your paid product one env var away from the free framework — LangChain](#recipe-154)
 - [Deliberately hold the bottom of the market with a free tier — Tailscale](#recipe-157)
-- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-167)
-- [Price per event, not per host or cardinality — Honeycomb](#recipe-170)
-- [Meter on data volume so your bill tracks their value — Confluent](#recipe-182)
-- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-185)
+- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-174)
+- [Price per event, not per host or cardinality — Honeycomb](#recipe-177)
+- [Meter on data volume so your bill tracks their value — Confluent](#recipe-190)
+- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-193)
 
 ### `freemium` <sup>13</sup>
 
 - [Seed bottom-up with 3,000 free CI minutes/month — Blacksmith](#recipe-10)
 - [Make your biggest cost center the unmetered free hook — Cloudflare](#recipe-17)
-- [Be the one repository that holds every package format — JFrog](#recipe-57)
-- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-85)
-- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-100)
-- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-112)
-- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-118)
+- [Be the one repository that holds every package format — JFrog](#recipe-56)
+- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-84)
+- [Build for the rising ecosystem incumbents ignore — Sentry](#recipe-99)
+- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-111)
+- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-117)
 - [Default-on your free tier inside the editor users already run — GitHub Copilot](#recipe-134)
 - [Make the free tier need no credit card and stand up in 3 minutes — MongoDB](#recipe-138)
 - [Gate the already-loved free tool behind a company-size line — Docker](#recipe-151)
 - [Draw the paywall at production-scale and async protocols — Gravitee](#recipe-153)
-- [Layer consumption pricing onto a dormant free base — Replit](#recipe-186)
-- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-189)
+- [Layer consumption pricing onto a dormant free base — Replit](#recipe-194)
+- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-197)
 
 ### `github` <sup>18</sup>
 
 - [Open-source the packaging format users need before they need you — Baseten](#recipe-8)
 - [Open-source the infra core, leave when the community outgrows you — Chronosphere](#recipe-12)
 - [Ship a free GitHub Action before the SaaS — CodeRabbit](#recipe-19)
-- [Open-source your runtime to make your standard the default — Fastly](#recipe-36)
-- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-49)
-- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-66)
-- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-80)
-- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-81)
-- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-83)
-- [Ship a free OSS tool a month before your paid product — Resend](#recipe-92)
-- [Launch the throwaway utility you already open-sourced — Segment](#recipe-94)
-- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-97)
-- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-102)
-- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-105)
-- [Build your engine as OSS inside a big employer first — Temporal](#recipe-110)
-- [Wait for the "can you host this for me?" email — Unleash](#recipe-114)
-- [Open-source a tool that grades your competitors — Wallarm](#recipe-124)
-- [Turn your users into your detection R&D team — Sublime Security](#recipe-161)
+- [Open-source your runtime to make your standard the default — Fastly](#recipe-35)
+- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-48)
+- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-65)
+- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-79)
+- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-80)
+- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-82)
+- [Ship a free OSS tool a month before your paid product — Resend](#recipe-91)
+- [Launch the throwaway utility you already open-sourced — Segment](#recipe-93)
+- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-96)
+- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-101)
+- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-104)
+- [Build your engine as OSS inside a big employer first — Temporal](#recipe-109)
+- [Wait for the "can you host this for me?" email — Unleash](#recipe-113)
+- [Open-source a tool that grades your competitors — Wallarm](#recipe-123)
+- [Turn your users into your detection R&D team — Sublime Security](#recipe-166)
 
 ### `hacker-news` <sup>7</sup>
 
 - [Publish the reverse-engineering teardown that wins HN — Blacksmith](#recipe-9)
-- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-30)
-- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-66)
-- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-81)
-- [Launch the throwaway utility you already open-sourced — Segment](#recipe-94)
-- [Anchor your category to a tool every dev already knows — Supabase](#recipe-106)
-- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-109)
+- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-29)
+- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-65)
+- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-80)
+- [Launch the throwaway utility you already open-sourced — Segment](#recipe-93)
+- [Anchor your category to a tool every dev already knows — Supabase](#recipe-105)
+- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-108)
 
 ### `integrations` <sup>4</sup>
 
-- [Be the one repository that holds every package format — JFrog](#recipe-57)
-- [Be the deploy target LLMs name by default — Render](#recipe-88)
-- [Become the default backend AI app builders auto-provision — Supabase](#recipe-107)
-- [Implement the framework's abstract base class to become the default runtime — Temporal](#recipe-111)
+- [Be the one repository that holds every package format — JFrog](#recipe-56)
+- [Be the deploy target LLMs name by default — Render](#recipe-87)
+- [Become the default backend AI app builders auto-provision — Supabase](#recipe-106)
+- [Implement the framework's abstract base class to become the default runtime — Temporal](#recipe-110)
 
 ### `integrations-marketplace` <sup>21</sup>
 
@@ -451,24 +466,24 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Sell with a free risk report that surfaces live threats — Abnormal AI](#recipe-4)
 - [Embed your engine inside a partner's installed base — Baseten](#recipe-7)
 - [Ship a free GitHub Action before the SaaS — CodeRabbit](#recipe-19)
-- [Take 0% of template sales, pay 50% referral — Framer](#recipe-43)
-- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-48)
-- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-50)
-- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-52)
-- [Become the bundled default in Linux distros — MariaDB](#recipe-67)
-- [Auto-generate an MCP server from every customer's docs — Mintlify](#recipe-69)
-- [Embed as the default DB inside other platforms — Neon](#recipe-73)
-- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-74)
-- [Pay template creators 25% of the compute they drive — Railway](#recipe-86)
-- [Let destination vendors build their own catalog integrations — Segment](#recipe-95)
-- [Make one install replace every per-tool integration — Segment](#recipe-96)
-- [Embed your engine as a platform's default scanner — Semgrep](#recipe-98)
+- [Take 0% of template sales, pay 50% referral — Framer](#recipe-42)
+- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-47)
+- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-49)
+- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-51)
+- [Become the bundled default in Linux distros — MariaDB](#recipe-66)
+- [Auto-generate an MCP server from every customer's docs — Mintlify](#recipe-68)
+- [Embed as the default DB inside other platforms — Neon](#recipe-72)
+- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-73)
+- [Pay template creators 25% of the compute they drive — Railway](#recipe-85)
+- [Let destination vendors build their own catalog integrations — Segment](#recipe-94)
+- [Make one install replace every per-tool integration — Segment](#recipe-95)
+- [Embed your engine as a platform's default scanner — Semgrep](#recipe-97)
 - [Let partners build a third of your integration catalog — Datadog](#recipe-133)
 - [Seed onboarding with a one-click prebuilt workflow library — Tines](#recipe-144)
-- [Neutralize the integration objection by going HTTP-first — Tines](#recipe-162)
-- [Route enterprise deals through cloud marketplaces to skip procurement — Wiz](#recipe-190)
+- [Neutralize the integration objection by going HTTP-first — Tines](#recipe-168)
+- [Route enterprise deals through cloud marketplaces to skip procurement — Wiz](#recipe-198)
 
-### `land-and-expand` <sup>61</sup>
+### `land-and-expand` <sup>63</sup>
 
 - [Acqui-hire your way into the developer daily workflow — 1Password](#recipe-1)
 - [Bundle a free family plan into every paid seat — 1Password](#recipe-2)
@@ -481,23 +496,23 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Make your biggest cost center the unmetered free hook — Cloudflare](#recipe-17)
 - [Open-source the core to flip selling into inbound — Confluent](#recipe-22)
 - [Engineer a free-tier loop that walks the tool into teams — Cursor](#recipe-23)
-- [Buy a developer community as a funnel, but own its upkeep — Fastly](#recipe-35)
-- [Give students the full paid plan, then harvest at work — Figma](#recipe-39)
-- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-44)
-- [Sell through the channel that already owns SMB trust — Huntress](#recipe-55)
-- [Fund a new category by ripping out VDI and VPN — Island](#recipe-56)
-- [Convene a conference that names your category — LangChain](#recipe-58)
-- [Embed as the default DB inside other platforms — Neon](#recipe-73)
-- [Ship a free risk-rating database as your wedge — Netskope](#recipe-77)
-- [Make one install replace every per-tool integration — Segment](#recipe-96)
-- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-101)
-- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-102)
-- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-104)
-- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-112)
-- [Give away the framework, sell the painful part — Vercel](#recipe-117)
-- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-119)
-- [Make your chip vendor both investor and co-marketer — Vultr](#recipe-122)
-- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-131)
+- [Buy a developer community as a funnel, but own its upkeep — Fastly](#recipe-34)
+- [Give students the full paid plan, then harvest at work — Figma](#recipe-38)
+- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-43)
+- [Sell through the channel that already owns SMB trust — Huntress](#recipe-54)
+- [Fund a new category by ripping out VDI and VPN — Island](#recipe-55)
+- [Convene a conference that names your category — LangChain](#recipe-57)
+- [Embed as the default DB inside other platforms — Neon](#recipe-72)
+- [Ship a free risk-rating database as your wedge — Netskope](#recipe-76)
+- [Make one install replace every per-tool integration — Segment](#recipe-95)
+- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-100)
+- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-101)
+- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-103)
+- [Wedge into procurement with a forever-free Community Edition — Tines](#recipe-111)
+- [Give away the framework, sell the painful part — Vercel](#recipe-116)
+- [Out-cover the government dataset everyone already trusts — VulnCheck](#recipe-118)
+- [Make your chip vendor both investor and co-marketer — Vultr](#recipe-121)
+- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-130)
 - [Let partners build a third of your integration catalog — Datadog](#recipe-133)
 - [Land light with a no-agent install, expand into the full product — Island](#recipe-136)
 - [Make the free tier need no credit card and stand up in 3 minutes — MongoDB](#recipe-138)
@@ -510,64 +525,79 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Replace your free tier with a $5 qualifying entry plan — PlanetScale](#recipe-155)
 - [Make the POC run on the buyer's live production cloud — Sedai](#recipe-156)
 - [Deliberately hold the bottom of the market with a free tier — Tailscale](#recipe-157)
-- [Replace per-module pricing with a committed spend pool — CrowdStrike](#recipe-164)
-- [Ship one agent so upsells need zero redeployment — CrowdStrike](#recipe-165)
-- [Wedge on what you suppress, not what you find — Endor Labs](#recipe-166)
-- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-167)
-- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-168)
-- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-169)
-- [Price per event, not per host or cardinality — Honeycomb](#recipe-170)
-- [Make the product get bought, not sold, by developers — JFrog](#recipe-171)
-- [Ship adjacent modules that share your first product's data collector — LogicMonitor](#recipe-172)
-- [Land on one module, converge the whole stack onto you — Netskope](#recipe-173)
-- [Bundle products until ripping you out is too painful — PostHog](#recipe-174)
-- [Land one regulated workload, expand to full cloud coverage — Rad Security](#recipe-175)
-- [Attach a security feature to move the buyer up the org chart — Rubrik](#recipe-176)
-- [Build four expansion vectors into every landed account — Rubrik](#recipe-177)
-- [Pull the 5 buyers per account the product already converted — Snyk](#recipe-178)
-- [Price per API call so spend grows with the app — Twilio](#recipe-179)
-- [Sell swappable bundles and publish a full-stack cohort — Zscaler](#recipe-180)
-- [Meter on data volume so your bill tracks their value — Confluent](#recipe-182)
-- [Charge the developer, not the ops buyer above them — Docker](#recipe-183)
-- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-185)
-- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-189)
+- [Auto-correlate telemetry so adding products deepens lock-in — Datadog](#recipe-160)
+- [Treat breadth of stages used as your #1 churn predictor — GitLab](#recipe-162)
+- [Replace per-module pricing with a committed spend pool — CrowdStrike](#recipe-171)
+- [Ship one agent so upsells need zero redeployment — CrowdStrike](#recipe-172)
+- [Wedge on what you suppress, not what you find — Endor Labs](#recipe-173)
+- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-174)
+- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-175)
+- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-176)
+- [Price per event, not per host or cardinality — Honeycomb](#recipe-177)
+- [Make the product get bought, not sold, by developers — JFrog](#recipe-178)
+- [Ship adjacent modules that share your first product's data collector — LogicMonitor](#recipe-179)
+- [Land on one module, converge the whole stack onto you — Netskope](#recipe-180)
+- [Bundle products until ripping you out is too painful — PostHog](#recipe-181)
+- [Land one regulated workload, expand to full cloud coverage — Rad Security](#recipe-182)
+- [Attach a security feature to move the buyer up the org chart — Rubrik](#recipe-183)
+- [Build four expansion vectors into every landed account — Rubrik](#recipe-184)
+- [Pull the 5 buyers per account the product already converted — Snyk](#recipe-185)
+- [Price per API call so spend grows with the app — Twilio](#recipe-186)
+- [Sell swappable bundles and publish a full-stack cohort — Zscaler](#recipe-187)
+- [Meter on data volume so your bill tracks their value — Confluent](#recipe-190)
+- [Charge the developer, not the ops buyer above them — Docker](#recipe-191)
+- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-193)
+- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-197)
 
 ### `launch-week` <sup>4</sup>
 
 - [Give away your best paid feature to manufacture a launch moment — Cloudflare](#recipe-16)
-- [Send each user a personal Spotify-style year-in-review — Framer](#recipe-42)
-- [Recruit the users who requested a feature as its launch-day beta testers — Resend](#recipe-91)
-- [Manufacture a quarterly demo-day with daily ships — Supabase](#recipe-108)
+- [Send each user a personal Spotify-style year-in-review — Framer](#recipe-41)
+- [Recruit the users who requested a feature as its launch-day beta testers — Resend](#recipe-90)
+- [Manufacture a quarterly demo-day with daily ships — Supabase](#recipe-107)
 
 ### `licensing` <sup>3</sup>
 
-- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-31)
-- [Author your own license to block cloud free-riders — Sentry](#recipe-99)
-- [Relicense to block hyperscalers, but expect a fork — Elastic](#recipe-184)
+- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-30)
+- [Author your own license to block cloud free-riders — Sentry](#recipe-98)
+- [Relicense to block hyperscalers, but expect a fork — Elastic](#recipe-192)
 
-### `migration` <sup>3</sup>
+### `lock-in` <sup>3</sup>
 
-- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-68)
-- [Ship a migration kit the day the incumbent breaks — Render](#recipe-89)
-- [Fork the incumbent, import its setup in one click — Cursor](#recipe-132)
+- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-49)
+- [Make customers rewrite the app, not just move the data — MongoDB](#recipe-164)
+- [Promise backward compatibility forever, never break old clients — Tailscale](#recipe-167)
+
+### `migration` <sup>4</sup>
+
+- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-67)
+- [Ship a migration kit the day the incumbent breaks — Render](#recipe-88)
+- [Fork the incumbent, import its setup in one click — Cursor](#recipe-131)
+- [Make customers rewrite the app, not just move the data — MongoDB](#recipe-164)
 
 ### `monetization` <sup>3</sup>
 
-- [Relicense to block hyperscalers, but expect a fork — Elastic](#recipe-184)
-- [Layer consumption pricing onto a dormant free base — Replit](#recipe-186)
-- [Meter on delivered effort, not flat per-action units — Replit](#recipe-187)
+- [Relicense to block hyperscalers, but expect a fork — Elastic](#recipe-192)
+- [Layer consumption pricing onto a dormant free base — Replit](#recipe-194)
+- [Meter on delivered effort, not flat per-action units — Replit](#recipe-195)
 
 ### `multi-product` <sup>3</sup>
 
-- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-168)
-- [Ship adjacent modules that share your first product's data collector — LogicMonitor](#recipe-172)
-- [Bundle products until ripping you out is too painful — PostHog](#recipe-174)
+- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-175)
+- [Ship adjacent modules that share your first product's data collector — LogicMonitor](#recipe-179)
+- [Bundle products until ripping you out is too painful — PostHog](#recipe-181)
+
+### `net-retention` <sup>3</sup>
+
+- [Treat breadth of stages used as your #1 churn predictor — GitLab](#recipe-162)
+- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-174)
+- [Build four expansion vectors into every landed account — Rubrik](#recipe-184)
 
 ### `onboarding-redesign` <sup>8</sup>
 
-- [Make switching a one-line YAML change — Blacksmith](#recipe-129)
-- [Put a working app behind a bare prompt box, no signup — Bolt.new](#recipe-130)
-- [Fork the incumbent, import its setup in one click — Cursor](#recipe-132)
+- [Make switching a one-line YAML change — Blacksmith](#recipe-128)
+- [Put a working app behind a bare prompt box, no signup — Bolt.new](#recipe-129)
+- [Fork the incumbent, import its setup in one click — Cursor](#recipe-131)
 - [Land light with a no-agent install, expand into the full product — Island](#recipe-136)
 - [Hand-migrate and edit early customers' docs yourself — Mintlify](#recipe-137)
 - [Ship one binary that works in seconds — ngrok](#recipe-139)
@@ -577,8 +607,8 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 ### `open-core` <sup>3</sup>
 
 - [Draw the paywall at production-scale and async protocols — Gravitee](#recipe-153)
-- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-169)
-- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-189)
+- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-176)
+- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-197)
 
 ### `open-source` <sup>53</sup>
 
@@ -588,165 +618,180 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Ship a free GitHub Action before the SaaS — CodeRabbit](#recipe-19)
 - [Launch a single-project conference to corral your community — Confluent](#recipe-21)
 - [Open-source the core to flip selling into inbound — Confluent](#recipe-22)
-- [Open the community Slack before you incorporate — dbt Labs](#recipe-29)
-- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-30)
-- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-31)
-- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-32)
-- [Open-source your runtime to make your standard the default — Fastly](#recipe-36)
-- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-44)
-- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-47)
-- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-48)
-- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-49)
-- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-50)
-- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-52)
-- [Be the one repository that holds every package format — JFrog](#recipe-57)
-- [Turn each quarterly release into its own news cycle — LangChain](#recipe-59)
-- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-66)
-- [Become the bundled default in Linux distros — MariaDB](#recipe-67)
-- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-68)
-- [Open-source the core as a free marketing channel — MongoDB](#recipe-72)
-- [Ship git-like branching as the wedge feature — Neon](#recipe-75)
-- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-81)
-- [Make your full handbook public before your second hire — PostHog](#recipe-82)
-- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-83)
-- [Give away the detection, sell applying it to their workloads — Rad Security](#recipe-84)
-- [Ship a free OSS tool a month before your paid product — Resend](#recipe-92)
-- [Launch the throwaway utility you already open-sourced — Segment](#recipe-94)
-- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-97)
-- [Embed your engine as a platform's default scanner — Semgrep](#recipe-98)
-- [Author your own license to block cloud free-riders — Sentry](#recipe-99)
-- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-101)
-- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-105)
-- [Anchor your category to a tool every dev already knows — Supabase](#recipe-106)
-- [Build your engine as OSS inside a big employer first — Temporal](#recipe-110)
-- [Wait for the "can you host this for me?" email — Unleash](#recipe-114)
-- [Give away the framework, sell the painful part — Vercel](#recipe-117)
-- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-123)
-- [Open-source a tool that grades your competitors — Wallarm](#recipe-124)
-- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-131)
-- [Fork the incumbent, import its setup in one click — Cursor](#recipe-132)
+- [Open the community Slack before you incorporate — dbt Labs](#recipe-28)
+- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-29)
+- [Re-add an OSI license to stay on the 'open source' shortlist — Elastic](#recipe-30)
+- [Ship a runnable runtime, not an embeddable library — Elastic](#recipe-31)
+- [Open-source your runtime to make your standard the default — Fastly](#recipe-35)
+- [Give it free to students and OSS maintainers to seed habit — GitHub Copilot](#recipe-43)
+- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-46)
+- [Be the neutral pane of glass, never the storage lock-in — Grafana Labs](#recipe-47)
+- [Out-generous incumbents on your free open-source edition — Gravitee](#recipe-48)
+- [Let the community write your integrations via a self-publish registry — HashiCorp](#recipe-49)
+- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-51)
+- [Be the one repository that holds every package format — JFrog](#recipe-56)
+- [Turn each quarterly release into its own news cycle — LangChain](#recipe-58)
+- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-65)
+- [Become the bundled default in Linux distros — MariaDB](#recipe-66)
+- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-67)
+- [Open-source the core as a free marketing channel — MongoDB](#recipe-71)
+- [Ship git-like branching as the wedge feature — Neon](#recipe-74)
+- [Launch open-source on HN 4 weeks after first commit — PostHog](#recipe-80)
+- [Make your full handbook public before your second hire — PostHog](#recipe-81)
+- [Coin a new standard, ship it as a free CLI — Rad Security](#recipe-82)
+- [Give away the detection, sell applying it to their workloads — Rad Security](#recipe-83)
+- [Ship a free OSS tool a month before your paid product — Resend](#recipe-91)
+- [Launch the throwaway utility you already open-sourced — Segment](#recipe-93)
+- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-96)
+- [Embed your engine as a platform's default scanner — Semgrep](#recipe-97)
+- [Author your own license to block cloud free-riders — Sentry](#recipe-98)
+- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-100)
+- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-104)
+- [Anchor your category to a tool every dev already knows — Supabase](#recipe-105)
+- [Build your engine as OSS inside a big employer first — Temporal](#recipe-109)
+- [Wait for the "can you host this for me?" email — Unleash](#recipe-113)
+- [Give away the framework, sell the painful part — Vercel](#recipe-116)
+- [Embed a free OSS utility in the deploy workflow — Wallarm](#recipe-122)
+- [Open-source a tool that grades your competitors — Wallarm](#recipe-123)
+- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-130)
+- [Fork the incumbent, import its setup in one click — Cursor](#recipe-131)
 - [Evaluate flags locally in-memory so adoption is free and private — Unleash](#recipe-146)
 - [Cap the free tier so teams outgrow it on purpose — Chainguard](#recipe-149)
 - [Segment monetization by money-vs-time, not by feature — Grafana Labs](#recipe-152)
 - [Draw the paywall at production-scale and async protocols — Gravitee](#recipe-153)
 - [Make your paid product one env var away from the free framework — LangChain](#recipe-154)
-- [Turn your users into your detection R&D team — Sublime Security](#recipe-161)
-- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-168)
-- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-169)
-- [Relicense to block hyperscalers, but expect a fork — Elastic](#recipe-184)
-- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-189)
+- [Turn your users into your detection R&D team — Sublime Security](#recipe-166)
+- [Go multi-product at $5-10M ARR to unlock willingness to pay — Grafana Labs](#recipe-175)
+- [Gate only the multi-team features, give the engine away — HashiCorp](#recipe-176)
+- [Relicense to block hyperscalers, but expect a fork — Elastic](#recipe-192)
+- [Give away unlimited flags, cap projects and environments — Unleash](#recipe-197)
 
 ### `positioning` <sup>5</sup>
 
-- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-68)
-- [Anchor your category to a tool every dev already knows — Supabase](#recipe-106)
-- [Anchor on 'price you see is price you pay' against hyperscalers — Vultr](#recipe-121)
+- [Mirror the incumbent's version numbers to signal compatibility — MariaDB](#recipe-67)
+- [Anchor your category to a tool every dev already knows — Supabase](#recipe-105)
+- [Anchor on 'price you see is price you pay' against hyperscalers — Vultr](#recipe-120)
 - [Work inside early customers' offices one day a week — Huntress](#recipe-135)
-- [Re-anchor your category onto the dominant funding wave — Astrix Security](#recipe-181)
+- [Re-anchor your category onto the dominant funding wave — Astrix Security](#recipe-188)
 
 ### `pricing-change` <sup>11</sup>
 
 - [Delete the incumbent's most-hated fee, not their features — Cloudflare](#recipe-15)
-- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-85)
+- [Beat the incumbent on its free-tier weakness, then kill abuse — Railway](#recipe-84)
 - [Gate the already-loved free tool behind a company-size line — Docker](#recipe-151)
 - [Replace your free tier with a $5 qualifying entry plan — PlanetScale](#recipe-155)
-- [Sell month-to-month so churn surfaces in weeks — Datadog](#recipe-160)
-- [Remove monthly pricing to force annual commitment — Vanta](#recipe-163)
-- [Replace per-module pricing with a committed spend pool — CrowdStrike](#recipe-164)
-- [Price per event, not per host or cardinality — Honeycomb](#recipe-170)
-- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-185)
-- [Layer consumption pricing onto a dormant free base — Replit](#recipe-186)
-- [Meter on delivered effort, not flat per-action units — Replit](#recipe-187)
+- [Sell month-to-month so churn surfaces in weeks — Datadog](#recipe-161)
+- [Remove monthly pricing to force annual commitment — Vanta](#recipe-169)
+- [Replace per-module pricing with a committed spend pool — CrowdStrike](#recipe-171)
+- [Price per event, not per host or cardinality — Honeycomb](#recipe-177)
+- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-193)
+- [Layer consumption pricing onto a dormant free base — Replit](#recipe-194)
+- [Meter on delivered effort, not flat per-action units — Replit](#recipe-195)
 
 ### `slack-community` <sup>3</sup>
 
-- [Invite your competitors to moderate your community — dbt Labs](#recipe-27)
-- [Open the community Slack before you incorporate — dbt Labs](#recipe-29)
+- [Invite your competitors to moderate your community — dbt Labs](#recipe-26)
+- [Open the community Slack before you incorporate — dbt Labs](#recipe-28)
 - [DM 600 OSS users in one month to mine the roadmap — Temporal](#recipe-143)
+
+### `switching-costs` <sup>5</sup>
+
+- [Ship a migration kit the day the incumbent breaks — Render](#recipe-88)
+- [Auto-correlate telemetry so adding products deepens lock-in — Datadog](#recipe-160)
+- [Codify one opinionated workflow into the product — Linear](#recipe-163)
+- [Make customers rewrite the app, not just move the data — MongoDB](#recipe-164)
+- [Turn a yearly audit into hourly monitoring — Vanta](#recipe-170)
+
+### `system-of-record` <sup>4</sup>
+
+- [Pay back an outage as commitment, not cash — CrowdStrike](#recipe-159)
+- [Make customers rewrite the app, not just move the data — MongoDB](#recipe-164)
+- [Promise backward compatibility forever, never break old clients — Tailscale](#recipe-167)
+- [Turn a yearly audit into hourly monitoring — Vanta](#recipe-170)
 
 ### `templates-starters` <sup>10</sup>
 
 - [Open-source the packaging format users need before they need you — Baseten](#recipe-8)
-- [Let users publish templates that Google indexes — Figma](#recipe-40)
-- [Take 0% of template sales, pay 50% referral — Framer](#recipe-43)
-- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-65)
-- [Pay template creators 25% of the compute they drive — Railway](#recipe-86)
-- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-97)
-- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-118)
-- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-128)
+- [Let users publish templates that Google indexes — Figma](#recipe-39)
+- [Take 0% of template sales, pay 50% referral — Framer](#recipe-42)
+- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-64)
+- [Pay template creators 25% of the compute they drive — Railway](#recipe-85)
+- [Crowdsource your detection rules to outpace coverage — Semgrep](#recipe-96)
+- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-117)
+- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-127)
 - [Seed onboarding with a one-click prebuilt workflow library — Tines](#recipe-144)
 - [Cap the free tier so teams outgrow it on purpose — Chainguard](#recipe-149)
 
 ### `time-to-value` <sup>4</sup>
 
-- [Put a working app behind a bare prompt box, no signup — Bolt.new](#recipe-130)
-- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-131)
+- [Put a working app behind a bare prompt box, no signup — Bolt.new](#recipe-129)
+- [Make your secure version a one-line drop-in replacement — Chainguard](#recipe-130)
 - [Let developers ship a working demo before signup friction — Twilio](#recipe-145)
 - [Turn agentless deploy into a 15-minute live demo — Wiz](#recipe-148)
 
 ### `transparency` <sup>11</sup>
 
-- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-46)
-- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-52)
-- [Disclose profitability and tiny headcount as a flex — Linear](#recipe-60)
-- [Ship a public weekly changelog before you have users — Linear](#recipe-62)
-- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-64)
-- [Make your full handbook public before your second hire — PostHog](#recipe-82)
-- [Author your own license to block cloud free-riders — Sentry](#recipe-99)
-- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-105)
-- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-109)
+- [Open-source your company handbook as a hiring and sales asset — GitLab](#recipe-45)
+- [Lead the open standard to kill lock-in fear — Honeycomb](#recipe-51)
+- [Disclose profitability and tiny headcount as a flex — Linear](#recipe-59)
+- [Ship a public weekly changelog before you have users — Linear](#recipe-61)
+- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-63)
+- [Make your full handbook public before your second hire — PostHog](#recipe-81)
+- [Author your own license to block cloud free-riders — Sentry](#recipe-98)
+- [Open-source your detections to beat black-box rivals — Sublime Security](#recipe-104)
+- [Write 'How X Works' HN posts on a fixed 5-beat structure — Tailscale](#recipe-108)
 - [Default new accounts to observe-only autonomy — Sedai](#recipe-140)
-- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-185)
+- [Kill your free tier to force-qualify serious customers — PlanetScale](#recipe-193)
 
 ### `twitter-x` <sup>6</sup>
 
 - [Launch on one demo-video tweet thread, nothing else — Bolt.new](#recipe-11)
-- [Disclose profitability and tiny headcount as a flex — Linear](#recipe-60)
-- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-61)
-- [Ship a public weekly changelog before you have users — Linear](#recipe-62)
-- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-64)
-- [Launch with a raw phone demo, not a campaign — Replit](#recipe-90)
+- [Disclose profitability and tiny headcount as a flex — Linear](#recipe-59)
+- [Gate your waitlist with a survey, invite 10/week — Linear](#recipe-60)
+- [Ship a public weekly changelog before you have users — Linear](#recipe-61)
+- [Hire builders, not closers, and let the founder be the funnel — Lovable](#recipe-63)
+- [Launch with a raw phone demo, not a campaign — Replit](#recipe-89)
 
 ### `usage-based-pricing` <sup>17</sup>
 
 - [Seed bottom-up with 3,000 free CI minutes/month — Blacksmith](#recipe-10)
 - [Sell a CFO-legible cost cut, not better monitoring — Chronosphere](#recipe-14)
 - [Delete the incumbent's most-hated fee, not their features — Cloudflare](#recipe-15)
-- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-74)
-- [Pay template creators 25% of the compute they drive — Railway](#recipe-86)
-- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-128)
+- [Make your primitive cheap enough for agents to spawn — Neon](#recipe-73)
+- [Pay template creators 25% of the compute they drive — Railway](#recipe-85)
+- [Be a drop-in replacement for the incumbent API, 50% cheaper — Baseten](#recipe-127)
 - [Make the free tier need no credit card and stand up in 3 minutes — MongoDB](#recipe-138)
 - [Replace your free tier with a $5 qualifying entry plan — PlanetScale](#recipe-155)
 - [Match a new account's first deposit, up to $100 — Vultr](#recipe-158)
-- [Replace per-module pricing with a committed spend pool — CrowdStrike](#recipe-164)
-- [Price per event, not per host or cardinality — Honeycomb](#recipe-170)
-- [Land on one module, converge the whole stack onto you — Netskope](#recipe-173)
-- [Bundle products until ripping you out is too painful — PostHog](#recipe-174)
-- [Price per API call so spend grows with the app — Twilio](#recipe-179)
-- [Meter on data volume so your bill tracks their value — Confluent](#recipe-182)
-- [Layer consumption pricing onto a dormant free base — Replit](#recipe-186)
-- [Meter on delivered effort, not flat per-action units — Replit](#recipe-187)
+- [Replace per-module pricing with a committed spend pool — CrowdStrike](#recipe-171)
+- [Price per event, not per host or cardinality — Honeycomb](#recipe-177)
+- [Land on one module, converge the whole stack onto you — Netskope](#recipe-180)
+- [Bundle products until ripping you out is too painful — PostHog](#recipe-181)
+- [Price per API call so spend grows with the app — Twilio](#recipe-186)
+- [Meter on data volume so your bill tracks their value — Confluent](#recipe-190)
+- [Layer consumption pricing onto a dormant free base — Replit](#recipe-194)
+- [Meter on delivered effort, not flat per-action units — Replit](#recipe-195)
 
 ### `viral-loop` <sup>12</sup>
 
 - [Bundle a free family plan into every paid seat — 1Password](#recipe-2)
 - [Launch on one demo-video tweet thread, nothing else — Bolt.new](#recipe-11)
-- [Let users publish templates that Google indexes — Figma](#recipe-40)
-- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-41)
-- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-47)
-- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-65)
-- [Put your brand inside the artifact users share — ngrok](#recipe-79)
-- [Pay template creators 25% of the compute they drive — Railway](#recipe-86)
-- [Let destination vendors build their own catalog integrations — Segment](#recipe-95)
-- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-102)
-- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-118)
+- [Let users publish templates that Google indexes — Figma](#recipe-39)
+- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-40)
+- [Staff merge-request coaches to keep contributions growing — GitLab](#recipe-46)
+- [Put a one-click 'remix this' button on every shared project — Lovable](#recipe-64)
+- [Put your brand inside the artifact users share — ngrok](#recipe-78)
+- [Pay template creators 25% of the compute they drive — Railway](#recipe-85)
+- [Let destination vendors build their own catalog integrations — Segment](#recipe-94)
+- [Brand your auto-fix PRs to recruit the whole team — Snyk](#recipe-101)
+- [Ship an AI act-two that outputs your platform's stack — Vercel](#recipe-117)
 - [Make every shared artifact a live product demo — Semgrep](#recipe-141)
 
 ### `wedge` <sup>3</sup>
 
 - [Lead with a free scan that surfaces unknown risk — Astrix Security](#recipe-5)
-- [Make one default feature an instant wow on install — Cursor](#recipe-24)
-- [Wedge on what you suppress, not what you find — Endor Labs](#recipe-166)
+- [Make one default feature an instant wow on install — Cursor](#recipe-132)
+- [Wedge on what you suppress, not what you find — Endor Labs](#recipe-173)
 
 ### `word-of-mouth` <sup>35</sup>
 
@@ -754,37 +799,37 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 - [Launch on one demo-video tweet thread, nothing else — Bolt.new](#recipe-11)
 - [Treat an unprompted foreign surge as your wedge signal — CodeRabbit](#recipe-20)
 - [Engineer a free-tier loop that walks the tool into teams — Cursor](#recipe-23)
-- [Make one default feature an instant wow on install — Cursor](#recipe-24)
-- [Let your customers' hiring needs sell for you — dbt Labs](#recipe-28)
-- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-30)
-- [Crowdsource your conference agenda by open CFP — Figma](#recipe-38)
-- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-41)
-- [Run a year-long invite-gated preview to build proof and demand — GitHub Copilot](#recipe-45)
-- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-51)
-- [Disclose profitability and tiny headcount as a flex — Linear](#recipe-60)
-- [Ship a public weekly changelog before you have users — Linear](#recipe-62)
-- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-66)
-- [Demo your product inside each language community's meetup — MongoDB](#recipe-71)
-- [Open-source the core as a free marketing channel — MongoDB](#recipe-72)
-- [Be the tool people reach for on stage — ngrok](#recipe-78)
-- [Put your brand inside the artifact users share — ngrok](#recipe-79)
-- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-80)
-- [Personally greet every Discord signup for 18 months — Railway](#recipe-87)
-- [Be the deploy target LLMs name by default — Render](#recipe-88)
-- [Launch with a raw phone demo, not a campaign — Replit](#recipe-90)
-- [Ship a free OSS tool a month before your paid product — Resend](#recipe-92)
-- [Harvest roadmap gaps from buyer-intent marketplaces — Sedai](#recipe-93)
-- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-101)
-- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-104)
-- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-113)
-- [Win one tight founder network until you're the default — Vanta](#recipe-115)
-- [Engineer your docs so the LLM names you — Vercel](#recipe-116)
-- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-120)
-- [Track champions who buy you again at their next job — Zscaler](#recipe-127)
+- [Let your customers' hiring needs sell for you — dbt Labs](#recipe-27)
+- [Launch by live-demoing the impossible in 5 minutes — Docker](#recipe-29)
+- [Crowdsource your conference agenda by open CFP — Figma](#recipe-37)
+- [Gate badge removal behind your cheapest paid tier — Framer](#recipe-40)
+- [Run a year-long invite-gated preview to build proof and demand — GitHub Copilot](#recipe-44)
+- [Turn user-group leaders into your internal champions — HashiCorp](#recipe-50)
+- [Disclose profitability and tiny headcount as a flex — Linear](#recipe-59)
+- [Ship a public weekly changelog before you have users — Linear](#recipe-61)
+- [Ship the free OSS tool first, sell the wrapped product later — Lovable](#recipe-65)
+- [Demo your product inside each language community's meetup — MongoDB](#recipe-70)
+- [Open-source the core as a free marketing channel — MongoDB](#recipe-71)
+- [Be the tool people reach for on stage — ngrok](#recipe-77)
+- [Put your brand inside the artifact users share — ngrok](#recipe-78)
+- [Turn schema migrations into a branch-and-deploy-request flow — PlanetScale](#recipe-79)
+- [Personally greet every Discord signup for 18 months — Railway](#recipe-86)
+- [Be the deploy target LLMs name by default — Render](#recipe-87)
+- [Launch with a raw phone demo, not a campaign — Replit](#recipe-89)
+- [Ship a free OSS tool a month before your paid product — Resend](#recipe-91)
+- [Harvest roadmap gaps from buyer-intent marketplaces — Sedai](#recipe-92)
+- [Give the self-hosted version away, sell the convenience — Sentry](#recipe-100)
+- [Give a free self-hosted tier with a mailbox cap — Sublime Security](#recipe-103)
+- [Run 'Ask Your Developer' to seed exec demand bottom-up — Twilio](#recipe-112)
+- [Win one tight founder network until you're the default — Vanta](#recipe-114)
+- [Engineer your docs so the LLM names you — Vercel](#recipe-115)
+- [Ship a drop-in replacement the week the incumbent breaks — VulnCheck](#recipe-119)
+- [Track champions who buy you again at their next job — Zscaler](#recipe-126)
+- [Make one default feature an instant wow on install — Cursor](#recipe-132)
 - [Segment monetization by money-vs-time, not by feature — Grafana Labs](#recipe-152)
 - [Deliberately hold the bottom of the market with a free tier — Tailscale](#recipe-157)
-- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-167)
-- [Make the product get bought, not sold, by developers — JFrog](#recipe-171)
+- [Never bill the developer; bill the executive they pull in — GitLab](#recipe-174)
+- [Make the product get bought, not sold, by developers — JFrog](#recipe-178)
 
 ## Recipes
 
@@ -1137,21 +1182,6 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 <a id="recipe-24"></a>
 
-#### Make one default feature an instant wow on install
-
-**The play:** Pick one wedge feature that delivers a visible payoff within seconds of install, turn it on by default with no configuration, and let that single moment carry trial-to-habit conversion and word-of-mouth instead of relying on a broad feature pitch.
-
-**How [Cursor](https://cursor.com) did it** _(Verified)_ — Cursor's wedge was Tab, a custom model that predicts your next edit (not just the next token) and fires the instant you type, with no setup or prompting. By Cursor's own account Tab "opened the first era of AI-assisted coding" and gave "significant leverage for nearly two years." The visceral, on-by-default wow moment turned trials into daily habits and made developers evangelize the tool unprompted.
-
-**Result:** Tab was the PMF trigger and the primary feature through early 2025 (2.5x more users than agents as of March 2025); it anchored Cursor's rise to the fastest SaaS company ever to $100M ARR (12 months).
-**When it works:** Works when you can engineer a genuinely surprising result that lands in the first session; it backfires if the wow requires setup, data, or a learning curve before it triggers.
-**Source:** [Cursor official blog, "The third era of AI software development"](https://cursor.com/blog/third-era)
-**Tags:** `default-on` `developer-advocacy` `wedge` `word-of-mouth`
-
----
-
-<a id="recipe-25"></a>
-
 #### Open the beta wide instead of hand-picking alpha customers
 
 **The play:** Do not gate early access to a hand-picked design-partner list; ship a public self-serve beta so the market, not your guesswork, reveals who has the timing and pain to actually adopt. Watch which uninvited users stick, and treat them as your ICP.
@@ -1165,7 +1195,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-26"></a>
+<a id="recipe-25"></a>
 
 #### Adopt the job title your community already coined
 
@@ -1180,7 +1210,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-27"></a>
+<a id="recipe-26"></a>
 
 #### Invite your competitors to moderate your community
 
@@ -1195,7 +1225,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-28"></a>
+<a id="recipe-27"></a>
 
 #### Let your customers' hiring needs sell for you
 
@@ -1210,7 +1240,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-29"></a>
+<a id="recipe-28"></a>
 
 #### Open the community Slack before you incorporate
 
@@ -1225,7 +1255,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-30"></a>
+<a id="recipe-29"></a>
 
 #### Launch by live-demoing the impossible in 5 minutes
 
@@ -1240,7 +1270,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-31"></a>
+<a id="recipe-30"></a>
 
 #### Re-add an OSI license to stay on the 'open source' shortlist
 
@@ -1255,7 +1285,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-32"></a>
+<a id="recipe-31"></a>
 
 #### Ship a runnable runtime, not an embeddable library
 
@@ -1270,7 +1300,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-33"></a>
+<a id="recipe-32"></a>
 
 #### Mine a public dataset for one scary, quotable stat
 
@@ -1285,7 +1315,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-34"></a>
+<a id="recipe-33"></a>
 
 #### Repackage your proprietary dataset as a free dev tool
 
@@ -1300,7 +1330,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-35"></a>
+<a id="recipe-34"></a>
 
 #### Buy a developer community as a funnel, but own its upkeep
 
@@ -1315,7 +1345,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-36"></a>
+<a id="recipe-35"></a>
 
 #### Open-source your runtime to make your standard the default
 
@@ -1330,7 +1360,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-37"></a>
+<a id="recipe-36"></a>
 
 #### Ship your #1 community ask as a usable free tier
 
@@ -1345,7 +1375,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-38"></a>
+<a id="recipe-37"></a>
 
 #### Crowdsource your conference agenda by open CFP
 
@@ -1360,7 +1390,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-39"></a>
+<a id="recipe-38"></a>
 
 #### Give students the full paid plan, then harvest at work
 
@@ -1375,7 +1405,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-40"></a>
+<a id="recipe-39"></a>
 
 #### Let users publish templates that Google indexes
 
@@ -1390,7 +1420,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-41"></a>
+<a id="recipe-40"></a>
 
 #### Gate badge removal behind your cheapest paid tier
 
@@ -1405,7 +1435,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-42"></a>
+<a id="recipe-41"></a>
 
 #### Send each user a personal Spotify-style year-in-review
 
@@ -1420,7 +1450,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-43"></a>
+<a id="recipe-42"></a>
 
 #### Take 0% of template sales, pay 50% referral
 
@@ -1435,7 +1465,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-44"></a>
+<a id="recipe-43"></a>
 
 #### Give it free to students and OSS maintainers to seed habit
 
@@ -1450,7 +1480,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-45"></a>
+<a id="recipe-44"></a>
 
 #### Run a year-long invite-gated preview to build proof and demand
 
@@ -1465,7 +1495,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-46"></a>
+<a id="recipe-45"></a>
 
 #### Open-source your company handbook as a hiring and sales asset
 
@@ -1480,7 +1510,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-47"></a>
+<a id="recipe-46"></a>
 
 #### Staff merge-request coaches to keep contributions growing
 
@@ -1495,7 +1525,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-48"></a>
+<a id="recipe-47"></a>
 
 #### Be the neutral pane of glass, never the storage lock-in
 
@@ -1510,7 +1540,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-49"></a>
+<a id="recipe-48"></a>
 
 #### Out-generous incumbents on your free open-source edition
 
@@ -1525,7 +1555,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-50"></a>
+<a id="recipe-49"></a>
 
 #### Let the community write your integrations via a self-publish registry
 
@@ -1536,11 +1566,11 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **Result:** 1,100+ community providers and 100+ verified providers beyond ~30 official ones; 5,000+ external contributors; products downloaded 250M+ times.
 **When it works:** Works when integrations are a major part of your product's value and third parties (vendors, users) have their own incentive to connect to you; the registry only pays off once enough users exist to make publishing worthwhile.
 **Source:** [Community Inc deep dive on HashiCorp community growth; Terraform Registry provider publishing docs (developer.hashicorp.com/terraform/registry/providers/publishing)](https://community.inc/deep-dives/community-growth-hashicorp)
-**Tags:** `community-led` `integrations-marketplace` `open-source`
+**Tags:** `community-led` `integrations-marketplace` `lock-in` `open-source`
 
 ---
 
-<a id="recipe-51"></a>
+<a id="recipe-50"></a>
 
 #### Turn user-group leaders into your internal champions
 
@@ -1555,7 +1585,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-52"></a>
+<a id="recipe-51"></a>
 
 #### Lead the open standard to kill lock-in fear
 
@@ -1570,7 +1600,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-53"></a>
+<a id="recipe-52"></a>
 
 #### Write the category's canonical O'Reilly book
 
@@ -1585,7 +1615,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-54"></a>
+<a id="recipe-53"></a>
 
 #### Run a monthly live-hacking webinar with zero sales pitch
 
@@ -1600,7 +1630,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-55"></a>
+<a id="recipe-54"></a>
 
 #### Sell through the channel that already owns SMB trust
 
@@ -1615,7 +1645,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-56"></a>
+<a id="recipe-55"></a>
 
 #### Fund a new category by ripping out VDI and VPN
 
@@ -1630,7 +1660,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-57"></a>
+<a id="recipe-56"></a>
 
 #### Be the one repository that holds every package format
 
@@ -1645,7 +1675,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-58"></a>
+<a id="recipe-57"></a>
 
 #### Convene a conference that names your category
 
@@ -1660,7 +1690,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-59"></a>
+<a id="recipe-58"></a>
 
 #### Turn each quarterly release into its own news cycle
 
@@ -1675,7 +1705,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-60"></a>
+<a id="recipe-59"></a>
 
 #### Disclose profitability and tiny headcount as a flex
 
@@ -1690,7 +1720,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-61"></a>
+<a id="recipe-60"></a>
 
 #### Gate your waitlist with a survey, invite 10/week
 
@@ -1705,7 +1735,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-62"></a>
+<a id="recipe-61"></a>
 
 #### Ship a public weekly changelog before you have users
 
@@ -1720,7 +1750,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-63"></a>
+<a id="recipe-62"></a>
 
 #### Make partners self-serve onboarding so they lead with you
 
@@ -1735,7 +1765,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-64"></a>
+<a id="recipe-63"></a>
 
 #### Hire builders, not closers, and let the founder be the funnel
 
@@ -1750,7 +1780,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-65"></a>
+<a id="recipe-64"></a>
 
 #### Put a one-click 'remix this' button on every shared project
 
@@ -1765,7 +1795,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-66"></a>
+<a id="recipe-65"></a>
 
 #### Ship the free OSS tool first, sell the wrapped product later
 
@@ -1780,7 +1810,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-67"></a>
+<a id="recipe-66"></a>
 
 #### Become the bundled default in Linux distros
 
@@ -1795,7 +1825,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-68"></a>
+<a id="recipe-67"></a>
 
 #### Mirror the incumbent's version numbers to signal compatibility
 
@@ -1810,7 +1840,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-69"></a>
+<a id="recipe-68"></a>
 
 #### Auto-generate an MCP server from every customer's docs
 
@@ -1825,7 +1855,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-70"></a>
+<a id="recipe-69"></a>
 
 #### Rebuild a prospect's docs, then cold-email the finished version
 
@@ -1840,7 +1870,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-71"></a>
+<a id="recipe-70"></a>
 
 #### Demo your product inside each language community's meetup
 
@@ -1855,7 +1885,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-72"></a>
+<a id="recipe-71"></a>
 
 #### Open-source the core as a free marketing channel
 
@@ -1870,7 +1900,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-73"></a>
+<a id="recipe-72"></a>
 
 #### Embed as the default DB inside other platforms
 
@@ -1885,7 +1915,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-74"></a>
+<a id="recipe-73"></a>
 
 #### Make your primitive cheap enough for agents to spawn
 
@@ -1900,7 +1930,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-75"></a>
+<a id="recipe-74"></a>
 
 #### Ship git-like branching as the wedge feature
 
@@ -1915,7 +1945,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-76"></a>
+<a id="recipe-75"></a>
 
 #### Engineer third-party proof to de-risk seven-figure deals
 
@@ -1930,7 +1960,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-77"></a>
+<a id="recipe-76"></a>
 
 #### Ship a free risk-rating database as your wedge
 
@@ -1945,7 +1975,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-78"></a>
+<a id="recipe-77"></a>
 
 #### Be the tool people reach for on stage
 
@@ -1960,7 +1990,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-79"></a>
+<a id="recipe-78"></a>
 
 #### Put your brand inside the artifact users share
 
@@ -1975,7 +2005,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-80"></a>
+<a id="recipe-79"></a>
 
 #### Turn schema migrations into a branch-and-deploy-request flow
 
@@ -1990,7 +2020,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-81"></a>
+<a id="recipe-80"></a>
 
 #### Launch open-source on HN 4 weeks after first commit
 
@@ -2005,7 +2035,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-82"></a>
+<a id="recipe-81"></a>
 
 #### Make your full handbook public before your second hire
 
@@ -2020,7 +2050,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-83"></a>
+<a id="recipe-82"></a>
 
 #### Coin a new standard, ship it as a free CLI
 
@@ -2035,7 +2065,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-84"></a>
+<a id="recipe-83"></a>
 
 #### Give away the detection, sell applying it to their workloads
 
@@ -2050,7 +2080,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-85"></a>
+<a id="recipe-84"></a>
 
 #### Beat the incumbent on its free-tier weakness, then kill abuse
 
@@ -2065,7 +2095,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-86"></a>
+<a id="recipe-85"></a>
 
 #### Pay template creators 25% of the compute they drive
 
@@ -2080,7 +2110,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-87"></a>
+<a id="recipe-86"></a>
 
 #### Personally greet every Discord signup for 18 months
 
@@ -2095,7 +2125,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-88"></a>
+<a id="recipe-87"></a>
 
 #### Be the deploy target LLMs name by default
 
@@ -2110,7 +2140,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-89"></a>
+<a id="recipe-88"></a>
 
 #### Ship a migration kit the day the incumbent breaks
 
@@ -2121,11 +2151,11 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **Result:** Heroku's decline became Render's primary early PMF trigger; the platform scaled to 4.5M+ developers and 250K+ new signups/month, with named production migrations like ReadMe.
 **When it works:** Works when a sticky incumbent in your category visibly degrades and your product can mechanically reproduce their primitives (services, DB, cache) so migration is a config import, not a rebuild.
 **Source:** [Render blog 'Why (and How) to Migrate from Heroku'; CEO Anurag Goel commentary in The New Stack 'Where Can Heroku Free Tier Users Go?'](https://render.com/blog/migrate-heroku-why-how)
-**Tags:** `docs-as-marketing` `migration`
+**Tags:** `docs-as-marketing` `migration` `switching-costs`
 
 ---
 
-<a id="recipe-90"></a>
+<a id="recipe-89"></a>
 
 #### Launch with a raw phone demo, not a campaign
 
@@ -2140,7 +2170,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-91"></a>
+<a id="recipe-90"></a>
 
 #### Recruit the users who requested a feature as its launch-day beta testers
 
@@ -2155,7 +2185,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-92"></a>
+<a id="recipe-91"></a>
 
 #### Ship a free OSS tool a month before your paid product
 
@@ -2170,7 +2200,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-93"></a>
+<a id="recipe-92"></a>
 
 #### Harvest roadmap gaps from buyer-intent marketplaces
 
@@ -2185,7 +2215,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-94"></a>
+<a id="recipe-93"></a>
 
 #### Launch the throwaway utility you already open-sourced
 
@@ -2200,7 +2230,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-95"></a>
+<a id="recipe-94"></a>
 
 #### Let destination vendors build their own catalog integrations
 
@@ -2215,7 +2245,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-96"></a>
+<a id="recipe-95"></a>
 
 #### Make one install replace every per-tool integration
 
@@ -2230,7 +2260,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-97"></a>
+<a id="recipe-96"></a>
 
 #### Crowdsource your detection rules to outpace coverage
 
@@ -2245,7 +2275,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-98"></a>
+<a id="recipe-97"></a>
 
 #### Embed your engine as a platform's default scanner
 
@@ -2260,7 +2290,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-99"></a>
+<a id="recipe-98"></a>
 
 #### Author your own license to block cloud free-riders
 
@@ -2275,7 +2305,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-100"></a>
+<a id="recipe-99"></a>
 
 #### Build for the rising ecosystem incumbents ignore
 
@@ -2290,7 +2320,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-101"></a>
+<a id="recipe-100"></a>
 
 #### Give the self-hosted version away, sell the convenience
 
@@ -2305,7 +2335,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-102"></a>
+<a id="recipe-101"></a>
 
 #### Brand your auto-fix PRs to recruit the whole team
 
@@ -2320,7 +2350,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-103"></a>
+<a id="recipe-102"></a>
 
 #### Generate one SEO landing page per open-source package
 
@@ -2335,7 +2365,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-104"></a>
+<a id="recipe-103"></a>
 
 #### Give a free self-hosted tier with a mailbox cap
 
@@ -2350,7 +2380,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-105"></a>
+<a id="recipe-104"></a>
 
 #### Open-source your detections to beat black-box rivals
 
@@ -2365,7 +2395,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-106"></a>
+<a id="recipe-105"></a>
 
 #### Anchor your category to a tool every dev already knows
 
@@ -2380,7 +2410,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-107"></a>
+<a id="recipe-106"></a>
 
 #### Become the default backend AI app builders auto-provision
 
@@ -2395,7 +2425,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-108"></a>
+<a id="recipe-107"></a>
 
 #### Manufacture a quarterly demo-day with daily ships
 
@@ -2410,7 +2440,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-109"></a>
+<a id="recipe-108"></a>
 
 #### Write 'How X Works' HN posts on a fixed 5-beat structure
 
@@ -2425,7 +2455,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-110"></a>
+<a id="recipe-109"></a>
 
 #### Build your engine as OSS inside a big employer first
 
@@ -2440,7 +2470,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-111"></a>
+<a id="recipe-110"></a>
 
 #### Implement the framework's abstract base class to become the default runtime
 
@@ -2455,7 +2485,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-112"></a>
+<a id="recipe-111"></a>
 
 #### Wedge into procurement with a forever-free Community Edition
 
@@ -2470,7 +2500,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-113"></a>
+<a id="recipe-112"></a>
 
 #### Run 'Ask Your Developer' to seed exec demand bottom-up
 
@@ -2485,7 +2515,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-114"></a>
+<a id="recipe-113"></a>
 
 #### Wait for the "can you host this for me?" email
 
@@ -2500,7 +2530,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-115"></a>
+<a id="recipe-114"></a>
 
 #### Win one tight founder network until you're the default
 
@@ -2515,7 +2545,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-116"></a>
+<a id="recipe-115"></a>
 
 #### Engineer your docs so the LLM names you
 
@@ -2530,7 +2560,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-117"></a>
+<a id="recipe-116"></a>
 
 #### Give away the framework, sell the painful part
 
@@ -2545,7 +2575,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-118"></a>
+<a id="recipe-117"></a>
 
 #### Ship an AI act-two that outputs your platform's stack
 
@@ -2560,7 +2590,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-119"></a>
+<a id="recipe-118"></a>
 
 #### Out-cover the government dataset everyone already trusts
 
@@ -2575,7 +2605,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-120"></a>
+<a id="recipe-119"></a>
 
 #### Ship a drop-in replacement the week the incumbent breaks
 
@@ -2590,7 +2620,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-121"></a>
+<a id="recipe-120"></a>
 
 #### Anchor on 'price you see is price you pay' against hyperscalers
 
@@ -2605,7 +2635,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-122"></a>
+<a id="recipe-121"></a>
 
 #### Make your chip vendor both investor and co-marketer
 
@@ -2620,7 +2650,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-123"></a>
+<a id="recipe-122"></a>
 
 #### Embed a free OSS utility in the deploy workflow
 
@@ -2635,7 +2665,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-124"></a>
+<a id="recipe-123"></a>
 
 #### Open-source a tool that grades your competitors
 
@@ -2650,7 +2680,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-125"></a>
+<a id="recipe-124"></a>
 
 #### Have founders sell to CISOs until first millions, then hire a CRO
 
@@ -2665,7 +2695,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-126"></a>
+<a id="recipe-125"></a>
 
 #### Run a peer-CXO forum so buyers sell each other
 
@@ -2680,7 +2710,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-127"></a>
+<a id="recipe-126"></a>
 
 #### Track champions who buy you again at their next job
 
@@ -2697,7 +2727,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ### Activation
 
-<a id="recipe-128"></a>
+<a id="recipe-127"></a>
 
 #### Be a drop-in replacement for the incumbent API, 50% cheaper
 
@@ -2712,7 +2742,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-129"></a>
+<a id="recipe-128"></a>
 
 #### Make switching a one-line YAML change
 
@@ -2727,7 +2757,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-130"></a>
+<a id="recipe-129"></a>
 
 #### Put a working app behind a bare prompt box, no signup
 
@@ -2742,7 +2772,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-131"></a>
+<a id="recipe-130"></a>
 
 #### Make your secure version a one-line drop-in replacement
 
@@ -2757,7 +2787,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-132"></a>
+<a id="recipe-131"></a>
 
 #### Fork the incumbent, import its setup in one click
 
@@ -2769,6 +2799,21 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **When it works:** Works when the incumbent is open-source or forkable and switching pain is dominated by setup/muscle memory rather than locked-in data or contracts.
 **Source:** [Cursor official docs: "VS Code Import" one-click import of extensions, themes, settings, and keybindings](https://cursor.com/docs/configuration/migrations/vscode)
 **Tags:** `bottom-up-plg` `default-on` `migration` `onboarding-redesign` `open-source`
+
+---
+
+<a id="recipe-132"></a>
+
+#### Make one default feature an instant wow on install
+
+**The play:** Pick one wedge feature that delivers a visible payoff within seconds of install, turn it on by default with no configuration, and let that single moment carry trial-to-habit conversion and word-of-mouth instead of relying on a broad feature pitch.
+
+**How [Cursor](https://cursor.com) did it** _(Verified)_ — Cursor's wedge was Tab, a custom model that predicts your next edit (not just the next token) and fires the instant you type, with no setup or prompting. By Cursor's own account Tab "opened the first era of AI-assisted coding" and gave "significant leverage for nearly two years." The visceral, on-by-default wow moment turned trials into daily habits and made developers evangelize the tool unprompted.
+
+**Result:** Tab was the PMF trigger and the primary feature through early 2025 (2.5x more users than agents as of March 2025); it anchored Cursor's rise to the fastest SaaS company ever to $100M ARR (12 months).
+**When it works:** Works when you can engineer a genuinely surprising result that lands in the first session; it backfires if the wow requires setup, data, or a learning curve before it triggers.
+**Source:** [Cursor official blog, "The third era of AI software development"](https://cursor.com/blog/third-era)
+**Tags:** `default-on` `developer-advocacy` `wedge` `word-of-mouth`
 
 ---
 
@@ -3168,20 +3213,35 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 <a id="recipe-159"></a>
 
-#### Run support at 90% AI deflection to keep team tiny
+#### Pay back an outage as commitment, not cash
 
-**The play:** When usage explodes faster than you can hire, route the high-volume, repetitive support tier to an AI agent backed by your own docs and resolve only escalations with humans, so support cost stays flat while users scale; track deflection rate as a first-class metric and keep the human team for the hard cases.
+**The play:** When you owe customers a make-good after an incident, pay it as credit toward an extended term and deeper product adoption rather than as a refund: tie the compensation to a re-commitment so the apology doubles as a renewal that deepens the account instead of a cash loss that resets it.
 
-**How [Bolt.new](https://bolt.new) did it** _(Reported)_ — Instead of staffing a support org to match its explosive user growth, Bolt.new pushed roughly 90% of customer support through AI agents, running ~100K paying customers with about 3 support staff. The lean structure let a 25-35 person company reach ~$40M ARR, roughly $1.1M revenue per employee. Because Bolt itself is an AI product, dogfooding AI on the support surface both saved headcount and kept margins defensible against heavy WebContainers/LLM compute costs.
+**How [CrowdStrike](https://crowdstrike.com) did it** _(Reported)_ — On July 19, 2024 a faulty CrowdStrike sensor update bricked 8.5M Windows machines worldwide and handed customers a credible reason to churn at renewal. Instead of writing refund checks, CrowdStrike offered 'customer commitment packages': discounts paired with subscription extensions and additional Falcon modules, structured so the make-good only paid out if the customer re-committed and signed a longer term. The compensation became a renewal and consolidation event rather than a cash outflow, and gross retention barely moved.
 
-**Result:** ~90% of support handled by AI with ~3 support staff for ~100K customers; ~$1.1M ARR per employee at ~$40M ARR.
-**When it works:** Works when most support tickets are repetitive how-to questions answerable from existing docs/product context; fails for high-stakes or highly bespoke support where a wrong AI answer is costly.
-**Source:** [Eric Simons (co-founder/CEO) on the World of DaaS / Summation podcast with Auren Hoffman](https://summation.buzzsprout.com/1783651/episodes/18152899-bolt-new-ceo-eric-simons-one-of-the-fastest-growing-ai-companies-in-the-world)
-**Tags:** 
+**Result:** Gross retention held above 97% in the first full quarter after the outage, down less than half a percentage point. The packages carried an estimated ~$60M ARR/revenue impact across H2 FY2025 and, per CFO Burt Podbere, drove 'longer-term deals and increased adoption'; net retention stayed in the 112-115% range. CEO George Kurtz framed them as 'a proactive and concerted investment' to build loyalty.
+**When it works:** Works when you are an embedded system-of-record with high switching cost and a multi-product portfolio, so customers prefer staying-and-getting-more over the pain of ripping you out; it fails if a cheaper substitute exists or the make-good is so small relative to customer damages that it reads as insulting.
+**Source:** [Cybersecurity Dive and AJC reporting on CrowdStrike Q3 FY2025 earnings; CFO Burt Podbere and CEO George Kurtz on-record quotes about 'customer commitment packages' (discounts, subscription extensions, additional offers) and the ~$60M ARR impact](https://www.cybersecuritydive.com/news/crowdstrike-retains-customers/734203/)
+**Tags:** `system-of-record`
 
 ---
 
 <a id="recipe-160"></a>
+
+#### Auto-correlate telemetry so adding products deepens lock-in
+
+**The play:** Make your products share a single data model and identifier scheme so signals auto-correlate across them; price and ship each product separately, but engineer them so adopting a second one makes the first more useful and removal more painful. Track the share of customers on 2+/4+/6+ products as your real retention leading indicator, not just logo count.
+
+**How [Datadog](https://datadoghq.com) did it** _(Verified)_ — Datadog architected its agent to inject shared identifiers (trace_id, service, env, version, host tags) into every signal so metrics, traces, and logs auto-stitch into one investigation, instead of selling isolated tools. A log spike is only actionable when correlated to an APM trace tied to a deployment and a real-user session, so each product a team adds makes the others more valuable and harder to unplug. By Q4 2024, 83% of customers used 2+ products, 50% used 4+, 26% used 6+, and 12% used 8+, and that compounding adoption held gross revenue retention in the mid-to-high 90s.
+
+**Result:** Gross revenue retention in the mid-to-high 90s and net revenue retention in the high 110s (Q4 2024); multi-product adoption climbing year-over-year (8+ products: 12% of customers, up from 9%). Customers using all three core pillars (infra, APM, logs) are reported to generate ~15x the revenue of single-product customers.
+**When it works:** Works when your products operate on overlapping data that becomes more valuable when joined (observability, security, analytics) and customers expand product-by-product; it does little for standalone tools whose data has no cross-product join, where adding products just stacks unrelated invoices.
+**Source:** [Olivier Pomel (CEO) and David Obstler (CFO), Datadog Q4 2024 earnings call: multi-product adoption percentages (83%/50%/26%/12%) and retention (GRR mid-to-high 90s, NRR high 110s). Unified-telemetry / shared-identifier architecture per Datadog product documentation and the 2019 S-1. The ~15x three-pillar revenue figure is from a secondary industry analysis (useluminix.com).](https://www.fool.com/earnings/call-transcripts/2025/02/13/datadog-ddog-q4-2024-earnings-call-transcript/)
+**Tags:** `data-gravity` `land-and-expand` `switching-costs`
+
+---
+
+<a id="recipe-161"></a>
 
 #### Sell month-to-month so churn surfaces in weeks
 
@@ -3196,7 +3256,67 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-161"></a>
+<a id="recipe-162"></a>
+
+#### Treat breadth of stages used as your #1 churn predictor
+
+**The play:** For a multi-module platform, measure retention risk by how many distinct use cases an account actively uses, not by seat count or total spend, and set an explicit usage threshold (GitLab uses >25% of the company per module) so a 'paying but shallow' account flags as at-risk. Then give CSMs a standard playbook to drive each healthy account into one more module before renewal.
+
+**How [GitLab](https://gitlab.com) did it** _(Reported)_ — GitLab sells one platform spanning the whole DevOps lifecycle (plan, code, CI, secure, release, etc.), so a customer can pay yet only use one or two stages, leaving them easy to rip out. After a 2023 Sales Key Review, GitLab stood up a cross-functional Customer Use Case Adoption working group that named 'use case adoption' (how many lifecycle stages an account genuinely uses) its north-star KPI and #1 predictor of churn and contraction. CSMs now score each account on stages where >25% of the company is active (below 25% counts as a pilot, not adoption) and run 'Adoption Landing Zones' to push under-adopting customers into more stages before renewal.
+
+**Result:** GitLab's handbook designates use case / stage adoption as the #1 (closed) predictor of churn and contraction; the company sustained dollar-based net retention of 120-130%+ while running this retention motion (DBNRR 122% as of Q1 FY2026).
+**When it works:** Works when your product is a broad suite where customers can pay while using only a slice, so single-module accounts are the ones that churn; it adds little for single-purpose tools where there is no breadth to expand into.
+**Source:** [GitLab public Handbook: Customer Use Case Adoption working group ('north star KPI and #1 predictor of Churn & Contraction', post 2023-05-16 Sales Key Review) and Stage Adoption Metrics page (>25% active-usage threshold); DBNRR from GitLab Q1 FY2026 IR release](https://handbook.gitlab.com/handbook/company/working-groups/customer-use-case-adoption/)
+**Tags:** `land-and-expand` `net-retention`
+
+---
+
+<a id="recipe-163"></a>
+
+#### Codify one opinionated workflow into the product
+
+**The play:** Pick the single best way your customers should work and hard-code it as the default (named, opinionated, documented as a method) instead of shipping configurability; when the team's process lives inside your defaults, switching tools means re-inventing how they operate, which is what makes them stay.
+
+**How [Linear](https://linear.app) did it** _(Verified)_ — Most B2B tools win deals by being infinitely configurable, which lets every team invent its own process and creates chaos at scale. Linear took the opposite bet: it built and published the 'Linear Method', baking one default way of working (Triage, Cycles, fixed issue states) directly into the product instead of offering a blank sandbox. Once a team runs its cadence on Linear's opinionated defaults, the tool stops being a task list and becomes how the team actually operates, so ripping it out means re-inventing the team's entire process. Linear reports 140%+ net revenue retention with near-zero paid marketing and a 4-person sales team serving 18,000+ paying companies.
+
+**Result:** Net revenue retention 140%+ (CEO, Jan 2025); minimal churn cited across coverage; profitable since 2021 with ~0.5% of revenue spent on marketing.
+**When it works:** Works when you serve a workflow with a genuinely better 'right answer' and your buyers value focus over flexibility, so opinionated defaults reduce their decision fatigue; it backfires for buyers with idiosyncratic, regulated, or deeply entrenched processes who need configurability and will churn the moment your opinion conflicts with theirs.
+**Source:** [Linear official 'Linear Method' (principles/practices built into the product); NRR 140%+ from Karri Saarinen (CEO) on X, Jan 2025; opinionated-software framing corroborated by Figma blog 'The Linear Method: Opinionated Software'](https://linear.app/method)
+**Tags:** `bottom-up-plg` `switching-costs`
+
+---
+
+<a id="recipe-164"></a>
+
+#### Make customers rewrite the app, not just move the data
+
+**The play:** When you displace an incumbent, refuse the like-for-like swap and design the migration so the customer's application logic, not just their data, becomes coupled to your model; then build and give away the migration tooling that makes that deeper rewrite cheap enough to commit to. The switching cost you want to create is 're-architect the app,' not 'export the data.'
+
+**How [MongoDB](https://mongodb.com) did it** _(Reported)_ — When enterprises migrate off legacy relational databases, the easy sell is a like-for-like 'lift and shift' that swaps the database but leaves the application untouched, leaving you trivially replaceable. MongoDB CEO Dev Ittycheria instead pushes 'lift and transform': customers remodel their data into MongoDB's document model and rewrite the application's data-access layer against it, and MongoDB ships a free Relational Migrator to lower the cost of that rewrite. Once the application code itself is coupled to the document model, ripping MongoDB out means re-architecting the app, not just exporting tables, so customers standardize on it for mission-critical workloads and rarely leave.
+
+**Result:** Net ARR expansion rate consistently above 120% (121% in Q4 FY2026, 128% at IPO); enterprises decommission legacy systems and standardize on MongoDB as a mission-critical platform, with one customer citing ~$50M in savings after consolidating onto it.
+**When it works:** Works when your product sits under an application and a genuinely different data/programming model gives real developer productivity gains, so the rewrite is justified on merit. It backfires if you are a drop-in replacement with no model difference, since then the rewrite is pure friction customers will refuse.
+**Source:** [Dev Ittycheria (CEO), diginomica: 'I would more frame it as lift and transform' (vs lift-and-shift). Corroborated by diginomica 'mission-critical ready' interview ('customers truly view us as a strategic platform, and that's why you're seeing more and more customers standardize on MongoDB') and MongoDB's Relational Migrator product, which maps relational schemas to the document model and rewrites SQL data-access code. NRR figures from MongoDB FY2026 10-K / Q4 FY2026 results.](https://diginomica.com/dont-think-lift-and-shift-when-it-comes-cloud-migration-it-needs-be-lift-and-transform-says-mongodb)
+**Tags:** `data-gravity` `enterprise-sales` `lock-in` `migration` `switching-costs` `system-of-record`
+
+---
+
+<a id="recipe-165"></a>
+
+#### Define activation as a repeated fix, then chase it
+
+**The play:** Pick the one recurring in-product action that correlates with staying (not a one-time setup), measure it as unique active days within a window, and rank every account by it; then aim onboarding, nudges, and product surfaces at moving accounts up that ladder, because the recurring-habit metric is the lever and retention is its downstream result.
+
+**How [Snyk](https://snyk.io) did it** _(Reported)_ — Snyk's growth team found acquisition was no longer the constraint, retention was, so they defined a single behavioral metric: the number of unique days an account fixed a vulnerability within 30 days. Plotting accounts into engagement states (Dormant, Casual, Core, Progressive) exposed a brutal split: dormant accounts had only a ~5-7% chance of still using Snyk twelve months later, while deeply engaged accounts retained at ~80%. They then re-pointed onboarding and product nudges at one job, getting accounts to fix vulnerabilities on more days, treating that recurring habit as the leading indicator of retention rather than tracking retention directly.
+
+**Result:** Engagement state predicted 12-month retention with a >10x spread: ~5-7% for dormant accounts vs ~80% for deeply engaged accounts. Snyk reached >130% NRR (2022) and $300M+ ARR on this developer-habit foundation.
+**When it works:** Works when your product has a repeatable core action users return to do (fix, deploy, query, ship) so frequency is meaningful; it pays off less for one-shot or infrequent-by-nature tools where a single use is the whole job.
+**Source:** [Ben Williams, 2x VP Product at Snyk (led PLG/growth), interviewed on Aakash Gupta's newsletter; corroborated by reo.dev citing his "Defining Activation at Snyk" essay (The Product-Led Geek)](https://www.news.aakashg.com/p/how-to-drive-growth-in-b2b-products)
+**Tags:** `bottom-up-plg`
+
+---
+
+<a id="recipe-166"></a>
 
 #### Turn your users into your detection R&D team
 
@@ -3211,7 +3331,22 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-162"></a>
+<a id="recipe-167"></a>
+
+#### Promise backward compatibility forever, never break old clients
+
+**The play:** Publish an explicit, enumerated compatibility contract (which APIs, file formats, client versions, and protocols you will never break) and engineer your data plane to keep working during your own control-plane outages, so customers never face a forced upgrade or a hard dependency on your uptime that would trigger a re-evaluation of whether to keep you.
+
+**How [Tailscale](https://tailscale.com) did it** _(Verified)_ — Infrastructure that breaks on upgrade forces customers to constantly re-evaluate it, and every re-evaluation is a churn opportunity. Tailscale made an explicit public promise that the platform is 'backward compatible, forever': it will never break a client release people still use, never break a coordination-server API or policy-file syntax, and will support both IPv4 and IPv6 forever. CEO Avery Pennarun framed this as deliberately stepping off the industry's 'upgrade treadmill' so that once something works on Tailscale it keeps working with no maintenance and no surprises. The design extends to runtime: the network keeps routing traffic and enforcing cached access policies even when Tailscale's own coordination servers are down.
+
+**Result:** Pennarun reports churn is low and growth is durable and mostly inbound; the product became 'invisible infrastructure' people 'use constantly but almost never think about,' alongside ~$45M ARR growing 100%+ YoY and ~20,000 paid business customers by late 2025. No public GRR/NRR figure is disclosed.
+**When it works:** Pays off for products meant to be permanent embedded infrastructure (networking, identity, storage, protocols) where being torn out is the real threat; the cost of carrying old code paths forever is worth it only when stability is the value. It backfires for fast-moving products whose users want and tolerate frequent breaking changes for new capabilities.
+**Source:** [CEO Avery Pennarun, Tailscale blog 'Backward compatible, forever' ('we would never break any client release that people were still using'; 'once you get them working, they're going to keep working, no exceptions'); runtime behavior corroborated by Tailscale docs 'What happens if the coordination server is down'; low-churn/durable-growth claim from Pennarun via Globe and Mail (Nov 2025) and Stratechery interview (2025)](https://tailscale.com/blog/community-projects)
+**Tags:** `data-gravity` `lock-in` `system-of-record`
+
+---
+
+<a id="recipe-168"></a>
 
 #### Neutralize the integration objection by going HTTP-first
 
@@ -3226,7 +3361,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-163"></a>
+<a id="recipe-169"></a>
 
 #### Remove monthly pricing to force annual commitment
 
@@ -3241,9 +3376,24 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
+<a id="recipe-170"></a>
+
+#### Turn a yearly audit into hourly monitoring
+
+**The play:** Re-architect any episodic, event-driven purchase into a continuous-monitoring service that runs on a fast cadence and integrates with the customer's core systems. The integrations and accumulated state create switching costs and generate value between the moments customers think they need you, so they stay subscribed instead of churning after the deliverable ships.
+
+**How [Vanta](https://vanta.com) did it** _(Reported)_ — A compliance audit is a one-time event customers naturally churn away from once the certificate is in hand. Vanta deliberately re-architected the job into an always-on system: 1,200+ automated control checks running hourly across deeply embedded integrations (AWS/GCP, Okta, GitHub, HR tools) plus an agent on every employee laptop, with real-time dashboards, deviation alerts, and auto-remediation. Christina Cacioppo frames the goal as customers being 'constantly audit-ready, you always have everything in place,' replacing the spreadsheet-and-Jira program with continuous operational dependency. The integration depth and accumulated monitoring state make ripping Vanta out painful long after the original audit ends.
+
+**Result:** Net revenue retention has stayed over 100% and increased every quarter for two years (per sources with knowledge of Vanta financials, Fortune, April 2026); ARR reached ~$300M, tripling in two years.
+**When it works:** Works when the underlying state actually drifts over time (so continuous checks are genuinely useful) and you can integrate deeply enough that the product becomes embedded in daily operations. It does not pay off if the job is truly one-and-done or your integrations are shallow and easy to disconnect.
+**Source:** [Christina Cacioppo (Vanta CEO) on the Cheeky Pint podcast (Stripe / John Collison): customers are 'constantly audit-ready, you always have everything in place' and want 'real-time dashboards and visibility, and deviations, and auto-remediation.' NRR figure from Fortune, 'Vanta hits $300 million ARR' (April 29, 2026), citing sources with knowledge of Vanta's financials. Mechanism detail (1,200+ hourly control checks, laptop agents, cloud/identity/code integrations) from Vanta product documentation.](https://cheekypint.substack.com/p/compliance-at-scale-and-why-tam-is)
+**Tags:** `data-gravity` `switching-costs` `system-of-record`
+
+---
+
 ### Expansion
 
-<a id="recipe-164"></a>
+<a id="recipe-171"></a>
 
 #### Replace per-module pricing with a committed spend pool
 
@@ -3258,7 +3408,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-165"></a>
+<a id="recipe-172"></a>
 
 #### Ship one agent so upsells need zero redeployment
 
@@ -3273,7 +3423,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-166"></a>
+<a id="recipe-173"></a>
 
 #### Wedge on what you suppress, not what you find
 
@@ -3288,7 +3438,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-167"></a>
+<a id="recipe-174"></a>
 
 #### Never bill the developer; bill the executive they pull in
 
@@ -3299,11 +3449,11 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **Result:** Bottom-up land-and-expand sustained dollar-based net retention of 122-130%+; single accounts like Siemens grew to 40,000+ seats. FY2025 total revenue $759.2M, up 31% YoY.
 **When it works:** Works when the product is adopted by individual practitioners who collaborate (so usage visibly compounds inside one company) and a paid tier exists with admin, security, or compliance features an executive eventually needs.
 **Source:** [Community Inc. deep dive on GitLab community growth; GitLab CMO Ashley Kramer; Siemens case study (about.gitlab.com/customers/siemens)](https://community.inc/deep-dives/contribution-gitlab)
-**Tags:** `bottom-up-plg` `free-tier` `land-and-expand` `word-of-mouth`
+**Tags:** `bottom-up-plg` `free-tier` `land-and-expand` `net-retention` `word-of-mouth`
 
 ---
 
-<a id="recipe-168"></a>
+<a id="recipe-175"></a>
 
 #### Go multi-product at $5-10M ARR to unlock willingness to pay
 
@@ -3318,7 +3468,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-169"></a>
+<a id="recipe-176"></a>
 
 #### Gate only the multi-team features, give the engine away
 
@@ -3333,7 +3483,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-170"></a>
+<a id="recipe-177"></a>
 
 #### Price per event, not per host or cardinality
 
@@ -3348,7 +3498,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-171"></a>
+<a id="recipe-178"></a>
 
 #### Make the product get bought, not sold, by developers
 
@@ -3363,7 +3513,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-172"></a>
+<a id="recipe-179"></a>
 
 #### Ship adjacent modules that share your first product's data collector
 
@@ -3378,7 +3528,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-173"></a>
+<a id="recipe-180"></a>
 
 #### Land on one module, converge the whole stack onto you
 
@@ -3393,7 +3543,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-174"></a>
+<a id="recipe-181"></a>
 
 #### Bundle products until ripping you out is too painful
 
@@ -3408,7 +3558,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-175"></a>
+<a id="recipe-182"></a>
 
 #### Land one regulated workload, expand to full cloud coverage
 
@@ -3419,11 +3569,11 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **Result:** ~50% of new ARR from existing-customer expansion; 60% growth in per-customer contract value; 219% net retention claimed (all self-reported, May 2024, not independently audited).
 **When it works:** Works when your buyer faces a stack of related mandates and a proven first deployment lowers procurement and trust barriers for the next one; fails if your product is a single point feature with no adjacent surface to grow into.
 **Source:** [RAD Security self-reported press release (May 6, 2024); single-source marketing figures, not independently verified, and >2 years stale](https://blog.rad.security/resources/behavioral_detection_response)
-**Tags:** `land-and-expand`
+**Tags:** `enterprise-sales` `land-and-expand`
 
 ---
 
-<a id="recipe-176"></a>
+<a id="recipe-183"></a>
 
 #### Attach a security feature to move the buyer up the org chart
 
@@ -3434,11 +3584,11 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **Result:** CEO: '100% of my conversations in the UK have been with CISOs and CIOs. Five years ago it was IT Operations,' alongside ~$129K average contract value (FY24 S-1) and 1,742 customers over $100K growing ~45% YoY.
 **When it works:** Works when a senior buyer (CISO, CFO, CRO) already cares about the outcome your product produces but doesn't yet know your category is the lever for it.
 **Source:** [Bipul Sinha (CEO) interview, The Stack](https://www.thestack.technology/the-big-interview-rubrik-ceo-bipol-sinha/)
-**Tags:** `founder-led-sales` `land-and-expand`
+**Tags:** `enterprise-sales` `founder-led-sales` `land-and-expand`
 
 ---
 
-<a id="recipe-177"></a>
+<a id="recipe-184"></a>
 
 #### Build four expansion vectors into every landed account
 
@@ -3449,11 +3599,11 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 **Result:** 133% subscription net dollar retention (FY24 S-1), with average contract value ~$129K growing ~21% annually and $100K+ customers growing ~45% YoY.
 **When it works:** Works when the product naturally accumulates data, surface area, or seats over time so consumption rises without an active sales push, and add-on modules can ride the same install footprint.
 **Source:** [Rubrik 424B4 IPO prospectus (SEC), NRR confirmed verbatim; expansion vectors detailed in hhhypergrowth.com/a-look-at-rubrik.](https://www.sec.gov/Archives/edgar/data/1943896/000119312524118478/d359771d424b4.htm)
-**Tags:** `land-and-expand`
+**Tags:** `land-and-expand` `net-retention`
 
 ---
 
-<a id="recipe-178"></a>
+<a id="recipe-185"></a>
 
 #### Pull the 5 buyers per account the product already converted
 
@@ -3468,7 +3618,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-179"></a>
+<a id="recipe-186"></a>
 
 #### Price per API call so spend grows with the app
 
@@ -3483,7 +3633,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-180"></a>
+<a id="recipe-187"></a>
 
 #### Sell swappable bundles and publish a full-stack cohort
 
@@ -3500,7 +3650,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ### Revenue
 
-<a id="recipe-181"></a>
+<a id="recipe-188"></a>
 
 #### Re-anchor your category onto the dominant funding wave
 
@@ -3515,7 +3665,22 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-182"></a>
+<a id="recipe-189"></a>
+
+#### Run support at 90% AI deflection to keep team tiny
+
+**The play:** When usage explodes faster than you can hire, route the high-volume, repetitive support tier to an AI agent backed by your own docs and resolve only escalations with humans, so support cost stays flat while users scale; track deflection rate as a first-class metric and keep the human team for the hard cases.
+
+**How [Bolt.new](https://bolt.new) did it** _(Reported)_ — Instead of staffing a support org to match its explosive user growth, Bolt.new pushed roughly 90% of customer support through AI agents, running ~100K paying customers with about 3 support staff. The lean structure let a 25-35 person company reach ~$40M ARR, roughly $1.1M revenue per employee. Because Bolt itself is an AI product, dogfooding AI on the support surface both saved headcount and kept margins defensible against heavy WebContainers/LLM compute costs.
+
+**Result:** ~90% of support handled by AI with ~3 support staff for ~100K customers; ~$1.1M ARR per employee at ~$40M ARR.
+**When it works:** Works when most support tickets are repetitive how-to questions answerable from existing docs/product context; fails for high-stakes or highly bespoke support where a wrong AI answer is costly.
+**Source:** [Eric Simons (co-founder/CEO) on the World of DaaS / Summation podcast with Auren Hoffman](https://summation.buzzsprout.com/1783651/episodes/18152899-bolt-new-ceo-eric-simons-one-of-the-fastest-growing-ai-companies-in-the-world)
+**Tags:** 
+
+---
+
+<a id="recipe-190"></a>
 
 #### Meter on data volume so your bill tracks their value
 
@@ -3530,7 +3695,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-183"></a>
+<a id="recipe-191"></a>
 
 #### Charge the developer, not the ops buyer above them
 
@@ -3545,7 +3710,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-184"></a>
+<a id="recipe-192"></a>
 
 #### Relicense to block hyperscalers, but expect a fork
 
@@ -3560,7 +3725,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-185"></a>
+<a id="recipe-193"></a>
 
 #### Kill your free tier to force-qualify serious customers
 
@@ -3575,7 +3740,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-186"></a>
+<a id="recipe-194"></a>
 
 #### Layer consumption pricing onto a dormant free base
 
@@ -3590,7 +3755,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-187"></a>
+<a id="recipe-195"></a>
 
 #### Meter on delivered effort, not flat per-action units
 
@@ -3605,7 +3770,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-188"></a>
+<a id="recipe-196"></a>
 
 #### Reframe a commodity product into the security budget
 
@@ -3620,7 +3785,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-189"></a>
+<a id="recipe-197"></a>
 
 #### Give away unlimited flags, cap projects and environments
 
@@ -3635,7 +3800,7 @@ Reusable growth and product-market-fit recipes from real developer tools, infras
 
 ---
 
-<a id="recipe-190"></a>
+<a id="recipe-198"></a>
 
 #### Route enterprise deals through cloud marketplaces to skip procurement
 
