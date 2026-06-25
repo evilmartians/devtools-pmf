@@ -19,7 +19,7 @@ const CAT = { tooling: "Tooling", infra: "Infrastructure", security: "Security" 
 // Acquisition is split into explicit channel tracks (each play carries `track`,
 // assigned by review). The rest of the funnel stays one track per goal.
 const TRACKS = [
-  { track: "Open-source", group: "Get users", blurb: "Turn the open-source project into the funnel." },
+  { track: "Open-source", group: "Get users", blurb: "Turn the open-source project into the funnel, one pattern played many ways: what to give away, what to charge for, how to handle free-riders." },
   { track: "Launches & build-in-public", group: "Get users", blurb: "Win attention with launches and building in public." },
   { track: "Community & DevRel", group: "Get users", blurb: "Grow through community, events, and developer relations." },
   { track: "Content & SEO", group: "Get users", blurb: "Pull demand with content, docs, and search." },

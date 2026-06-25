@@ -38,9 +38,9 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
     <meta name="twitter:title" content="The DevTools Cookbook" />
     <meta name="twitter:description" content="190 sourced plays real devtools companies used to hit product-market fit." />
     <meta name="twitter:image" content={OG_IMAGE} />
-    <link rel="preload" href="/fonts/grotesk-expanded-ultrablack.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/grotesk-regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/grotesk-expanded-bold.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/grotesk-expanded-ultrablack.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/grotesk-regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/grotesk-expanded-bold.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/martian-mono-700.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
@@ -151,7 +151,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
               </div>
               <div class="grid-cards">
                 {ch.items.map((r) => (
-                  <article class="recipe" data-id={r.id} data-track={r.track} data-gtm={r.gtm} data-cat={r.sub_industry} data-tags={r.tags.join(" ")} data-text={(r.company + " " + r.title + " " + r.learning + " " + r.summary + " " + r.tags.join(" ")).toLowerCase()}>
+                  <article class="recipe" data-id={r.id} data-track={r.track} data-gtm={r.gtm} data-cat={r.sub_industry} data-tags={r.tags.join(" ")}>
                     <div class="r-top">
                       <span class="rno mono">No. {r.no}</span>
                       <span class={`stamp ${tierClass(r.tier)}`}>{r.tier}</span>
@@ -234,6 +234,10 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
 
     <script>
       const recipes = Array.from(document.querySelectorAll(".recipe"));
+      // Build the search index from each card's text once, rather than shipping a
+      // duplicated data-text attribute on every card (~180KB of the HTML).
+      const textIndex = new WeakMap();
+      for (const el of recipes) textIndex.set(el, el.textContent.toLowerCase());
       const groups = Array.from(document.querySelectorAll(".catgroup"));
       const facetBtns = Array.from(document.querySelectorAll("[data-facet]"));
       const search = document.getElementById("search");
@@ -263,7 +267,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         if (state.gtm && el.dataset.gtm !== state.gtm) return false;
         if (state.cat && el.dataset.cat !== state.cat) return false;
         if (state.tag && !el.dataset.tags.split(" ").includes(state.tag)) return false;
-        if (query && !el.dataset.text.includes(query)) return false;
+        if (query && !textIndex.get(el).includes(query)) return false;
         return true;
       }
 
