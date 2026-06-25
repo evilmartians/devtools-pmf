@@ -9,6 +9,8 @@ const REPO_URL = "https://github.com/evilmartians/devtools-pmf";
 const ISSUE_URL = `${REPO_URL}/issues/new?template=add-data-point.yml`;
 // Set to the final deploy domain before launch (must match `site` in astro.config.mjs).
 const SITE_URL = "https://devtools-pmf.evilmartians.com";
+// Pre-launch: keep the preview out of search results. Flip to false at public launch.
+const NOINDEX = true;
 const OG_IMAGE = `${SITE_URL}/og.png`;
 
 const getUsers = data.tracks.filter((t) => t.group === "Get users");
@@ -26,6 +28,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
     <title>The DevTools Cookbook — what 67 devtools companies did to hit PMF</title>
     <meta name="description" content="190 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians." />
     <link rel="canonical" href={SITE_URL + "/"} />

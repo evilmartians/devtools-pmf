@@ -1,4 +1,8 @@
+# Pre-launch: blocking crawlers until the public launch.
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://devtools-pmf.evilmartians.com/sitemap.xml
+# At launch, replace the block above with:
+# User-agent: *
+# Allow: /
+# Sitemap: https://devtools-pmf.evilmartians.com/sitemap.xml
