@@ -33,6 +33,7 @@ plays:
   - title: "Launch on one demo-video tweet thread, nothing else"
     summary: "Bolt.new launched in October 2024 with no PR, no blog post, and no press outreach: just a single tweet thread anchored by a ~43-second screencast that showed a prompt turning into a running app in real time, with follow-up tweets walking through specific example prompts. Eric Simons: 'we put out a tweet thread. That was it. There's no blog posts, there's no press article. Nothing.' The thread jumped on its own to Hacker News, Reddit, YouTube, and TikTok, generating $60K ARR on day one and $4M in four weeks."
     goal: "Acquisition"
+    track: "Launches & build-in-public"
     learning: "If your product produces a visible 'wow' in under a minute, lead your launch with one tight screencast that shows the transformation end to end and lets a viewer immediately picture themselves doing it, rather than spending the launch budget on PR; a self-evident demo travels across channels on its own."
     when_it_works: "Works when the product delivers a fast, screen-recordable result that is instantly impressive to a non-expert; fails for products whose value is slow, abstract, or only legible to specialists."
     metric_moved: "signups / ARR"

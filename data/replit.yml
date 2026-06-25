@@ -49,6 +49,7 @@ plays:
   - title: "Launch with a raw phone demo, not a campaign"
     summary: "Replit Agent was buggy and the team wanted more time, but Amjad Masad shipped it as an 'early preview' and posted a casual iPhone screen recording of himself prompting the Agent to write code, spin up a database, and deploy a working app end-to-end. Andrej Karpathy quote-tweeted it as the field's 'AGI moment,' and researchers at OpenAI and Anthropic reached out saying they hadn't realized their own models could do that. The unpolished, single-take demo read as proof rather than marketing."
     goal: "Acquisition"
+    track: "Launches & build-in-public"
     learning: "When your product produces a visible, hard-to-fake result, launch with one unedited screen recording of it running end-to-end on a real task, and ship it as an 'early preview' so a high-credibility peer can amplify it as proof rather than a pitch. A messy real demo out-converts a polished campaign because it removes the suspicion of staging."
     when_it_works: "Works when the product can deliver a jaw-dropping outcome in a single uncut take and you have access to credible voices who will amplify a genuine breakthrough."
     metric_moved: "organic"

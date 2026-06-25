@@ -49,6 +49,7 @@ plays:
   - title: "Write 'How X Works' HN posts on a fixed 5-beat structure"
     summary: "Tailscale needed organic distribution with no marketing org. They wrote deeply technical posts on a fixed structure: problem agitation -> the obvious solution a developer would reach for -> exactly why that obvious solution breaks -> their product -> how it works at the implementation level. Titles were stripped of all benefit-speak (literally 'Tailscale SSH', 'How Tailscale Works', not 'Tailscale SSH makes you faster'). The plain-fact titles plus the trust earned by explaining why naive solutions fail repeatedly landed them on the Hacker News front page."
     goal: "Acquisition"
+    track: "Content & SEO"
     learning: "Earn a developer audience's trust before pitching: write the problem so they feel it, name the obvious fix they'd try, then show precisely why it fails before introducing your product, and title the post as a flat statement of fact with zero benefit-speak so it reads as engineering, not marketing."
     when_it_works: "Works when your product solves a problem developers genuinely struggle with and you can explain your internals credibly; fails for products whose value is taste or polish rather than a defensible technical mechanism."
     metric_moved: "organic acquisition / HN front-page reach"

@@ -82,6 +82,7 @@ plays:
   - title: "Run 'Ask Your Developer' to seed exec demand bottom-up"
     summary: "As deal sizes grew, Twilio needed executives (not just coders) to know its name, but selling top-down would betray its developer-first brand. So it rented a billboard on Highway 101 reading 'Ask Your Developer,' lifted directly from pharma ads ('ask your doctor if X is right for you'). The line did double duty: it flattered developers as the in-house experts whose opinion the company should trust, and it planted Twilio in executives' heads in a way that routed the buying conversation back through the developers who already loved the product."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "When you need to reach economic buyers but your brand is built on bottom-up developer love, do not pitch the buyer directly; tell the buyer to ask their own engineers about you. It converts your existing developer fans into your internal sales force and keeps your champion, not your logo, at the center of the deal."
     when_it_works: "Works once you already have genuine developer advocates inside accounts who will vouch for you when an executive asks."
     metric_moved: "community"

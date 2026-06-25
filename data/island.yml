@@ -33,6 +33,7 @@ plays:
   - title: "Fund a new category by ripping out VDI and VPN"
     summary: "Selling a brand-new product category (an enterprise browser) to CISOs means fighting for net-new budget that does not exist. Island instead anchored every deal to a line item enterprises already resent: legacy VDI (Citrix/virtual desktops) and VPN/remote-access stacks. By moving security controls into the browser on the endpoint, customers could decommission virtualization servers and remote-access infrastructure, so a security pitch became a CFO-friendly cost-takeout. One global bank decommissioned 400 servers and saved tens of millions; a pharma firm cut contractor VDI cost 94%."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "If you are creating a category with no budget line, do not ask for new money: position yourself as the replacement for an expensive incumbent system the buyer already pays for and resents (VDI, VPN, a legacy vault), and quantify the decommissioning in servers retired and dollars saved so the economic buyer becomes the CFO, not just the CISO."
     when_it_works: "Works when your product genuinely lets customers turn off costly existing infrastructure, so the savings are auditable; fails if you are purely additive spend with no system to retire."
     metric_moved: "arr"

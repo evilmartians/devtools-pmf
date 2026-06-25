@@ -33,6 +33,7 @@ plays:
   - title: "Launch by live-demoing the impossible in 5 minutes"
     summary: "Solomon Hykes had dotCloud's unreleased internal container tool and a 5-minute PyCon 2013 lightning talk he assumed would be a side room of 30 people. PyCon ran lightning talks on the main stage, so he live-spun up 5, 10, 15, 20 containers in seconds in front of ~800 developers who had never seen anything package and ship that fast. The video went viral on Hacker News, where skeptics called it vaporware because it was not yet open source, so the team open-sourced Docker two weeks later and converted the talk into a launch."
     goal: "Acquisition"
+    track: "Launches & build-in-public"
     learning: "Lead your launch with a live, real-time demo of something the audience believes is slow or impossible, doing it in seconds in front of them, rather than a pitch deck or blog post; the visible speed delta is the viral payload. Ship the open or free version within days of the demo so the skeptics who try to debunk you become your first installers instead."
     when_it_works: "Works when your product produces a visceral, watchable speed or capability gap over the status quo that can be shown end-to-end in a few minutes to a technical audience."
     metric_moved: "developer install base / awareness"

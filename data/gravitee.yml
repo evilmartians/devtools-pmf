@@ -33,6 +33,7 @@ plays:
   - title: "Out-generous incumbents on your free open-source edition"
     summary: "Gravitee shipped a fully free Apache 2.0 Community Edition and deliberately positioned it as the most feature-complete open-source API gateway available, with no proprietary runtime and no lock-in, undercutting incumbents who gated the core behind a license. That generosity turned the OSS distribution itself into the acquisition channel instead of paid ads. By mid-2021 it drove 35,000 downloads per month at 163% year-on-year growth, and ranked #9 fastest-growing commercial open-source startup on the COSS index."
     goal: "Acquisition"
+    track: "Open-source"
     learning: "If you compete against an incumbent that gates its core product, make the free open-source core of your product strictly more capable than theirs and explicitly permissive (no proprietary runtime, no lock-in) so the distribution itself becomes your top-of-funnel and developers choose you before sales ever calls."
     when_it_works: "When you sell into a category with an entrenched incumbent that for cost or lock-in reasons cannot match a genuinely permissive, feature-rich free tier."
     metric_moved: "downloads / organic adoption"

@@ -33,6 +33,7 @@ plays:
   - title: "Turn schema migrations into a branch-and-deploy-request flow"
     summary: "Schema changes are the scariest, most lock-prone operation in a team's database, and a bad ALTER can take production down. PlanetScale mapped the exact Git mental model onto the database: developers branch an isolated copy of the production schema, change it freely, then open a 'deploy request' that shows a semantic schema diff (CREATE TABLE, ALTER TABLE) and lints each change for compatibility before merge. On merge, it never runs raw DDL against the live table; it builds a shadow table, backfills rows in batches while binlog-streaming live writes, then does an atomic name-swap cutover for zero downtime regardless of table size. This branching workflow became the signature feature that drove developer word of mouth."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "Take the single most dangerous operation in your category and wrap it in the workflow developers already trust (Git branch, diff, review, merge); a familiar safety model on a scary task becomes the feature people demo to each other."
     when_it_works: "Works when your product owns an operation users genuinely fear getting wrong, so that de-risking it (not just speeding it up) is the wedge."
     metric_moved: "developer adoption / word-of-mouth signups"

@@ -48,6 +48,7 @@ plays:
   - title: "Make partners self-serve onboarding so they lead with you"
     summary: "Direct enterprise observability sales are expensive, so LogicMonitor built the product so MSPs can onboard a new client in hours, not months, via agentless Collectors, automatic dependency mapping, thousands of ready-made monitoring templates, and multi-tenant isolation with white-labeled dashboards. It then wrapped that with a Bronze/Silver/Gold partner program (upfront discounts, deal protection, referral fees, MDF, and a Partner Academy with sales/technical certs) so partners profit by leading with LogicMonitor. The channel now touches over 80% of global business."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "If you want a channel to carry distribution, the lever is not just margin tiers but ripping onboarding friction out of the product: give partners agentless setup, templates, and multi-tenant white-labeling so they can stand up a new client in hours, which makes leading with you the most profitable use of their time."
     when_it_works: "Works when resellers/MSPs make money on the deployment and management labor, so collapsing your setup time from months to hours directly improves their margins and makes them favor you."
     metric_moved: "growth"

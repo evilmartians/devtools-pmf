@@ -49,6 +49,7 @@ plays:
   - title: "Open the beta wide instead of hand-picking alpha customers"
     summary: "Datadog ran a closed alpha with a handful of hand-picked 'perfect' enterprise accounts and got almost no usable signal: timing, infra readiness, and deployment bandwidth varied too much to learn anything. They threw it open as a wide self-serve beta and let the market reveal who showed up and stuck. Pomel: 'It's a lot easier for users to self-select and start using your product than for you to understand for whom you're going to be the right thing at the right time.'"
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "Do not gate early access to a hand-picked design-partner list; ship a public self-serve beta so the market, not your guesswork, reveals who has the timing and pain to actually adopt. Watch which uninvited users stick, and treat them as your ICP."
     when_it_works: "Works when your product can be tried self-serve with low setup cost; fails for products that require heavy services or bespoke deployment before any value appears."
     metric_moved: "qualified signups / ICP discovery"

@@ -41,6 +41,7 @@ plays:
   - title: "Be the one repository that holds every package format"
     summary: "JFrog open-sourced Artifactory in 2008, but the durable edge was not 'free,' it was being the first software-agnostic repository: one tool that stores and proxies Maven, npm, Docker, PyPI, NuGet, Helm, and 40+ formats behind a single URL via local, remote-cache, and virtual repos. A polyglot team could standardize on JFrog instead of running a separate registry per language, so it became the neutral default that no language community had a reason to reject. That universality, seeded by the free OSS edition, fed the paid SaaS and on-prem versions."
     goal: "Acquisition"
+    track: "Open-source"
     learning: "If your category is fragmented by language or stack, win by being the single neutral tool that supports all of them under one interface, so a polyglot team can standardize on you and never needs a competing point tool. Breadth of integration, not the free tier itself, is what makes you the default."
     when_it_works: "Works when buyers run heterogeneous stacks and currently juggle one narrow tool per language or ecosystem, so consolidation onto a universal layer is itself the value."
     metric_moved: "customer count / NDR"

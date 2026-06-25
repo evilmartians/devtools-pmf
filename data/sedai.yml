@@ -57,6 +57,7 @@ plays:
   - title: "Harvest roadmap gaps from buyer-intent marketplaces"
     summary: "Creating the 'autonomous cloud' category meant Sedai's pitches drew polite praise that never closed, because passionate founder demos make buyers say the product looks good regardless. CEO Suresh Mathew shifted to a buyer-intent marketplace (Sagetap) where prospects arrive specifically to evaluate and give feedback, then mined those candid conversations for the exact missing capabilities blocking deals, adding ECS support on top of Lambda after a few such conversations. He treats the feedback, not the demo, as the asset: filling the named gaps is what flips conversations into closed deals."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "Founder demos generate flattery, not signal, because buyers won't argue with your passion; put your product in front of buyers who arrive with intent to evaluate (a peer marketplace or paid evaluation panel), then treat their objections as your roadmap and ship the named blocker, because the gap they flag is usually what is stalling other deals too."
     when_it_works: "Works when you are creating or entering an unfamiliar category where buyers can't self-articulate fit, so structured high-intent feedback reveals the specific capability gaps blocking deals."
     metric_moved: "deals_closed"

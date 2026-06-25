@@ -48,6 +48,7 @@ plays:
   - title: "Win one tight founder network until you're the default"
     summary: "Vanta concentrated entirely on Y Combinator startups, founders Cacioppo could DM directly through YC's internal Bookface forum. The first major customer (Lattice) came via a YC intro, and YC founders proved unusually willing to take meetings with tiny companies and refer peers. By making SOC 2 painless for one cohesive community, Vanta became the obvious choice each new batch defaulted to, generating two to three inbound emails per week off a barebones homepage."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "Pick one tightly-networked community with a shared channel (a forum, Slack, accelerator cohort) and over-serve it until being the default spreads by word of mouth inside it. A dense network where members trust and refer each other beats broad reach you have to pay for."
     when_it_works: "Works when a high-trust community exists where your buyers already talk to each other and the same pain recurs for every new member."
     metric_moved: "inbound signups / referral rate"

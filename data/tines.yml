@@ -41,6 +41,7 @@ plays:
   - title: "Wedge into procurement with a forever-free Community Edition"
     summary: "Security automation is normally a sales-led, services-heavy enterprise purchase that an individual analyst can never start alone. Tines shipped a forever-free Community Edition (1 team, 3 flows, 25,000 monthly events, unlimited viewers, no credit card) giving a single analyst the full platform builder to stand up a real workflow and build the internal business case before any procurement conversation. The free tier seeds the product inside the org and walks itself into the enterprise plan; Tines reached 400+ customers including Coinbase, Databricks, Reddit and SAP while staying profitable from day one."
     goal: "Acquisition"
+    track: "Open-source"
     learning: "In a category sold only top-down through procurement, give the individual practitioner a forever-free tier with enough room to ship one real production-grade workflow, so they build your business case for you before sales ever engages."
     when_it_works: "Works when a single hands-on practitioner inside the buyer can get real value alone and has the standing to champion a later enterprise purchase."
     metric_moved: "free_to_paid"

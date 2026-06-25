@@ -49,6 +49,7 @@ plays:
   - title: "Have founders sell to CISOs until first millions, then hire a CRO"
     summary: "Wiz skipped freemium and self-serve entirely. From day one the founders personally ran top-down sales to Fortune 500 CISOs, learning the exact ICP, positioning, and objections firsthand rather than delegating discovery. They closed roughly the first couple million in ARR themselves and only then brought in a CRO and a repeatable motion, backed by reference logos like Morgan Stanley, DocuSign, Slack, and BMW."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "Do not hire salespeople until the founders have personally closed the first few million in ARR: the founder needs to feel the exact objections, ICP, and winning pitch firsthand so the playbook you hand a CRO is real, not theoretical. Premature sales hires sell a story nobody has validated."
     when_it_works: "Works for high-ACV, top-down enterprise products where one founder can credibly hold a conversation with the economic buyer; fails for low-ACV self-serve where the bottleneck is volume, not credibility."
     metric_moved: "arr"

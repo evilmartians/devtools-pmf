@@ -33,6 +33,7 @@ plays:
   - title: "Be the neutral pane of glass, never the storage lock-in"
     summary: "Observability vendors usually force you to ship data into their proprietary store before you can see it, which makes adoption a rip-and-replace decision. Grafana ran the opposite play: stay data-source agnostic and read whatever already exists, building and accepting 100+ data source plugins for Prometheus, Elasticsearch, cloud providers, and even direct competitors. Because trying Grafana required zero data migration, the average deployment wires up 16 data sources (24 at companies over 5,000 employees) and Grafana becomes the default front end for the whole stack."
     goal: "Acquisition"
+    track: "Integrations & ecosystem"
     learning: "If incumbents win by owning the data store, attack as the read-only layer that sits on top of data wherever it already lives, including your competitors' stores, so adopting you costs zero migration. The more sources a user connects through you, the more you become their default surface and the harder you are to remove."
     when_it_works: "Works when buyers already have data scattered across many tools and the switching cost of consolidating storage is the real barrier to trying a new vendor."
     metric_moved: "organic adoption / users"

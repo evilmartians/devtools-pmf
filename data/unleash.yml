@@ -33,6 +33,7 @@ plays:
   - title: "Wait for the \"can you host this for me?\" email"
     summary: "Ivar Østhus built Unleash to solve his own deploy-coupling pain at Finn.no in 2014, open-sourced it on GitHub in 2015, and ran it as a pure side project for ~4 years with no company behind it. He refused to commercialize on a hunch and instead waited for a specific buying signal: by late 2018 enterprises were emailing him asking for paid enterprise functionality, and one explicitly asked if he would just host it for them. Only after that inbound did the brothers incorporate (2019) and ship a hosted version, reaching 120 paying customers by the 2022 Series A."
     goal: "Acquisition"
+    track: "Open-source"
     learning: "Don't guess at willingness to pay: open-source the tool, then treat unsolicited \"can you host this / sell us enterprise features?\" emails as your signal to incorporate. The day a stranger offers to pay you to run it is the day demand is real."
     when_it_works: "Works when the tool solves an infrastructure pain teams already feel acutely, so adopters self-select and surface the buying signal without you prospecting."
     metric_moved: "paying customers"

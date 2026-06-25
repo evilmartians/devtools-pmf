@@ -98,6 +98,7 @@ plays:
   - title: "Engineer a free-tier loop that walks the tool into teams"
     summary: "Cursor ran a deliberate bottom-up loop with no outbound sales for years: a free tier (2,000 completions/month) seeds personal use, the developer hits the contrast with single-line Copilot and upgrades to $20/mo Pro, then mentions it in standup so teammates try it, the manager sees faster shipping, and the org buys a Business plan. The same engineers then surface it at conferences, restarting the loop. A 40-60 person team rode this to scale with effectively $0 paid marketing."
     goal: "Acquisition"
+    track: "Word-of-mouth & outbound"
     learning: "Design the free tier as the first step of an explicit expansion path: make individual value obvious so solo users upgrade, then build the product so paid individuals naturally pull in teammates (visible output, shared workflows), letting bottom-up adoption replace an outbound sales motion."
     when_it_works: "Works when individual value is felt before team value and adoption is visible to peers; it stalls where the buyer is top-down and individual usage stays invisible inside the org."
     metric_moved: "organic"

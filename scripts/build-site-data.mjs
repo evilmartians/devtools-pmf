@@ -16,12 +16,15 @@ const CAT = { tooling: "Tooling", infra: "Infrastructure", security: "Security" 
 
 // The filter/chapter dimension. The Acquisition goal is split into 5 channel
 // tracks; the rest of the funnel stays as single tracks.
+// Acquisition is split into explicit channel tracks (each play carries `track`,
+// assigned by review). The rest of the funnel stays one track per goal.
 const TRACKS = [
   { track: "Open-source", group: "Get users", blurb: "Turn the open-source project into the funnel." },
-  { track: "Launches", group: "Get users", blurb: "Win attention with launches and building in public." },
-  { track: "Community", group: "Get users", blurb: "Grow through community, events, and DevRel." },
+  { track: "Launches & build-in-public", group: "Get users", blurb: "Win attention with launches and building in public." },
+  { track: "Community & DevRel", group: "Get users", blurb: "Grow through community, events, and developer relations." },
   { track: "Content & SEO", group: "Get users", blurb: "Pull demand with content, docs, and search." },
-  { track: "Word-of-mouth", group: "Get users", blurb: "Engineer referrals, virality, and the free-tier wedge." },
+  { track: "Integrations & ecosystem", group: "Get users", blurb: "Ride another platform's marketplace, integrations, or embeds." },
+  { track: "Word-of-mouth & outbound", group: "Get users", blurb: "Referrals and virality, or founder-led outreach and partnerships." },
   { track: "Activation", group: "Convert & grow", blurb: "Get new users to value fast." },
   { track: "Conversion", group: "Convert & grow", blurb: "Turn free users into paying ones." },
   { track: "Retention", group: "Convert & grow", blurb: "Keep customers and cut churn." },
@@ -30,20 +33,9 @@ const TRACKS = [
 ];
 const TRACK_INDEX = Object.fromEntries(TRACKS.map((t, i) => [t.track, i]));
 
-// Split an Acquisition recipe into a channel track by its strongest tag.
-const TRACK_TAGS = [
-  ["Open-source", ["open-source", "github", "dogfooding"]],
-  ["Launches", ["launch-week", "hacker-news", "product-hunt", "changelog-marketing", "transparency", "twitter-x", "linkedin", "youtube"]],
-  ["Community", ["developer-advocacy", "community-led", "slack-community", "discord", "conference-talk", "newsletter"]],
-  ["Content & SEO", ["content-seo", "docs-as-marketing", "templates-starters"]],
-];
-function acquisitionTrack(tags) {
-  const t = new Set(tags || []);
-  for (const [track, list] of TRACK_TAGS) if (list.some((x) => t.has(x))) return track;
-  return "Word-of-mouth"; // free-tier wedge, virality, integrations, word-of-mouth, default
-}
-function trackOf(goal, tags) {
-  return goal === "Acquisition" ? acquisitionTrack(tags) : goal;
+function trackOf(goal, play) {
+  if (goal !== "Acquisition") return goal;
+  return play.track || "Word-of-mouth & outbound"; // explicit channel from review; safe default
 }
 
 const recipes = [];
@@ -58,7 +50,7 @@ for (const f of fs.readdirSync(dataDir).filter((f) => f.endsWith(".yml") || f.en
       categoryLabel: CAT[doc.sub_industry] || doc.sub_industry,
       gtm: doc.gtm,
       goal,
-      track: trackOf(goal, p.tags),
+      track: trackOf(goal, p),
       title: p.title,
       learning: p.learning || "",
       when_it_works: p.when_it_works || "",
