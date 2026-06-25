@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "DevTools PMF Benchmarks: a source-checked, tier-graded dataset of product-market-fit metrics for developer tools, infrastructure, and security companies.",
+  "description": "DevTools PMF: an open, source-checked dataset of how developer-tools, infra, and security companies reached product-market fit. Benchmark metrics plus a cookbook of transferable plays.",
   "license": "CC-BY-4.0",
   "scripts": {
     "validate": "node scripts/validate.mjs",

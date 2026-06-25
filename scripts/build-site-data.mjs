@@ -38,9 +38,31 @@ function trackOf(goal, play) {
   return play.track || "Word-of-mouth & outbound"; // explicit channel from review; safe default
 }
 
+// Surface each company's verified benchmark numbers on its cards (the
+// "what's good for a company like mine?" data, which previously never
+// reached the site). Show the highest-signal few, cleaned and tier-stamped.
+const METRIC_LABEL = { nrr: "NRR", free_to_paid: "Free→paid", retention: "Retention", ttfv: "TTFV", organic: "Organic", arr: "ARR" };
+const METRIC_PRIORITY = ["nrr", "free_to_paid", "retention", "ttfv", "organic", "arr"];
+function cleanMetric(v) {
+  const s = String(v || "").split(/\s*[(/]/)[0].trim();
+  return s.length > 24 ? s.slice(0, 23) + "…" : s;
+}
+function companyMetricStrip(metrics) {
+  const by = {};
+  for (const m of metrics || []) by[m.field] = m;
+  const out = [];
+  for (const f of METRIC_PRIORITY) {
+    const m = by[f];
+    if (m && m.value && cleanMetric(m.value)) out.push({ label: METRIC_LABEL[f], value: cleanMetric(m.value), tier: m.tier });
+    if (out.length >= 4) break;
+  }
+  return out;
+}
+
 const recipes = [];
 for (const f of fs.readdirSync(dataDir).filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"))) {
   const doc = yaml.load(fs.readFileSync(path.join(dataDir, f), "utf8"));
+  const companyMetrics = companyMetricStrip(doc.metrics);
   for (const p of doc.plays || []) {
     const goal = p.goal || "Acquisition";
     recipes.push({
@@ -49,6 +71,7 @@ for (const f of fs.readdirSync(dataDir).filter((f) => f.endsWith(".yml") || f.en
       sub_industry: doc.sub_industry,
       categoryLabel: CAT[doc.sub_industry] || doc.sub_industry,
       gtm: doc.gtm,
+      companyMetrics,
       goal,
       track: trackOf(goal, p),
       title: p.title,
