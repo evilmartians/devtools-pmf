@@ -4,8 +4,12 @@ import data from "../data/cookbook.json";
 
 // The PMF Compass section on the Evil Martians homepage.
 const BENCHMARK_URL = "https://evilmartians.com/#pmf-compass";
+const CONTACT_URL = "https://evilmartians.com/contact-us";
 const REPO_URL = "https://github.com/evilmartians/devtools-pmf";
 const ISSUE_URL = `${REPO_URL}/issues/new?template=add-data-point.yml`;
+// Set to the final deploy domain before launch (must match `site` in astro.config.mjs).
+const SITE_URL = "https://devtools-pmf.evilmartians.com";
+const OG_IMAGE = `${SITE_URL}/og.png`;
 
 const getUsers = data.tracks.filter((t) => t.group === "Get users");
 const grow = data.tracks.filter((t) => t.group === "Convert & grow");
@@ -22,9 +26,21 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The DevTools Cookbook — Field Manual, Vol. 2026</title>
-    <meta name="description" content="190 sourced product-market-fit recipes from developer tools, infrastructure, and security companies. Filter by your goal; each is a transferable play. By Evil Martians." />
+    <title>The DevTools Cookbook — what 67 devtools companies did to hit PMF</title>
+    <meta name="description" content="190 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians." />
+    <link rel="canonical" href={SITE_URL + "/"} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={SITE_URL + "/"} />
+    <meta property="og:title" content="The DevTools Cookbook" />
+    <meta property="og:description" content="190 sourced plays real devtools companies used to hit product-market fit. Filter by your goal." />
+    <meta property="og:image" content={OG_IMAGE} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The DevTools Cookbook" />
+    <meta name="twitter:description" content="190 sourced plays real devtools companies used to hit product-market fit." />
+    <meta name="twitter:image" content={OG_IMAGE} />
     <link rel="preload" href="/fonts/grotesk-expanded-ultrablack.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/grotesk-regular.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/grotesk-expanded-bold.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="/fonts/martian-mono-700.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
@@ -42,15 +58,15 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
           <span class="ct-small">The DevTools</span>
           <span class="ct-big foil">Cookbook</span>
         </h1>
-        <p class="cover-sub mono">{data.stats.recipes} sourced recipes for product-market fit</p>
+        <p class="cover-sub mono">What {data.stats.companies} devtools companies actually did to reach product-market fit</p>
         <div class="stats">
           <div class="stat"><span class="snum">{data.stats.recipes}</span><span class="slabel mono">Recipes</span></div>
           <div class="stat"><span class="snum">{data.stats.companies}</span><span class="slabel mono">Companies</span></div>
           <div class="stat"><span class="snum">{data.stats.tactics}</span><span class="slabel mono">Tactics</span></div>
         </div>
         <div class="cta">
-          <a class="btn btn-primary" href="#recipes">Find your recipe</a>
-          <a class="btn btn-ghost" href={BENCHMARK_URL}>Test your company →</a>
+          <a class="btn btn-primary" href="#recipes">Browse {data.stats.recipes} plays →</a>
+          <a class="btn btn-ghost" href={BENCHMARK_URL}>Benchmark your company →</a>
         </div>
       </div>
       <div class="scroll-cue mono" aria-hidden="true">▾ open the book</div>
@@ -63,16 +79,17 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         <h2 class="section-title">Each recipe is a play you can run</h2>
         <div class="fw-grid">
           <p class="fw-lede">
-            <span class="dropcap">N</span>obody discloses the move that worked. This book separates the
-            tactic you can copy from the anecdote you cannot. Every recipe leads with the transferable play,
-            backs it with the company that ran it, and tells you when it works, so you can judge whether it
-            fits you before you spend a week on it.
+            <span class="dropcap">T</span>he move that worked is usually buried in a conference talk, an S-1
+            footnote, or a five-year-old blog post. We dug it out, generalized it into a play you can run, and
+            cited it. Each recipe names the company that ran it and, in the <strong>when it works</strong> line,
+            tells you when it does not, because every company here is a survivor and the honest question is
+            whether the play fits <em>you</em>.
           </p>
           <div class="legend">
             <p class="legend-h mono">Provenance</p>
             <div class="legend-row"><span class="stamp verified">Verified</span><span>Primary source: filing, official post, or a named spokesperson on record.</span></div>
             <div class="legend-row"><span class="stamp reported">Reported</span><span>A single credible secondary source, e.g. trade journalism.</span></div>
-            <div class="legend-row"><span class="stamp estimated">Estimated</span><span>Well-documented lore without a clean primary link.</span></div>
+            <div class="legend-row"><span class="stamp estimated">Estimated</span><span>Widely reported across secondary accounts; no single primary link.</span></div>
           </div>
         </div>
       </section>
@@ -118,11 +135,11 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
           <div class="controls">
             <input id="search" class="search" type="search" placeholder="Search plays, companies, tactics…" autocomplete="off" aria-label="Search recipes" />
             <div class="controls-right">
-              <span id="count" class="mono"></span>
+              <span id="count" class="mono" role="status" aria-live="polite"></span>
               <button id="clear" class="clearbtn mono" type="button" hidden>reset ✕</button>
             </div>
           </div>
-          <p id="synth" class="synth mono" hidden></p>
+          <p id="synth" class="synth mono" role="status" aria-live="polite" aria-atomic="true" hidden></p>
 
           {chapters.map((ch) => (
             <div class="catgroup" data-track={ch.track}>
@@ -160,7 +177,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                       </div>
                       {r.source_url
                         ? <a class="rsrc mono" href={r.source_url} target="_blank" rel="noopener" title={r.attribution}>Source ↗</a>
-                        : <span class="rsrc mono dim" title={r.attribution}>lore</span>}
+                        : <span class="rsrc mono dim" title={r.attribution}>no direct link</span>}
                     </div>
                   </article>
                 ))}
@@ -170,6 +187,12 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
 
           <p id="empty" class="empty" hidden>No plays match that combination. <button id="empty-clear" class="linklike">Reset the filters.</button></p>
           <p class="caveat">These are plays that worked for these companies. Treat them as leads to test, not guarantees.</p>
+
+          <div class="cta-band">
+            <p class="cta-band-h">Stuck on one of these moves?</p>
+            <p class="cta-band-sub">The Martians who compiled this cookbook work on developer-tools go-to-market for a living. Bring us your goal, we'll help you run the play.</p>
+            <a class="btn btn-primary" href={CONTACT_URL}>Work with Evil Martians →</a>
+          </div>
         </div>
       </section>
 
@@ -253,7 +276,11 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
           if (show) visible++;
         }
         for (const g of groups) g.classList.toggle("is-hidden", !g.querySelector(".recipe:not(.is-hidden)"));
-        for (const b of facetBtns) b.classList.toggle("is-active", state[b.dataset.facet] === b.dataset.val);
+        for (const b of facetBtns) {
+          const on = state[b.dataset.facet] === b.dataset.val;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-pressed", String(on));
+        }
         const active = state.track || state.gtm || state.cat || state.tag || query;
         countEl.textContent = active ? `${visible} / ${total}` : `${total} plays`;
         clearBtn.hidden = !active;
@@ -368,12 +395,13 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
 
       .controls { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; position: sticky; top: 0; z-index: 5; padding: 1rem 0; margin: 1.4rem 0 0.2rem; background: linear-gradient(var(--void), rgba(5,3,4,0.86)); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
       .search { flex: 1; min-width: 240px; background: rgba(20,12,17,0.8); border: 1px solid var(--line-strong); color: var(--paper); font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; padding: 0.8em 1em; border-radius: 4px; }
-      .search:focus { outline: none; border-color: var(--red); }
+      .search:focus { border-color: var(--red); }
       .controls-right { display: flex; align-items: center; gap: 1rem; }
       #count { color: var(--paper-faint); }
       .clearbtn { color: var(--red); background: none; border: none; cursor: pointer; }
       .synth { color: var(--paper); margin: 0.4rem 0 0; letter-spacing: 0.06em; }
 
+      .catgroup { content-visibility: auto; contain-intrinsic-size: 1px 1200px; }
       .catgroup.is-hidden, .recipe.is-hidden { display: none; }
       .catdivider { display: flex; align-items: baseline; gap: 1rem; margin: 2.8rem 0 1.4rem; border-bottom: 1.5px solid var(--line-strong); padding-bottom: 0.7rem; flex-wrap: wrap; }
       .cd-no { color: var(--red); }
@@ -414,6 +442,9 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
 
       .empty { text-align: center; color: var(--paper-dim); padding: 3rem 0; }
       .caveat { text-align: center; color: var(--paper-faint); font-size: 0.85rem; margin-top: 3rem; font-style: italic; }
+      .cta-band { margin-top: 3.5rem; padding: 2.4rem; text-align: center; border: 1px solid var(--line-strong); border-radius: 10px; background: radial-gradient(120% 100% at 50% 0%, rgba(228,60,12,0.14), rgba(20,12,17,0.5)); }
+      .cta-band-h { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.2rem, 3vw, 1.7rem); letter-spacing: 0.03em; margin: 0 0 0.6rem; }
+      .cta-band-sub { color: var(--paper-dim); max-width: 46ch; margin: 0 auto 1.6rem; font-size: 0.98rem; }
       .linklike { background: none; border: none; color: var(--red); cursor: pointer; font: inherit; text-decoration: underline; }
 
       /* ---------------- TACTIC INDEX ---------------- */

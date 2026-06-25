@@ -46,7 +46,7 @@ plays:
     metric_moved: "growth"
     result: "Kafka adopted by 150,000+ organizations and ~35% of the Fortune 500, feeding Confluent's $922M FY2024 subscription revenue."
     tier: "Reported"
-    source_type: "estimate"
+    source_type: "spokesperson"
     source_url: "https://opensourceunderdogs.com/episode-13-confluent-apache-kafka-streaming-with-jay-kreps/"
     attribution: "Jay Kreps (CEO, co-founder), Open Source Underdogs podcast Ep. 13"
     tags:
@@ -78,7 +78,7 @@ plays:
     metric_moved: "nrr"
     result: "Usage-based model underpins 114% net retention (Q3 2025); Confluent Cloud revenue grew ~41% YoY to ~$492M (FY2024)."
     tier: "Reported"
-    source_type: "estimate"
+    source_type: "spokesperson"
     source_url: "https://opensourceunderdogs.com/episode-13-confluent-apache-kafka-streaming-with-jay-kreps/"
     attribution: "Jay Kreps (CEO), Open Source Underdogs podcast; Confluent Cloud free-trial terms ($400 credits, no card) per docs.confluent.io"
     tags:

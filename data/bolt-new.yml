@@ -66,7 +66,7 @@ plays:
       - "activation"
   - title: "Run support at 90% AI deflection to keep team tiny"
     summary: "Instead of staffing a support org to match its explosive user growth, Bolt.new pushed roughly 90% of customer support through AI agents, running ~100K paying customers with about 3 support staff. The lean structure let a 25-35 person company reach ~$40M ARR, roughly $1.1M revenue per employee. Because Bolt itself is an AI product, dogfooding AI on the support surface both saved headcount and kept margins defensible against heavy WebContainers/LLM compute costs."
-    goal: "Retention"
+    goal: "Revenue"
     learning: "When usage explodes faster than you can hire, route the high-volume, repetitive support tier to an AI agent backed by your own docs and resolve only escalations with humans, so support cost stays flat while users scale; track deflection rate as a first-class metric and keep the human team for the hard cases."
     when_it_works: "Works when most support tickets are repetitive how-to questions answerable from existing docs/product context; fails for high-stakes or highly bespoke support where a wrong AI answer is costly."
     metric_moved: "support cost / revenue-per-employee"

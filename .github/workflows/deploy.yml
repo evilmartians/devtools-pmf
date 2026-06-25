@@ -1,0 +1,44 @@
+name: Deploy site
+
+# Manual-trigger only for now. Once GitHub Pages is enabled (Settings → Pages →
+# Source: GitHub Actions) and the domain is set, add the `push` trigger below.
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+  #   paths: ["site/**", "data/**", "scripts/**", ".github/workflows/deploy.yml"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # Root deps (js-yaml) power the data generator the site prebuild runs.
+      - run: npm ci
+      - run: cd site && npm ci && npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

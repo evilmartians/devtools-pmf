@@ -46,7 +46,7 @@ plays:
     metric_moved: "free_to_paid"
     result: "Free tier became top-of-funnel for an enterprise motion; 400+ customers by mid-2025, 122% NRR (company-reported), and >1B automated actions per week."
     tier: "Reported"
-    source_type: "aggregator"
+    source_type: "press"
     source_url: "https://www.tines.com/blog/announcing-the-tines-community-edition/"
     attribution: "Tines blog 'Announcing the Tines Community Edition' (edition limits); Contrary Research company report on Tines (400+ customers, profitability)"
     tags:

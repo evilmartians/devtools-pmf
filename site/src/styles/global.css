@@ -22,12 +22,6 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Grotesk";
-  src: url("/fonts/grotesk-medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
   font-family: "Martian Mono";
   src: url("/fonts/martian-mono-400.woff2") format("woff2");
   font-weight: 400;
@@ -61,8 +55,8 @@
   --violet-2: #1a0a22;
 
   --paper: #f6ece2;
-  --paper-dim: rgba(246, 236, 226, 0.62);
-  --paper-faint: rgba(246, 236, 226, 0.36);
+  --paper-dim: rgba(246, 236, 226, 0.66);
+  --paper-faint: rgba(246, 236, 226, 0.55);
   --line: rgba(246, 236, 226, 0.13);
   --line-strong: rgba(246, 236, 226, 0.26);
 
@@ -139,6 +133,9 @@ body::after {
 a { color: var(--cyan); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
+/* Visible keyboard focus on the dark theme (the page is filter-driven). */
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 2px; }
+
 ::selection { background: var(--red); color: var(--paper); }
 
 /* Foil/chrome text used on the cover title */
@@ -148,6 +145,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+/* Don't let the brand title vanish where background-clip:text is unsupported. */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .foil { color: var(--gold); }
+}
+@media (forced-colors: active) {
+  .foil { -webkit-text-fill-color: CanvasText; color: CanvasText; }
 }
 
 /* Layout helpers */
@@ -171,4 +175,6 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+  /* the CRT/scanline overlay lowers text contrast; calm it right down */
+  body::after { opacity: 0.12; }
 }

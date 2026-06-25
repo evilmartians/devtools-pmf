@@ -81,7 +81,7 @@ plays:
       - "migration"
   - title: "Make one default feature an instant wow on install"
     summary: "Cursor's wedge was Tab, a custom model that predicts your next edit (not just the next token) and fires the instant you type, with no setup or prompting. By Cursor's own account Tab \"opened the first era of AI-assisted coding\" and gave \"significant leverage for nearly two years.\" The visceral, on-by-default wow moment turned trials into daily habits and made developers evangelize the tool unprompted."
-    goal: "Acquisition"
+    goal: "Activation"
     learning: "Pick one wedge feature that delivers a visible payoff within seconds of install, turn it on by default with no configuration, and let that single moment carry trial-to-habit conversion and word-of-mouth instead of relying on a broad feature pitch."
     when_it_works: "Works when you can engineer a genuinely surprising result that lands in the first session; it backfires if the wow requires setup, data, or a learning curve before it triggers."
     metric_moved: "growth"

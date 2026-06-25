@@ -54,7 +54,7 @@ plays:
     metric_moved: "signups / search intent"
     result: "Show HN launch drove early traction; grew to 1.7M+ registered developers and 81K+ GitHub stars by April 2025."
     tier: "Verified"
-    source_type: "aggregator"
+    source_type: "press"
     source_url: "https://news.ycombinator.com/item?id=25289254"
     attribution: "Supabase 'open source Firebase alternative' Show HN, Dec 2020"
     tags:

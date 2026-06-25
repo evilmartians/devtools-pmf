@@ -62,7 +62,7 @@ plays:
     metric_moved: "organic signups"
     result: "HN front page: 154 points, 37 comments (Jul 2025), plus pickup on daily.dev, Devtalk, and X. Concrete benchmark: 49.8 to 327.5 MB/s, 8s to ~1s."
     tier: "Verified"
-    source_type: "aggregator"
+    source_type: "press"
     source_url: "https://news.ycombinator.com/item?id=44658909"
     attribution: "Hacker News story linking blacksmith.sh/blog/cache (154 pts / 37 comments); post at https://www.blacksmith.sh/blog/cache (benchmark: 49.8 to 327.5 MB/s; Twirp/protobuf protocol sniffed with Claude; NGINX + host proxy + Azure-to-S3 translator)"
     tags:
