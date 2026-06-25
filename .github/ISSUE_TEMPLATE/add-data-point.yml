@@ -1,6 +1,6 @@
-name: Add or update a data point
-description: Contribute a PMF metric for a devtools, infrastructure, or security company.
-title: "[data] <company> — <metric>"
+name: Add a benchmark metric
+description: Contribute a PMF number (ARR, NRR, free-to-paid, etc.) for a devtools, infra, or security company. For a growth tactic, use "Add a play" instead.
+title: "[metric] <company> — <field>"
 labels: ["data-submission"]
 body:
   - type: markdown

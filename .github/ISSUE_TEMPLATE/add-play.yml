@@ -1,0 +1,115 @@
+name: Add a play (Cookbook recipe)
+description: Contribute a growth / PMF play a company used, and the transferable lesson.
+title: "[play] <company> — <tactic>"
+labels: ["play-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share a documented move a developer-tools, infra, or security company made to reach product-market fit.
+        The best submissions are a specific, reusable tactic plus the generalized lesson and an honest "when it works".
+        A maintainer turns this into a data file. Founders: you can submit your own company's plays.
+  - type: input
+    id: company
+    attributes: { label: Company, placeholder: Acme Inc. }
+    validations: { required: true }
+  - type: input
+    id: url
+    attributes: { label: Company URL, placeholder: acme.com }
+    validations: { required: true }
+  - type: dropdown
+    id: sub_industry
+    attributes: { label: Sub-industry, options: [tooling, infra, security] }
+    validations: { required: true }
+  - type: dropdown
+    id: gtm
+    attributes: { label: GTM motion, options: [PLG, Sales-assisted, Enterprise] }
+    validations: { required: true }
+  - type: dropdown
+    id: goal
+    attributes:
+      label: Goal (what did the play move?)
+      options: [Acquisition, Activation, Conversion, Retention, Expansion, Revenue]
+    validations: { required: true }
+  - type: dropdown
+    id: track
+    attributes:
+      label: Channel (only if the goal is Acquisition)
+      options:
+        - "n/a (not an acquisition play)"
+        - Open-source
+        - Launches & build-in-public
+        - Community & DevRel
+        - Content & SEO
+        - Integrations & ecosystem
+        - Word-of-mouth & outbound
+  - type: input
+    id: title
+    attributes:
+      label: The tactic (title)
+      description: Imperative and specific, max ~9 words.
+      placeholder: "Make migration a one-click import"
+    validations: { required: true }
+  - type: textarea
+    id: summary
+    attributes:
+      label: How the company did it
+      description: 2-4 sentences. The situation, the exact move, the result.
+    validations: { required: true }
+  - type: input
+    id: result
+    attributes:
+      label: Result
+      description: The outcome, quantified if known.
+      placeholder: "Free-to-paid rose from 12% to 35%"
+  - type: textarea
+    id: learning
+    attributes:
+      label: The play (transferable lesson)
+      description: The generalized instruction another founder applies to their own product. Not a restatement of the title.
+    validations: { required: true }
+  - type: textarea
+    id: when_it_works
+    attributes:
+      label: When it works
+      description: The condition under which this pays off (and implicitly when it does not).
+    validations: { required: true }
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Provenance tier
+      options:
+        - "Verified (primary source: filing, official post, or named spokesperson on record)"
+        - "Reported (credible secondary journalism)"
+        - "Estimated (well-documented but no single primary link)"
+    validations: { required: true }
+  - type: dropdown
+    id: source_type
+    attributes: { label: Source type, options: [filing, press, spokesperson, journalism, aggregator, estimate] }
+    validations: { required: true }
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: Required for Verified and Reported. A working link.
+      placeholder: "https://..."
+  - type: input
+    id: attribution
+    attributes:
+      label: Attribution
+      placeholder: "CEO on Lenny's Podcast, Mar 2026"
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated, lowercase-kebab.
+      placeholder: "default-on, onboarding-redesign"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: "If I marked this Verified or Reported, I included a working source URL."
+          required: true
+        - label: "This is a specific, reusable tactic, not generic advice."
+          required: true
