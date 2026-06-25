@@ -493,6 +493,27 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         .frow { grid-template-columns: 1fr; gap: 0.4rem; }
         .flabel { padding-top: 0; }
       }
+      /* Narrow phones: the long uppercase, letter-spaced lines need to shrink to fit
+         with comfortable side margin (the Expanded UltraBlack cut is very wide). */
+      @media (max-width: 540px) {
+        .wrap { width: 90vw; }
+        .hero { padding: 6vh 0 7vh; }
+        .kicker { letter-spacing: 0.08em; font-size: 0.5rem; }
+        .ct-small { font-size: 0.95rem; letter-spacing: 0.08em; }
+        .ct-big { font-size: clamp(1.4rem, 7vw, 4rem); letter-spacing: -0.015em; }
+        .cover-sub { letter-spacing: 0.04em; font-size: 0.52rem; max-width: 32ch; margin-inline: auto; }
+        .stats { gap: 0.9rem; margin-top: 1.8rem; }
+        .snum { font-size: 1.55rem; }
+        .slabel { font-size: 0.5rem; letter-spacing: 0.1em; }
+        .cta { gap: 0.6rem; margin-top: 2rem; flex-direction: column; align-items: center; }
+        .btn { font-size: 0.66rem; padding: 0.9em 1.1em; letter-spacing: 0.08em; width: 100%; max-width: 300px; text-align: center; }
+        .cta-band { padding: 1.6rem 1.1rem; }
+        .cta-band-h { font-size: 1.05rem; }
+        .foot-nav { gap: 0.7rem 1rem; }
+        .foot-nav a { font-size: 0.62rem; }
+        .catdivider { gap: 0.5rem 0.8rem; }
+        .cd-blurb { font-size: 0.82rem; }
+      }
     </style>
   </body>
 </html>
