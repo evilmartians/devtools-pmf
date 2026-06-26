@@ -28,6 +28,7 @@ for (const f of fs.readdirSync(dir).filter((f) => f.endsWith(".yml") || f.endsWi
       when_it_works: p.when_it_works || "",
       summary: p.summary,
       result: p.result || "",
+      tradeoff: p.tradeoff || "",
       tier: p.tier,
       source_url: p.source_url || "",
       attribution: p.attribution || "",
@@ -85,6 +86,7 @@ for (const r of recipes) {
   md.push(`**How [${r.company}](https://${r.url}) did it** _(${r.tier})_ — ${r.summary}`);
   md.push("");
   if (r.result) md.push(`**Result:** ${r.result}`);
+  if (r.tradeoff) md.push(`**The cost:** ${r.tradeoff}`);
   if (r.when_it_works) md.push(`**When it works:** ${r.when_it_works}`);
   if (r.source_url) md.push(`**Source:** [${r.attribution || "link"}](${r.source_url})`);
   md.push(`**Tags:** ${r.tags.map((t) => `\`${t}\``).join(" ")}`);

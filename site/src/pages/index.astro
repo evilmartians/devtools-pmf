@@ -178,6 +178,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                       )}
                       <p class="rsum">{r.summary}</p>
                       {r.result && (<p class="rres"><span class="rres-l mono">Result</span> {r.result}</p>)}
+                      {r.tradeoff && (<p class="rcost"><span class="rcost-l mono">The cost</span> {r.tradeoff}</p>)}
                     </div>
                     {r.when_it_works && (
                       <p class="r-when"><span class="r-when-l mono">When it works</span> {r.when_it_works}</p>
@@ -453,6 +454,8 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
       .rsum { color: var(--paper-dim); font-size: 0.9rem; margin: 0 0 0.7rem; }
       .rres { font-size: 0.86rem; color: var(--paper); margin: 0; padding-left: 0.75rem; border-left: 2px solid var(--line-strong); }
       .rres-l { color: var(--red); display: block; margin-bottom: 0.15rem; font-size: 0.58rem; }
+      .rcost { font-size: 0.84rem; color: var(--paper-dim); margin: 0.7rem 0 0; padding-left: 0.75rem; border-left: 2px solid var(--ember); }
+      .rcost-l { color: var(--ember); display: block; margin-bottom: 0.15rem; font-size: 0.58rem; }
 
       .r-when { font-size: 0.82rem; color: var(--paper-faint); margin: 0.9rem 0 0; line-height: 1.45; }
       .r-when-l { color: var(--gold); display: block; margin-bottom: 0.2rem; font-size: 0.58rem; }

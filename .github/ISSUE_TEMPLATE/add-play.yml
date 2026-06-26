@@ -74,6 +74,12 @@ body:
       label: When it works
       description: The condition under which this pays off (and implicitly when it does not).
     validations: { required: true }
+  - type: textarea
+    id: tradeoff
+    attributes:
+      label: The tradeoff / cost
+      description: What did this play cost them, or what did they give up? Every real move has a downside, name the honest one (a structural cost is fine).
+      placeholder: "Ongoing burden to track and merge upstream changes from the forked project."
   - type: dropdown
     id: tier
     attributes:

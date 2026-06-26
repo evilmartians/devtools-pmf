@@ -79,6 +79,7 @@ for (const f of fs.readdirSync(dataDir).filter((f) => f.endsWith(".yml") || f.en
       when_it_works: p.when_it_works || "",
       summary: p.summary,
       result: p.result || "",
+      tradeoff: p.tradeoff || "",
       metric_moved: p.metric_moved || "",
       tier: p.tier,
       source_url: p.source_url || "",
