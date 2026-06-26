@@ -17,553 +17,1936 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
-    <title>The DevTools Cookbook — what 67 devtools companies did to hit PMF</title>
-    <meta name="description" content="198 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians." />
-    <link rel="canonical" href={SITE_URL + "/"} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={SITE_URL + "/"} />
-    <meta property="og:title" content="The DevTools Cookbook" />
-    <meta property="og:description" content="198 sourced plays real devtools companies used to hit product-market fit. Filter by your goal." />
-    <meta property="og:image" content={OG_IMAGE} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The DevTools Cookbook" />
-    <meta name="twitter:description" content="198 sourced plays real devtools companies used to hit product-market fit." />
-    <meta name="twitter:image" content={OG_IMAGE} />
-    <link rel="preload" href="/fonts/grotesk-expanded-ultrablack.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/grotesk-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/grotesk-expanded-bold.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/martian-mono-700.woff2" as="font" type="font/woff2" crossorigin />
-  </head>
-  <body>
-    <!-- ====================== HERO ====================== -->
-    <header class="hero">
-      <div class="sky" aria-hidden="true">
-        <div class="stars"></div>
-        <div class="sun"></div>
-        <div class="grid"></div>
-        <div class="haze"></div>
-      </div>
-      <div class="hero-inner wrap">
-        <p class="kicker">Field Manual · Vol. 2026 · Evil Martians</p>
-        <h1 class="cover-title">
-          <span class="ct-small">The DevTools</span>
-          <span class="ct-big foil">Cookbook</span>
-        </h1>
-        <p class="cover-sub mono">What {data.stats.companies} devtools companies actually did to reach product-market fit</p>
-        <div class="stats">
-          <div class="stat"><span class="snum">{data.stats.recipes}</span><span class="slabel mono">Recipes</span></div>
-          <div class="stat"><span class="snum">{data.stats.companies}</span><span class="slabel mono">Companies</span></div>
-          <div class="stat"><span class="snum">{data.stats.tactics}</span><span class="slabel mono">Tactics</span></div>
-        </div>
-        <div class="cta">
-          <a class="btn btn-primary" href="#recipes">Browse {data.stats.recipes} plays →</a>
-          <a class="btn btn-ghost" href={BENCHMARK_URL}>Benchmark your company →</a>
-        </div>
-      </div>
-      <div class="scroll-cue mono" aria-hidden="true">▾ open the book</div>
-    </header>
-
-    <main>
-      <!-- ====================== FOREWORD ====================== -->
-      <section class="foreword wrap">
-        <p class="kicker">Foreword</p>
-        <h2 class="section-title">Each recipe is a play you can run</h2>
-        <div class="fw-grid">
-          <p class="fw-lede">
-            <span class="dropcap">T</span>he move that worked is usually buried in a conference talk, an S-1
-            footnote, or a five-year-old blog post. We dug it out, generalized it into a play you can run, and
-            cited it. Each recipe names the company that ran it and, in the <strong>when it works</strong> line,
-            tells you when it does not, because every company here is a survivor and the honest question is
-            whether the play fits <em>you</em>.
-          </p>
-          <div class="legend">
-            <p class="legend-h mono">Provenance</p>
-            <div class="legend-row"><span class="stamp verified">Verified</span><span>Primary source: filing, official post, or a named spokesperson on record.</span></div>
-            <div class="legend-row"><span class="stamp reported">Reported</span><span>A single credible secondary source, e.g. trade journalism.</span></div>
-            <div class="legend-row"><span class="stamp estimated">Estimated</span><span>Widely reported across secondary accounts; no single primary link.</span></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ====================== RECIPES (filter -> deck) ====================== -->
-      <section id="recipes" class="recipes">
-        <div class="wrap">
-          <p class="kicker">The Recipes</p>
-          <h2 class="section-title">Find your recipe</h2>
-          <p class="recipes-lede">Pick what you're trying to do, narrow by your specifics, then flip through the matching plays.</p>
-
-          <div class="filterbar">
-            <div class="frow">
-              <span class="flabel mono">Get users</span>
-              <div class="fchips">
-                {getUsers.map((t) => (<button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>))}
-              </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
+        <title>
+            The DevTools Cookbook — what 67 devtools companies did to hit PMF
+        </title>
+        <meta
+            name="description"
+            content="198 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians."
+        />
+        <link rel="canonical" href={SITE_URL + "/"} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE_URL + "/"} />
+        <meta property="og:title" content="The DevTools Cookbook" />
+        <meta
+            property="og:description"
+            content="198 sourced plays real devtools companies used to hit product-market fit. Filter by your goal."
+        />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="The DevTools Cookbook" />
+        <meta
+            name="twitter:description"
+            content="198 sourced plays real devtools companies used to hit product-market fit."
+        />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <link
+            rel="preload"
+            href="/fonts/grotesk-expanded-ultrablack.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/grotesk-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/grotesk-expanded-bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+        <link
+            rel="preload"
+            href="/fonts/martian-mono-700.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+    </head>
+    <body>
+        <!-- ====================== HERO ====================== -->
+        <header class="hero">
+            <div class="sky" aria-hidden="true">
+                <div class="stars"></div>
+                <div class="sun"></div>
+                <div class="grid"></div>
+                <div class="haze"></div>
             </div>
-            <div class="frow">
-              <span class="flabel mono">Grow &amp; keep</span>
-              <div class="fchips">
-                {grow.map((t) => (<button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>))}
-              </div>
-            </div>
-            <div class="frow">
-              <span class="flabel mono">Motion</span>
-              <div class="fchips">{data.motions.map((m) => (<button class="fchip" data-facet="gtm" data-val={m} type="button">{m}</button>))}</div>
-            </div>
-            <div class="frow">
-              <span class="flabel mono">Category</span>
-              <div class="fchips">{data.categories.map((c) => (<button class="fchip" data-facet="cat" data-val={c.key} type="button">{c.label}</button>))}</div>
-            </div>
-          </div>
-
-          <div class="controls">
-            <input id="search" class="search" type="search" placeholder="Search plays, companies, tactics…" autocomplete="off" aria-label="Search recipes" />
-            <div class="controls-right">
-              <span id="count" class="mono" role="status" aria-live="polite"></span>
-              <button id="clear" class="clearbtn mono" type="button" hidden>reset ✕</button>
-            </div>
-          </div>
-          <p id="synth" class="synth mono" role="status" aria-live="polite" aria-atomic="true" hidden></p>
-        </div>
-
-        <div class="deckwrap">
-          <div class="deck-rail" id="deck-rail">
-            {data.recipes.map((r) => (
-              <article class="card" data-id={r.id} data-track={r.track} data-gtm={r.gtm} data-cat={r.sub_industry} data-tags={r.tags.join(" ")}>
-                <div class="c-top">
-                  <span class="rno mono">No. {r.no}</span>
-                  <span class="c-track mono">{r.track}</span>
-                  <span class={`stamp ${tierClass(r.tier)}`}>{r.tier}</span>
+            <div class="hero-inner wrap">
+                <p class="kicker">Vol. 2026 · Evil Martians</p>
+                <h1 class="cover-title">
+                    <span class="ct-small">The DevTools</span>
+                    <span class="ct-big foil">Cookbook</span>
+                </h1>
+                <p class="cover-sub mono">
+                    What {data.stats.companies} devtools companies did to reach product-market
+                    fit
+                </p>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="snum">{data.stats.recipes}</span><span
+                            class="slabel mono">Recipes</span
+                        >
+                    </div>
+                    <div class="stat">
+                        <span class="snum">{data.stats.companies}</span><span
+                            class="slabel mono">Companies</span
+                        >
+                    </div>
+                    <div class="stat">
+                        <span class="snum">{data.stats.tactics}</span><span
+                            class="slabel mono">Tactics</span
+                        >
+                    </div>
                 </div>
-                <h3 class="ctitle">{r.title}</h3>
-                {r.learning && (
-                  <div class="c-learn"><span class="lbl mono">The play</span><p>{r.learning}</p></div>
-                )}
-                <p class="c-co mono">How <a href={`https://${r.url}`} target="_blank" rel="noopener">{r.company}</a> did it<span class="rgtm">{r.gtm}</span></p>
-                {r.companyMetrics.length > 0 && (
-                  <div class="facts" aria-label="Company benchmarks">
-                    {r.companyMetrics.map((f) => (
-                      <div class={`fact t-${f.tier.toLowerCase()}`} title={f.tier}>
-                        <span class="fact-l mono">{f.label}</span>
-                        <span class="fact-n">{f.figure}</span>
-                        {f.qualifier && <span class="fact-q">{f.qualifier}</span>}
-                      </div>
-                    ))}
-                  </div>
-                )}
-                <p class="c-sum">{r.summary}</p>
-                <div class="c-split">
-                  {r.result && (<div class="c-cell c-result"><span class="lbl mono">Result</span><p>{r.result}</p></div>)}
-                  {r.tradeoff && (<div class="c-cell c-cost"><span class="lbl mono">The cost</span><p>{r.tradeoff}</p></div>)}
+                <div class="cta">
+                    <a class="btn btn-primary" href="#recipes"
+                        >Browse {data.stats.recipes} plays →</a
+                    >
+                    <a class="btn btn-ghost" href={BENCHMARK_URL}
+                        >Benchmark your company →</a
+                    >
                 </div>
-                {r.when_it_works && (<p class="c-when"><span class="lbl mono">When it works</span> {r.when_it_works}</p>)}
-                <div class="c-foot">
-                  <div class="rtags">{r.tags.map((t) => (<button class="tag-mini" data-tag={t} type="button">{t}</button>))}</div>
-                  {r.source_url
-                    ? <a class="rsrc mono" href={r.source_url} target="_blank" rel="noopener" title={r.attribution}>Source ↗</a>
-                    : <span class="rsrc mono dim" title={r.attribution}>no direct link</span>}
+            </div>
+            <div class="scroll-cue mono" aria-hidden="true">
+                ▾ open the book
+            </div>
+        </header>
+
+        <main>
+            <!-- ====================== FOREWORD ====================== -->
+            <section class="foreword wrap">
+                <p class="kicker">Foreword</p>
+                <h2 class="section-title">Each recipe is a play you can run</h2>
+                <div class="fw-grid">
+                    <p class="fw-lede">
+                        <span class="dropcap">T</span>he move that worked is
+                        usually buried in a conference talk, an S-1 footnote, or
+                        a five-year-old blog post. We dug it out, generalized it
+                        into a play you can run, and cited it. Each recipe names
+                        the company that ran it and, in the <strong
+                            >when it works</strong
+                        > line, tells you when it does not, because every company
+                        here is a survivor and the honest question is whether the
+                        play fits <em>you</em>.
+                    </p>
+                    <div class="legend">
+                        <p class="legend-h mono">Provenance</p>
+                        <div class="legend-row">
+                            <span class="stamp verified">Verified</span><span
+                                >Primary source: filing, official post, or a
+                                named spokesperson on record.</span
+                            >
+                        </div>
+                        <div class="legend-row">
+                            <span class="stamp reported">Reported</span><span
+                                >A single credible secondary source, e.g. trade
+                                journalism.</span
+                            >
+                        </div>
+                        <div class="legend-row">
+                            <span class="stamp estimated">Estimated</span><span
+                                >Widely reported across secondary accounts; no
+                                single primary link.</span
+                            >
+                        </div>
+                    </div>
                 </div>
-              </article>
-            ))}
-          </div>
-          <div class="deck-nav">
-            <button id="prev" class="deck-arrow" type="button" aria-label="Previous play">←</button>
-            <span id="pos" class="mono" role="status" aria-live="polite"></span>
-            <button id="next" class="deck-arrow" type="button" aria-label="Next play">→</button>
-          </div>
-        </div>
+            </section>
 
-        <div class="wrap">
-          <p id="empty" class="empty" hidden>No plays match that combination. <button id="empty-clear" class="linklike">Reset the filters.</button></p>
-          <p class="caveat">These are plays that worked for these companies. Treat them as leads to test, not guarantees.</p>
-          <div class="cta-band">
-            <p class="cta-band-h">Stuck on one of these moves?</p>
-            <p class="cta-band-sub">The Martians who compiled this cookbook work on developer-tools go-to-market for a living. Bring us your goal, we'll help you run the play.</p>
-            <a class="btn btn-primary" href={CONTACT_URL}>Work with Evil Martians →</a>
-          </div>
-        </div>
-      </section>
+            <!-- ====================== RECIPES (filter -> deck) ====================== -->
+            <section id="recipes" class="recipes">
+                <div class="wrap">
+                    <p class="kicker">The Recipes</p>
+                    <h2 class="section-title">Find your recipe</h2>
+                    <p class="recipes-lede">
+                        Pick what you're trying to do, narrow by your specifics,
+                        then flip through the matching plays.
+                    </p>
 
-      <!-- ====================== TACTIC CROSS-REFERENCE ====================== -->
-      <section class="appendix wrap">
-        <p class="kicker">Appendix A</p>
-        <h2 class="section-title">Or browse by tactic</h2>
-        <p class="appendix-lede">Every recipe is cross-referenced. Pick a tactic or channel to filter the book.</p>
-        <div class="tagcloud">
-          {data.tags.map((t) => (
-            <button class="tagchip" data-facet="tag" data-val={t.tag} type="button">{t.tag}<sup>{t.count}</sup></button>
-          ))}
-        </div>
-      </section>
-    </main>
+                    <div class="filterbar">
+                        <div class="frow">
+                            <span class="flabel mono">Get users</span>
+                            <div class="fchips">
+                                {
+                                    getUsers.map((t) => (
+                                        <button
+                                            class="fchip"
+                                            data-facet="track"
+                                            data-val={t.track}
+                                            type="button"
+                                        >
+                                            {t.track}
+                                            <sup>{t.count}</sup>
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <span class="flabel mono">Grow &amp; keep</span>
+                            <div class="fchips">
+                                {
+                                    grow.map((t) => (
+                                        <button
+                                            class="fchip"
+                                            data-facet="track"
+                                            data-val={t.track}
+                                            type="button"
+                                        >
+                                            {t.track}
+                                            <sup>{t.count}</sup>
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <span class="flabel mono">Motion</span>
+                            <div class="fchips">
+                                {
+                                    data.motions.map((m) => (
+                                        <button
+                                            class="fchip"
+                                            data-facet="gtm"
+                                            data-val={m}
+                                            type="button"
+                                        >
+                                            {m}
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div class="frow">
+                            <span class="flabel mono">Category</span>
+                            <div class="fchips">
+                                {
+                                    data.categories.map((c) => (
+                                        <button
+                                            class="fchip"
+                                            data-facet="cat"
+                                            data-val={c.key}
+                                            type="button"
+                                        >
+                                            {c.label}
+                                        </button>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- ====================== FOOTER ====================== -->
-    <footer class="foot">
-      <div class="wrap foot-inner">
-        <div>
-          <p class="foot-title">The DevTools Cookbook</p>
-          <p class="foot-sub mono">Part of the <a href={REPO_URL}>DevTools PMF</a> dataset · updated {data.generatedAt}</p>
-        </div>
-        <nav class="foot-nav mono">
-          <a href={BENCHMARK_URL}>Test your company →</a>
-          <a href={ISSUE_URL}>Contribute a recipe</a>
-          <a href={REPO_URL}>Source on GitHub</a>
-        </nav>
-        <p class="foot-mark mono">Made by <a href="https://evilmartians.com">Evil Martians</a> · data CC BY 4.0</p>
-      </div>
-    </footer>
+                    <div class="controls">
+                        <input
+                            id="search"
+                            class="search"
+                            type="search"
+                            placeholder="Search plays, companies, tactics…"
+                            autocomplete="off"
+                            aria-label="Search recipes"
+                        />
+                        <div class="controls-right">
+                            <span
+                                id="count"
+                                class="mono"
+                                role="status"
+                                aria-live="polite"></span>
+                            <button
+                                id="clear"
+                                class="clearbtn mono"
+                                type="button"
+                                hidden>reset ✕</button
+                            >
+                        </div>
+                    </div>
+                    <p
+                        id="synth"
+                        class="synth mono"
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                        hidden
+                    >
+                    </p>
+                </div>
 
-    <script>
-      const cards = Array.from(document.querySelectorAll(".card"));
-      const textIndex = new WeakMap();
-      for (const el of cards) textIndex.set(el, el.textContent.toLowerCase());
-      const facetBtns = Array.from(document.querySelectorAll("[data-facet]"));
-      const search = document.getElementById("search");
-      const countEl = document.getElementById("count");
-      const synthEl = document.getElementById("synth");
-      const clearBtn = document.getElementById("clear");
-      const emptyEl = document.getElementById("empty");
-      const rail = document.getElementById("deck-rail");
-      const posEl = document.getElementById("pos");
-      const total = cards.length;
+                <div class="deckwrap">
+                    <div class="deck-rail" id="deck-rail">
+                        {
+                            data.recipes.map((r) => {
+                                const anchor = `${r.company
+                                    .toLowerCase()
+                                    .replace(/[^a-z0-9]+/g, "-")
+                                    .replace(/(^-|-$)/g, "")}-${r.no}`;
+                                return (
+                                    <article
+                                        id={anchor}
+                                        class="card"
+                                        data-id={r.id}
+                                        data-track={r.track}
+                                        data-gtm={r.gtm}
+                                        data-cat={r.sub_industry}
+                                        data-tags={r.tags.join(" ")}
+                                    >
+                                        <div class="c-top">
+                                            <span class="rno mono">
+                                                No. {r.no}
+                                            </span>
+                                            <span class="c-track mono">
+                                                {r.track}
+                                            </span>
+                                            <span
+                                                class={`stamp ${tierClass(r.tier)}`}
+                                            >
+                                                {r.tier}
+                                            </span>
+                                        </div>
+                                        <h3 class="ctitle">{r.title}</h3>
+                                        <div class="c-body">
+                                            <div class="c-col">
+                                                <p class="c-co mono">
+                                                    How{" "}
+                                                    <a
+                                                        href={`https://${r.url}`}
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                    >
+                                                        {r.company}
+                                                    </a>{" "}
+                                                    did it
+                                                    <span class="rgtm">
+                                                        {r.gtm}
+                                                    </span>
+                                                </p>
+                                                <p class="c-sum">{r.summary}</p>
+                                                {r.when_it_works && (
+                                                    <p class="c-when">
+                                                        <span class="lbl mono">
+                                                            When it works
+                                                        </span>{" "}
+                                                        {r.when_it_works}
+                                                    </p>
+                                                )}
+                                                {r.companyMetrics.length >
+                                                    0 && (
+                                                    <div
+                                                        class="facts"
+                                                        aria-label="Company benchmarks"
+                                                    >
+                                                        {r.companyMetrics.map(
+                                                            (f) => (
+                                                                <div
+                                                                    class={`fact t-${f.tier.toLowerCase()}`}
+                                                                    title={
+                                                                        f.tier
+                                                                    }
+                                                                >
+                                                                    <span class="fact-n">
+                                                                        {
+                                                                            f.figure
+                                                                        }
+                                                                    </span>
+                                                                    <span class="fact-l mono">
+                                                                        {
+                                                                            f.label
+                                                                        }
+                                                                    </span>
+                                                                    {f.qualifier && (
+                                                                        <span class="fact-q">
+                                                                            {
+                                                                                f.qualifier
+                                                                            }
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                            ),
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div class="c-col c-col-r">
+                                                {r.learning && (
+                                                    <div class="c-learn">
+                                                        <span class="c-tab mono">
+                                                            Play
+                                                        </span>
+                                                        <p>{r.learning}</p>
+                                                    </div>
+                                                )}
+                                                <div class="c-split">
+                                                    {r.result && (
+                                                        <div class="c-cell c-result">
+                                                            <span class="c-tab mono">
+                                                                Result
+                                                            </span>
+                                                            <p>{r.result}</p>
+                                                        </div>
+                                                    )}
+                                                    {r.tradeoff && (
+                                                        <div class="c-cell c-cost">
+                                                            <span class="c-tab mono">
+                                                                Cost
+                                                            </span>
+                                                            <p>{r.tradeoff}</p>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="c-foot">
+                                            <div class="rtags">
+                                                {r.tags.map((t) => (
+                                                    <button
+                                                        class="tag-mini"
+                                                        data-tag={t}
+                                                        type="button"
+                                                    >
+                                                        {t}
+                                                    </button>
+                                                ))}
+                                            </div>
+                                            {r.source_url ? (
+                                                <a
+                                                    class="rsrc mono"
+                                                    href={r.source_url}
+                                                    target="_blank"
+                                                    rel="noopener"
+                                                    title={r.attribution}
+                                                >
+                                                    Source ↗
+                                                </a>
+                                            ) : (
+                                                <span
+                                                    class="rsrc mono dim"
+                                                    title={r.attribution}
+                                                >
+                                                    no direct link
+                                                </span>
+                                            )}
+                                        </div>
+                                    </article>
+                                );
+                            })
+                        }
+                    </div>
+                    <div class="deck-nav">
+                        <button
+                            id="prev"
+                            class="deck-arrow"
+                            type="button"
+                            aria-label="Previous play">←</button
+                        >
+                        <span
+                            id="pos"
+                            class="mono"
+                            role="status"
+                            aria-live="polite"></span>
+                        <button
+                            id="next"
+                            class="deck-arrow"
+                            type="button"
+                            aria-label="Next play">→</button
+                        >
+                        <button
+                            id="mute"
+                            class="deck-snd mono"
+                            type="button"
+                            aria-pressed="true"
+                            aria-label="Toggle flip sound"
+                            title="Flip sound">♪</button
+                        >
+                    </div>
+                </div>
 
-      const TRACK_VERB = {
-        "Open-source": "drive open-source adoption",
-        "Launches & build-in-public": "win attention with launches",
-        "Community & DevRel": "grow your community",
-        "Content & SEO": "pull demand with content",
-        "Integrations & ecosystem": "grow through integrations",
-        "Word-of-mouth & outbound": "spread by word of mouth and outreach",
-        "Activation": "activate users", "Conversion": "convert to paid",
-        "Retention": "keep customers", "Expansion": "expand accounts", "Revenue": "grow revenue",
-      };
-      const CAT_LABEL = { tooling: "tooling", infra: "infrastructure", security: "security" };
-      const state = { track: null, gtm: null, cat: null, tag: null };
-      let query = "";
+                <div class="wrap">
+                    <p id="empty" class="empty" hidden>
+                        No plays match that combination. <button
+                            id="empty-clear"
+                            class="linklike">Reset the filters.</button
+                        >
+                    </p>
+                    <p class="caveat">
+                        These are plays that worked for these companies. Treat
+                        them as leads to test, not guarantees.
+                    </p>
+                    <div class="cta-band">
+                        <p class="cta-band-h">Stuck on one of these moves?</p>
+                        <p class="cta-band-sub">
+                            The Martians who compiled this cookbook work on
+                            developer-tools go-to-market for a living. Bring us
+                            your goal, we'll help you run the play.
+                        </p>
+                        <a class="btn btn-primary" href={CONTACT_URL}
+                            >Work with Evil Martians →</a
+                        >
+                    </div>
+                </div>
+            </section>
 
-      function matches(el) {
-        if (state.track && el.dataset.track !== state.track) return false;
-        if (state.gtm && el.dataset.gtm !== state.gtm) return false;
-        if (state.cat && el.dataset.cat !== state.cat) return false;
-        if (state.tag && !el.dataset.tags.split(" ").includes(state.tag)) return false;
-        if (query && !textIndex.get(el).includes(query)) return false;
-        return true;
-      }
-      function sentence(n) {
-        const verb = state.track ? TRACK_VERB[state.track] : null;
-        let s = verb ? `${n} ${n === 1 ? "play" : "plays"} to ${verb}` : `${n} ${n === 1 ? "play" : "plays"}`;
-        const who = [];
-        if (state.gtm) who.push(state.gtm);
-        if (state.cat) who.push(CAT_LABEL[state.cat]);
-        if (who.length) s += ` for ${who.join(" ")} companies`;
-        if (state.tag) s += ` · tactic: ${state.tag}`;
-        return s;
-      }
-      const visibleCards = () => cards.filter((c) => !c.classList.contains("is-hidden"));
-      function focusedIndex(vis) {
-        if (!vis.length) return -1;
-        const center = rail.scrollLeft + rail.clientWidth / 2;
-        let idx = 0, best = Infinity;
-        for (let i = 0; i < vis.length; i++) {
-          const c = vis[i], cc = c.offsetLeft + c.offsetWidth / 2, d = Math.abs(cc - center);
-          if (d < best) { best = d; idx = i; }
-        }
-        return idx;
-      }
-      function updatePos() {
-        const vis = visibleCards();
-        posEl.textContent = vis.length ? `${focusedIndex(vis) + 1} / ${vis.length}` : "";
-      }
-      function move(dir) {
-        const vis = visibleCards();
-        if (!vis.length) return;
-        const j = Math.max(0, Math.min(vis.length - 1, focusedIndex(vis) + dir));
-        vis[j].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
-      function apply(scrollReset) {
-        let v = 0;
-        for (const el of cards) { const show = matches(el); el.classList.toggle("is-hidden", !show); if (show) v++; }
-        for (const b of facetBtns) { const on = state[b.dataset.facet] === b.dataset.val; b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", String(on)); }
-        const active = state.track || state.gtm || state.cat || state.tag || query;
-        countEl.textContent = active ? `${v} / ${total}` : `${total} plays`;
-        clearBtn.hidden = !active;
-        synthEl.hidden = !active;
-        synthEl.textContent = active ? "→ " + sentence(v) : "";
-        emptyEl.hidden = v !== 0;
-        if (scrollReset) rail.scrollLeft = 0;
-        updatePos();
-      }
-      function setFacet(facet, val) {
-        state[facet] = state[facet] === val ? null : val;
-        apply(true);
-        document.getElementById("recipes").scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      facetBtns.forEach((b) => b.addEventListener("click", () => setFacet(b.dataset.facet, b.dataset.val)));
-      document.querySelectorAll(".tag-mini").forEach((c) => c.addEventListener("click", () => setFacet("tag", c.dataset.tag)));
-      search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); apply(true); });
-      function clearAll() { state.track = state.gtm = state.cat = state.tag = null; query = ""; search.value = ""; apply(true); }
-      clearBtn.addEventListener("click", clearAll);
-      document.getElementById("empty-clear").addEventListener("click", clearAll);
-      document.getElementById("prev").addEventListener("click", () => move(-1));
-      document.getElementById("next").addEventListener("click", () => move(1));
-      rail.addEventListener("scroll", () => requestAnimationFrame(updatePos), { passive: true });
-      window.addEventListener("resize", () => requestAnimationFrame(updatePos), { passive: true });
-      document.addEventListener("keydown", (e) => {
-        if (e.target && e.target.tagName === "INPUT") return;
-        if (e.key === "ArrowRight") move(1);
-        else if (e.key === "ArrowLeft") move(-1);
-        else if (e.key === "Escape") clearAll();
-      });
-      apply(false);
-    </script>
+            <!-- ====================== TACTIC CROSS-REFERENCE ====================== -->
+            <section class="appendix wrap">
+                <p class="kicker">Appendix A</p>
+                <h2 class="section-title">Or browse by tactic</h2>
+                <p class="appendix-lede">
+                    Every recipe is cross-referenced. Pick a tactic or channel
+                    to filter the book.
+                </p>
+                <div class="tagcloud">
+                    {
+                        data.tags.map((t) => (
+                            <button
+                                class="tagchip"
+                                data-facet="tag"
+                                data-val={t.tag}
+                                type="button"
+                            >
+                                {t.tag}
+                                <sup>{t.count}</sup>
+                            </button>
+                        ))
+                    }
+                </div>
+            </section>
+        </main>
 
-    <style>
-      /* ---------------- HERO ---------------- */
-      .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding: 7vh 0 9vh; }
-      .sky { position: absolute; inset: 0; z-index: -1; }
-      .stars {
-        position: absolute; inset: 0; height: 70%;
-        background-image:
-          radial-gradient(1.4px 1.4px at 12% 22%, #fff, transparent),
-          radial-gradient(1.2px 1.2px at 33% 12%, rgba(255,255,255,.8), transparent),
-          radial-gradient(1.3px 1.3px at 58% 28%, rgba(255,255,255,.7), transparent),
-          radial-gradient(1.5px 1.5px at 78% 14%, #fff, transparent),
-          radial-gradient(1.1px 1.1px at 88% 33%, rgba(255,255,255,.7), transparent),
-          radial-gradient(1.2px 1.2px at 22% 38%, rgba(255,255,255,.6), transparent);
-        opacity: 0.8;
-      }
-      .sun {
-        position: absolute; left: 50%; bottom: 15%; width: min(470px, 68vw); aspect-ratio: 1;
-        transform: translateX(-50%); border-radius: 50%;
-        background: linear-gradient(180deg, #ffd884 0%, var(--gold) 22%, var(--ember) 56%, var(--red) 100%);
-        filter: drop-shadow(0 0 70px rgba(228, 60, 12, 0.45)); opacity: 0.76;
-      }
-      .sun::after {
-        content: ""; position: absolute; inset: 0; border-radius: 50%;
-        background: repeating-linear-gradient(180deg, transparent 0 6px, var(--void) 6px 9px);
-        -webkit-mask-image: linear-gradient(180deg, transparent 46%, #000 60%);
-        mask-image: linear-gradient(180deg, transparent 46%, #000 60%);
-      }
-      .grid {
-        position: absolute; left: 50%; bottom: 0; width: 240%; height: 52vh;
-        transform: translateX(-50%) perspective(300px) rotateX(74deg); transform-origin: bottom center;
-        background-image:
-          linear-gradient(rgba(255, 46, 132, 0.55) 1.5px, transparent 1.5px),
-          linear-gradient(90deg, rgba(228, 60, 12, 0.5) 1.5px, transparent 1.5px);
-        background-size: 64px 64px;
-        -webkit-mask-image: linear-gradient(transparent, #000 38%, #000 100%);
-        mask-image: linear-gradient(transparent, #000 38%, #000 100%);
-        animation: gridmove 5.5s linear infinite;
-      }
-      @keyframes gridmove { from { background-position: 0 0, 0 0; } to { background-position: 0 64px, 0 0; } }
-      .haze { position: absolute; inset: 0; background:
-        radial-gradient(56% 44% at 50% 45%, rgba(5,3,4,0.74), transparent 72%),
-        radial-gradient(86% 52% at 50% 80%, transparent, var(--void) 92%); }
+        <!-- ====================== FOOTER ====================== -->
+        <footer class="foot">
+            <div class="wrap foot-inner">
+                <div>
+                    <p class="foot-title">The DevTools Cookbook</p>
+                    <p class="foot-sub mono">
+                        Part of the <a href={REPO_URL}>DevTools PMF</a> dataset ·
+                        updated {data.generatedAt}
+                    </p>
+                </div>
+                <nav class="foot-nav mono">
+                    <a href={BENCHMARK_URL}>Test your company →</a>
+                    <a href={ISSUE_URL}>Contribute a recipe</a>
+                    <a href={REPO_URL}>Star on GitHub</a>
+                </nav>
+                <p class="foot-mark mono">
+                    Made by <a href="https://evilmartians.com">Evil Martians</a> ·
+                    data CC BY 4.0
+                </p>
+            </div>
+        </footer>
 
-      .hero-inner { position: relative; text-align: center; text-shadow: 0 2px 16px rgba(0,0,0,0.62); }
-      .cover-title { margin: 1.2rem 0 0.4rem; font-family: var(--font-display); text-transform: uppercase; line-height: 0.82; letter-spacing: 0.005em; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.35)) drop-shadow(0 0 40px rgba(228,60,12,0.35)); }
-      .ct-small { display: block; font-family: var(--font-head); font-size: clamp(1.1rem, 3.4vw, 2.1rem); letter-spacing: 0.16em; color: var(--paper); opacity: 0.9; }
-      .ct-big { display: block; font-size: clamp(2.6rem, 10.2vw, 8.4rem); }
-      .cover-sub { color: var(--paper); margin: 0.4rem 0 0; letter-spacing: 0.28em; }
-      .stats { display: flex; justify-content: center; gap: clamp(1.6rem, 6vw, 4rem); margin: 2.4rem 0 0; }
-      .stat { display: flex; flex-direction: column; align-items: center; }
-      .snum { font-family: var(--font-head); font-size: clamp(1.8rem, 5vw, 3rem); color: var(--red); line-height: 1; }
-      .slabel { color: var(--paper-faint); margin-top: 0.45rem; }
-      .cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.6rem; }
-      .btn { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.74rem; font-weight: 700; padding: 0.95em 1.5em; border-radius: 3px; border: 1.5px solid var(--red); transition: transform .15s var(--ease), background .2s, color .2s; cursor: pointer; }
-      .btn-primary { background: var(--red); color: var(--paper); }
-      .btn-primary:hover { transform: translateY(-2px); text-decoration: none; box-shadow: 0 8px 30px rgba(228,60,12,.4); }
-      .btn-ghost { background: transparent; color: var(--paper); }
-      .btn-ghost:hover { background: rgba(228,60,12,.16); transform: translateY(-2px); text-decoration: none; }
-      .scroll-cue { position: absolute; bottom: 2.4rem; left: 0; right: 0; text-align: center; color: var(--paper-faint); animation: bob 2.4s ease-in-out infinite; }
-      @keyframes bob { 50% { transform: translateY(6px); } }
+        <script>
+            const cards = Array.from(document.querySelectorAll(".card"));
+            const textIndex = new WeakMap();
+            for (const el of cards)
+                textIndex.set(el, el.textContent.toLowerCase());
+            const facetBtns = Array.from(
+                document.querySelectorAll("[data-facet]"),
+            );
+            const search = document.getElementById("search");
+            const countEl = document.getElementById("count");
+            const synthEl = document.getElementById("synth");
+            const clearBtn = document.getElementById("clear");
+            const emptyEl = document.getElementById("empty");
+            const rail = document.getElementById("deck-rail");
+            const posEl = document.getElementById("pos");
+            const total = cards.length;
 
-      /* ---------------- SECTION SHELL ---------------- */
-      section { padding-block: clamp(3.5rem, 9vw, 7rem); position: relative; }
-      .section-title { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.6rem, 4.2vw, 2.8rem); letter-spacing: 0.02em; margin: 0.5rem 0 0; line-height: 1.02; max-width: 20ch; }
+            const TRACK_VERB = {
+                "Open-source": "drive open-source adoption",
+                "Launches & build-in-public": "win attention with launches",
+                "Community & DevRel": "grow your community",
+                "Content & SEO": "pull demand with content",
+                "Integrations & ecosystem": "grow through integrations",
+                "Word-of-mouth & outbound":
+                    "spread by word of mouth and outreach",
+                Activation: "activate users",
+                Conversion: "convert to paid",
+                Retention: "keep customers",
+                Expansion: "expand accounts",
+                Revenue: "grow revenue",
+            };
+            const CAT_LABEL = {
+                tooling: "tooling",
+                infra: "infrastructure",
+                security: "security",
+            };
+            const state = { track: null, gtm: null, cat: null, tag: null };
+            let query = "";
 
-      /* ---------------- FOREWORD ---------------- */
-      .foreword { border-top: 1px solid var(--line); }
-      .fw-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 5vw, 4rem); margin-top: 2rem; align-items: start; }
-      .fw-lede { font-size: 1.18rem; line-height: 1.7; margin: 0; }
-      .dropcap { float: left; font-family: var(--font-display); color: var(--red); font-size: 3.6rem; line-height: 0.8; padding: 0.05em 0.12em 0 0; }
-      .legend { border: 1px solid var(--line); border-radius: 6px; padding: 1.4rem; background: rgba(20,12,17,0.6); }
-      .legend-h { color: var(--red); margin: 0 0 1rem; }
-      .legend-row { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: center; margin-bottom: 0.85rem; font-size: 0.92rem; color: var(--paper-dim); }
-      .legend-row .stamp { justify-self: start; }
+            function matches(el) {
+                if (state.track && el.dataset.track !== state.track)
+                    return false;
+                if (state.gtm && el.dataset.gtm !== state.gtm) return false;
+                if (state.cat && el.dataset.cat !== state.cat) return false;
+                if (
+                    state.tag &&
+                    !el.dataset.tags.split(" ").includes(state.tag)
+                )
+                    return false;
+                if (query && !textIndex.get(el).includes(query)) return false;
+                return true;
+            }
+            function sentence(n) {
+                const verb = state.track ? TRACK_VERB[state.track] : null;
+                let s = verb
+                    ? `${n} ${n === 1 ? "play" : "plays"} to ${verb}`
+                    : `${n} ${n === 1 ? "play" : "plays"}`;
+                const who = [];
+                if (state.gtm) who.push(state.gtm);
+                if (state.cat) who.push(CAT_LABEL[state.cat]);
+                if (who.length) s += ` for ${who.join(" ")} companies`;
+                if (state.tag) s += ` · tactic: ${state.tag}`;
+                return s;
+            }
+            const visibleCards = () =>
+                cards.filter((c) => !c.classList.contains("is-hidden"));
+            function focusedIndex(vis) {
+                if (!vis.length) return -1;
+                const center = rail.scrollLeft + rail.clientWidth / 2;
+                let idx = 0,
+                    best = Infinity;
+                for (let i = 0; i < vis.length; i++) {
+                    const c = vis[i],
+                        cc = c.offsetLeft + c.offsetWidth / 2,
+                        d = Math.abs(cc - center);
+                    if (d < best) {
+                        best = d;
+                        idx = i;
+                    }
+                }
+                return idx;
+            }
+            // ---- ASMR card-flip sound (synthesized via Web Audio, no asset) ----
+            let audioCtx = null,
+                noiseBuf = null,
+                lastFlipAt = 0;
+            let soundOn = localStorage.getItem("deckSound") !== "off";
+            const muteBtn = document.getElementById("mute");
+            function initAudio() {
+                if (audioCtx) {
+                    if (audioCtx.state === "suspended") audioCtx.resume();
+                    return;
+                }
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (!AC) return;
+                audioCtx = new AC();
+                if (audioCtx.state === "suspended") audioCtx.resume();
+                // pre-render a dry "autumn leaves" crackle: a faint noise floor plus hundreds of
+                // short decaying micro-grains, which is what gives the irregular rustle texture
+                const sr = audioCtx.sampleRate,
+                    n = Math.floor(sr * 1.6);
+                noiseBuf = audioCtx.createBuffer(1, n, sr);
+                const d = noiseBuf.getChannelData(0);
+                for (let i = 0; i < n; i++)
+                    d[i] = (Math.random() * 2 - 1) * 0.04;
+                const grains = 1100;
+                for (let k = 0; k < grains; k++) {
+                    const start = (Math.random() * (n - 300)) | 0;
+                    const glen = 24 + ((Math.random() * 110) | 0);
+                    const amp = 0.35 + Math.random() * 0.6;
+                    for (let j = 0; j < glen; j++) {
+                        const env = 1 - j / glen;
+                        d[start + j] +=
+                            (Math.random() * 2 - 1) * amp * env * env;
+                    }
+                }
+            }
+            function flipSound() {
+                if (!soundOn || !audioCtx) return;
+                const now = audioCtx.currentTime;
+                if (now - lastFlipAt < 0.05) return; // avoid stacking on fast scroll
+                lastFlipAt = now;
+                if (audioCtx.state === "suspended") audioCtx.resume();
+                // play a random slice of the crackle buffer (each flip differs) through a dry
+                // band-pass, no low-end, with a gentle swell so it rustles rather than slaps
+                const src = audioCtx.createBufferSource();
+                src.buffer = noiseBuf;
+                src.playbackRate.value = 0.85 + Math.random() * 0.35;
+                const bp = audioCtx.createBiquadFilter();
+                bp.type = "bandpass";
+                bp.frequency.value = 2400;
+                bp.Q.value = 0.5;
+                const hp = audioCtx.createBiquadFilter();
+                hp.type = "highpass";
+                hp.frequency.value = 800; // dry, no rumble or slap
+                const g = audioCtx.createGain();
+                g.gain.setValueAtTime(0.0001, now);
+                g.gain.linearRampToValueAtTime(0.033, now + 0.04);
+                g.gain.exponentialRampToValueAtTime(0.0004, now + 0.3);
+                src.connect(bp);
+                bp.connect(hp);
+                hp.connect(g);
+                g.connect(audioCtx.destination);
+                src.start(now, Math.random() * 1.2, 0.36);
+            }
+            function paintMute() {
+                muteBtn.textContent = soundOn ? "♪" : "♪̶";
+                muteBtn.setAttribute("aria-pressed", String(soundOn));
+                muteBtn.classList.toggle("is-off", !soundOn);
+            }
+            muteBtn.addEventListener("click", () => {
+                initAudio();
+                soundOn = !soundOn;
+                localStorage.setItem("deckSound", soundOn ? "on" : "off");
+                paintMute();
+                if (soundOn) flipSound(); // little confirmation chirp
+            });
+            paintMute();
+            // sound fires only when the centered card actually changes (scroll/nav)
+            let soundFocusId = null;
+            function maybeFlipSound() {
+                const vis = visibleCards();
+                if (!vis.length) return;
+                const id = vis[focusedIndex(vis)].id;
+                if (soundFocusId === null) {
+                    soundFocusId = id;
+                    return;
+                }
+                if (id !== soundFocusId) {
+                    soundFocusId = id;
+                    flipSound();
+                }
+            }
 
-      /* ---------------- RECIPES: FILTER BAR ---------------- */
-      .recipes { border-top: 1px solid var(--line); }
-      .recipes-lede { color: var(--paper-dim); margin: 0.8rem 0 2rem; max-width: 52ch; }
-      .filterbar { border: 1px solid var(--line-strong); border-radius: 8px; padding: 1.3rem 1.4rem; background: linear-gradient(180deg, rgba(29,17,23,0.6), rgba(12,7,9,0.5)); display: grid; gap: 0.9rem; }
-      .frow { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; align-items: start; }
-      .flabel { color: var(--red); padding-top: 0.55em; }
-      .fchips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-      .fchip { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--paper-dim); background: rgba(8,5,6,0.7); border: 1px solid var(--line-strong); padding: 0.5em 0.8em; border-radius: 4px; cursor: pointer; transition: all .15s var(--ease); }
-      .fchip sup { color: var(--red); margin-left: 0.3em; font-size: 0.72em; }
-      .fchip:hover { color: var(--paper); border-color: var(--red); transform: translateY(-1px); }
-      .fchip.is-active { background: var(--red); color: var(--paper); border-color: var(--red); box-shadow: 0 6px 20px rgba(228,60,12,.3); }
-      .fchip.is-active sup { color: var(--paper); }
+            let lastHashId = "";
+            function syncHash(id) {
+                if (!id || id === lastHashId) return;
+                lastHashId = id;
+                history.replaceState(null, "", "#" + id);
+            }
+            function updatePos() {
+                const vis = visibleCards();
+                if (!vis.length) {
+                    posEl.textContent = "";
+                    return;
+                }
+                const idx = focusedIndex(vis);
+                posEl.textContent = `${idx + 1} / ${vis.length}`;
+                syncHash(vis[idx].id);
+            }
+            // center a card using layout coords (transform-independent, so no overshoot).
+            // Mandatory scroll-snap fights a programmatic smooth scroll (it retargets mid-flight
+            // and skips cards), so we suspend snapping for the duration and restore it on settle.
+            let focusIdx = 0,
+                programmatic = false,
+                settleTimer = null;
+            function centerCard(el, smooth) {
+                const target = Math.max(
+                    0,
+                    el.offsetLeft - (rail.clientWidth - el.offsetWidth) / 2,
+                );
+                if (smooth) {
+                    programmatic = true;
+                    rail.style.scrollSnapType = "none";
+                    rail.scrollTo({ left: target, behavior: "smooth" });
+                    clearTimeout(settleTimer);
+                    settleTimer = setTimeout(endProgrammatic, 700); // fallback if scrollend never fires
+                } else {
+                    rail.scrollTo({ left: target, behavior: "auto" });
+                }
+            }
+            function endProgrammatic() {
+                clearTimeout(settleTimer);
+                rail.style.scrollSnapType = "";
+                programmatic = false;
+            }
+            rail.addEventListener("scrollend", () => {
+                if (programmatic) endProgrammatic();
+                else {
+                    const vis = visibleCards();
+                    if (vis.length) focusIdx = focusedIndex(vis);
+                }
+            });
+            // step from the in-flight target during rapid presses, not the mid-animation position
+            function move(dir) {
+                const vis = visibleCards();
+                if (!vis.length) return;
+                const base = programmatic ? focusIdx : focusedIndex(vis);
+                focusIdx = Math.max(0, Math.min(vis.length - 1, base + dir));
+                centerCard(vis[focusIdx], true);
+            }
+            function apply(scrollReset) {
+                let v = 0;
+                for (const el of cards) {
+                    const show = matches(el);
+                    el.classList.toggle("is-hidden", !show);
+                    if (show) v++;
+                }
+                for (const b of facetBtns) {
+                    const on = state[b.dataset.facet] === b.dataset.val;
+                    b.classList.toggle("is-active", on);
+                    b.setAttribute("aria-pressed", String(on));
+                }
+                const active =
+                    state.track || state.gtm || state.cat || state.tag || query;
+                countEl.textContent = active
+                    ? `${v} / ${total}`
+                    : `${total} plays`;
+                clearBtn.hidden = !active;
+                synthEl.hidden = !active;
+                synthEl.textContent = active ? "→ " + sentence(v) : "";
+                emptyEl.hidden = v !== 0;
+                if (scrollReset) {
+                    rail.scrollLeft = 0;
+                    focusIdx = 0;
+                }
+                updatePos();
+                // resync baselines so filtering/search doesn't fire a flip sound or misstep nav
+                const vis2 = visibleCards();
+                if (vis2.length) {
+                    soundFocusId = vis2[focusedIndex(vis2)].id;
+                    if (!scrollReset) focusIdx = focusedIndex(vis2);
+                }
+            }
+            function setFacet(facet, val) {
+                state[facet] = state[facet] === val ? null : val;
+                apply(true);
+                document
+                    .getElementById("recipes")
+                    .scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+            facetBtns.forEach((b) =>
+                b.addEventListener("click", () =>
+                    setFacet(b.dataset.facet, b.dataset.val),
+                ),
+            );
+            document
+                .querySelectorAll(".tag-mini")
+                .forEach((c) =>
+                    c.addEventListener("click", () =>
+                        setFacet("tag", c.dataset.tag),
+                    ),
+                );
+            search.addEventListener("input", () => {
+                query = search.value.trim().toLowerCase();
+                apply(true);
+            });
+            function clearAll() {
+                state.track = state.gtm = state.cat = state.tag = null;
+                query = "";
+                search.value = "";
+                apply(true);
+            }
+            clearBtn.addEventListener("click", clearAll);
+            document
+                .getElementById("empty-clear")
+                .addEventListener("click", clearAll);
+            document
+                .getElementById("prev")
+                .addEventListener("click", () => move(-1));
+            document
+                .getElementById("next")
+                .addEventListener("click", () => move(1));
+            rail.addEventListener(
+                "scroll",
+                () =>
+                    requestAnimationFrame(() => {
+                        updatePos();
+                        maybeFlipSound();
+                    }),
+                { passive: true },
+            );
+            window.addEventListener(
+                "resize",
+                () => requestAnimationFrame(updatePos),
+                { passive: true },
+            );
+            // unlock the AudioContext on the first user gesture
+            ["pointerdown", "keydown", "wheel", "touchstart"].forEach((ev) =>
+                window.addEventListener(ev, initAudio, {
+                    once: true,
+                    passive: true,
+                }),
+            );
+            document.addEventListener("keydown", (e) => {
+                if (e.target && e.target.tagName === "INPUT") return;
+                if (e.key === "ArrowRight") move(1);
+                else if (e.key === "ArrowLeft") move(-1);
+                else if (e.key === "Escape") clearAll();
+            });
+            apply(false);
+            // deep-link: if the URL names a card, center it on load
+            (function deepLink() {
+                const id = decodeURIComponent(location.hash.slice(1));
+                if (!id) return;
+                const el = cards.find(
+                    (c) => c.id === id && !c.classList.contains("is-hidden"),
+                );
+                if (!el) return;
+                document
+                    .getElementById("recipes")
+                    .scrollIntoView({ block: "start" });
+                centerCard(el, false);
+                const vis = visibleCards();
+                focusIdx = Math.max(0, vis.indexOf(el));
+                soundFocusId = el.id;
+                lastHashId = id;
+                requestAnimationFrame(updatePos);
+            })();
+        </script>
 
-      .controls { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 1rem 0 0; margin: 1.2rem 0 0; }
-      .search { flex: 1; min-width: 240px; background: rgba(20,12,17,0.8); border: 1px solid var(--line-strong); color: var(--paper); font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; padding: 0.8em 1em; border-radius: 4px; }
-      .search:focus { border-color: var(--red); }
-      .controls-right { display: flex; align-items: center; gap: 1rem; }
-      #count { color: var(--paper-faint); }
-      .clearbtn { color: var(--red); background: none; border: none; cursor: pointer; }
-      .synth { color: var(--paper); margin: 0.6rem 0 0; letter-spacing: 0.06em; }
+        <style>
+            /* ---------------- HERO ---------------- */
+            .hero {
+                position: relative;
+                min-height: 100svh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
+                padding: 7vh 0 9vh;
+            }
+            .sky {
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+            }
+            .stars {
+                position: absolute;
+                inset: 0;
+                height: 70%;
+                background-image:
+                    radial-gradient(1.4px 1.4px at 12% 22%, #fff, transparent),
+                    radial-gradient(
+                        1.2px 1.2px at 33% 12%,
+                        rgba(255, 255, 255, 0.8),
+                        transparent
+                    ),
+                    radial-gradient(
+                        1.3px 1.3px at 58% 28%,
+                        rgba(255, 255, 255, 0.7),
+                        transparent
+                    ),
+                    radial-gradient(1.5px 1.5px at 78% 14%, #fff, transparent),
+                    radial-gradient(
+                        1.1px 1.1px at 88% 33%,
+                        rgba(255, 255, 255, 0.7),
+                        transparent
+                    ),
+                    radial-gradient(
+                        1.2px 1.2px at 22% 38%,
+                        rgba(255, 255, 255, 0.6),
+                        transparent
+                    );
+                opacity: 0.8;
+            }
+            .sun {
+                position: absolute;
+                left: 50%;
+                bottom: 15%;
+                width: min(470px, 68vw);
+                aspect-ratio: 1;
+                transform: translateX(-50%);
+                border-radius: 50%;
+                background: linear-gradient(
+                    180deg,
+                    #ffd884 0%,
+                    var(--gold) 22%,
+                    var(--ember) 56%,
+                    var(--red) 100%
+                );
+                filter: drop-shadow(0 0 70px rgba(228, 60, 12, 0.45));
+                opacity: 0.76;
+            }
+            .sun::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                background: repeating-linear-gradient(
+                    180deg,
+                    transparent 0 6px,
+                    var(--void) 6px 9px
+                );
+                -webkit-mask-image: linear-gradient(
+                    180deg,
+                    transparent 46%,
+                    #000 60%
+                );
+                mask-image: linear-gradient(180deg, transparent 46%, #000 60%);
+            }
+            .grid {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                width: 240%;
+                height: 52vh;
+                transform: translateX(-50%) perspective(300px) rotateX(74deg);
+                transform-origin: bottom center;
+                background-image:
+                    linear-gradient(
+                        rgba(255, 46, 132, 0.55) 1.5px,
+                        transparent 1.5px
+                    ),
+                    linear-gradient(
+                        90deg,
+                        rgba(228, 60, 12, 0.5) 1.5px,
+                        transparent 1.5px
+                    );
+                background-size: 64px 64px;
+                -webkit-mask-image: linear-gradient(
+                    transparent,
+                    #000 38%,
+                    #000 100%
+                );
+                mask-image: linear-gradient(transparent, #000 38%, #000 100%);
+                animation: gridmove 5.5s linear infinite;
+            }
+            @keyframes gridmove {
+                from {
+                    background-position:
+                        0 0,
+                        0 0;
+                }
+                to {
+                    background-position:
+                        0 64px,
+                        0 0;
+                }
+            }
+            .haze {
+                position: absolute;
+                inset: 0;
+                background:
+                    radial-gradient(
+                        56% 44% at 50% 45%,
+                        rgba(5, 3, 4, 0.74),
+                        transparent 72%
+                    ),
+                    radial-gradient(
+                        86% 52% at 50% 80%,
+                        transparent,
+                        var(--void) 92%
+                    );
+            }
 
-      /* ---------------- THE DECK (horizontal scroll-snap) ---------------- */
-      .deckwrap { position: relative; margin-top: 1.6rem; }
-      .deck-rail {
-        display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.4rem);
-        overflow-x: auto; overflow-y: hidden;
-        scroll-snap-type: x mandatory; scroll-behavior: smooth;
-        padding: 3.2rem max(1rem, calc((100% - min(620px, 86vw)) / 2)) 3.4rem;
-        perspective: 1600px; scrollbar-width: none;
-      }
-      .deck-rail::-webkit-scrollbar { display: none; }
-      .card.is-hidden { display: none; }
-      .card {
-        scroll-snap-align: center; flex: 0 0 min(620px, 86vw);
-        position: relative; transform-style: preserve-3d;
-        background: linear-gradient(180deg, rgba(31,18,24,0.97), rgba(12,7,9,0.97));
-        border: 1px solid var(--line-strong); border-radius: 12px;
-        padding: clamp(1.5rem, 2.6vw, 2.2rem);
-        box-shadow: 0 22px 60px rgba(0,0,0,0.55);
-        transition: border-color .2s, box-shadow .25s;
-      }
-      /* perspective tilt: neighbours dim and rotate, the centred card is full */
-      @supports (animation-timeline: view()) {
-        .card { animation: deckfocus linear both; animation-timeline: view(inline); }
-        @keyframes deckfocus {
-          0%   { opacity: 0.28; transform: scale(0.8) rotateY(-32deg); }
-          46%, 54% { opacity: 1; transform: scale(1) rotateY(0deg); }
-          100% { opacity: 0.28; transform: scale(0.8) rotateY(32deg); }
-        }
-      }
-      /* 80s arcade neon glow on hover */
-      .card:hover {
-        border-color: var(--magenta);
-        box-shadow:
-          0 0 0 1px var(--magenta),
-          0 0 12px rgba(255,46,132,0.7),
-          0 0 34px rgba(228,60,12,0.45),
-          0 0 70px rgba(255,46,132,0.25),
-          0 22px 60px rgba(0,0,0,0.55);
-      }
-      .card::after {
-        content: ""; position: absolute; inset: 0; border-radius: 12px; pointer-events: none;
-        box-shadow: inset 0 0 22px rgba(255,46,132,0.18), inset 0 0 1px var(--magenta);
-        opacity: 0; transition: opacity .25s;
-      }
-      .card:hover::after { opacity: 1; }
+            .hero-inner {
+                position: relative;
+                text-align: center;
+                text-shadow: 0 2px 16px rgba(0, 0, 0, 0.62);
+            }
+            .cover-title {
+                margin: 1.2rem 0 0.4rem;
+                font-family: var(--font-display);
+                text-transform: uppercase;
+                line-height: 0.82;
+                letter-spacing: 0.005em;
+                filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.35))
+                    drop-shadow(0 0 40px rgba(228, 60, 12, 0.35));
+            }
+            .ct-small {
+                display: block;
+                font-family: var(--font-head);
+                font-size: clamp(1.1rem, 3.4vw, 2.1rem);
+                letter-spacing: 0.16em;
+                color: var(--paper);
+                opacity: 0.9;
+            }
+            .ct-big {
+                display: block;
+                font-size: clamp(2.6rem, 10.2vw, 8.4rem);
+            }
+            .cover-sub {
+                color: var(--paper);
+                margin: 0.4rem 0 0;
+                letter-spacing: 0.28em;
+            }
+            .stats {
+                display: flex;
+                justify-content: center;
+                gap: clamp(1.6rem, 6vw, 4rem);
+                margin: 2.4rem 0 0;
+            }
+            .stat {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .snum {
+                font-family: var(--font-head);
+                font-size: clamp(1.8rem, 5vw, 3rem);
+                color: var(--red);
+                line-height: 1;
+            }
+            .slabel {
+                color: var(--paper-faint);
+                margin-top: 0.45rem;
+            }
+            .cta {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 2.6rem;
+            }
+            .btn {
+                font-family: var(--font-mono);
+                text-transform: uppercase;
+                letter-spacing: 0.14em;
+                font-size: 0.74rem;
+                font-weight: 700;
+                padding: 0.95em 1.5em;
+                border-radius: 3px;
+                border: 1.5px solid var(--red);
+                transition:
+                    transform 0.15s var(--ease),
+                    background 0.2s,
+                    color 0.2s;
+                cursor: pointer;
+            }
+            .btn-primary {
+                background: var(--red);
+                color: var(--paper);
+            }
+            .btn-primary:hover {
+                transform: translateY(-2px);
+                text-decoration: none;
+                box-shadow: 0 8px 30px rgba(228, 60, 12, 0.4);
+            }
+            .btn-ghost {
+                background: transparent;
+                color: var(--paper);
+            }
+            .btn-ghost:hover {
+                background: rgba(228, 60, 12, 0.16);
+                transform: translateY(-2px);
+                text-decoration: none;
+            }
+            .scroll-cue {
+                position: absolute;
+                bottom: 2.4rem;
+                left: 0;
+                right: 0;
+                text-align: center;
+                color: var(--paper-faint);
+                animation: bob 2.4s ease-in-out infinite;
+            }
+            @keyframes bob {
+                50% {
+                    transform: translateY(6px);
+                }
+            }
 
-      .c-top { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem; }
-      .rno { color: var(--paper-faint); }
-      .c-track { color: var(--paper-faint); font-size: 0.58rem; border: 1px solid var(--line); padding: 0.3em 0.55em; border-radius: 2px; }
-      .ctitle { font-family: var(--font-head); font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.12; letter-spacing: 0.005em; margin: 0 0 1.1rem; color: var(--paper); }
+            /* ---------------- SECTION SHELL ---------------- */
+            section {
+                padding-block: clamp(3.5rem, 9vw, 7rem);
+                position: relative;
+            }
+            .section-title {
+                font-family: var(--font-head);
+                text-transform: uppercase;
+                font-size: clamp(1.6rem, 4.2vw, 2.8rem);
+                letter-spacing: 0.02em;
+                margin: 0.5rem 0 0;
+                line-height: 1.02;
+                max-width: 20ch;
+            }
 
-      .c-learn { border-left: 2px solid var(--red); background: rgba(228,60,12,0.08); padding: 0.8rem 1rem; border-radius: 0 5px 5px 0; margin-bottom: 1.1rem; }
-      .lbl { color: var(--red); display: block; margin-bottom: 0.3rem; font-size: 0.58rem; }
-      .c-learn p { margin: 0; font-size: 1.04rem; line-height: 1.5; color: var(--paper); }
+            /* ---------------- FOREWORD ---------------- */
+            .foreword {
+                border-top: 1px solid var(--line);
+            }
+            .fw-grid {
+                display: grid;
+                grid-template-columns: 1.3fr 1fr;
+                gap: clamp(2rem, 5vw, 4rem);
+                margin-top: 2rem;
+                align-items: start;
+            }
+            .fw-lede {
+                font-size: 1.18rem;
+                line-height: 1.7;
+                margin: 0;
+            }
+            .dropcap {
+                float: left;
+                font-family: var(--font-display);
+                color: var(--red);
+                font-size: 3.6rem;
+                line-height: 0.8;
+                padding: 0.05em 0.12em 0 0;
+            }
+            .legend {
+                border: 1px solid var(--line);
+                border-radius: 6px;
+                padding: 1.4rem;
+                background: rgba(20, 12, 17, 0.6);
+            }
+            .legend-h {
+                color: var(--red);
+                margin: 0 0 1rem;
+            }
+            .legend-row {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 0.8rem;
+                align-items: center;
+                margin-bottom: 0.85rem;
+                font-size: 0.92rem;
+                color: var(--paper-dim);
+            }
+            .legend-row .stamp {
+                justify-self: start;
+            }
 
-      .c-co { color: var(--paper-faint); display: flex; align-items: center; gap: 0.5rem; margin: 0 0 1rem; }
-      .c-co a { color: var(--cyan); }
-      .rgtm { color: var(--paper-faint); font-size: 0.92em; padding: 0.1em 0.5em; border: 1px solid var(--line); border-radius: 2px; }
+            /* ---------------- RECIPES: FILTER BAR ---------------- */
+            .recipes {
+                border-top: 1px solid var(--line);
+            }
+            .recipes-lede {
+                color: var(--paper-dim);
+                margin: 0.8rem 0 2rem;
+                max-width: 52ch;
+            }
+            .filterbar {
+                border: 1px solid var(--line-strong);
+                border-radius: 8px;
+                padding: 1.3rem 1.4rem;
+                background: linear-gradient(
+                    180deg,
+                    rgba(29, 17, 23, 0.6),
+                    rgba(12, 7, 9, 0.5)
+                );
+                display: grid;
+                gap: 0.9rem;
+            }
+            .frow {
+                display: grid;
+                grid-template-columns: 96px 1fr;
+                gap: 1rem;
+                align-items: start;
+            }
+            .flabel {
+                color: var(--red);
+                padding-top: 0.55em;
+            }
+            .fchips {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .fchip {
+                font-family: var(--font-mono);
+                font-size: 0.7rem;
+                letter-spacing: 0.04em;
+                color: var(--paper-dim);
+                background: rgba(8, 5, 6, 0.7);
+                border: 1px solid var(--line-strong);
+                padding: 0.5em 0.8em;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: all 0.15s var(--ease);
+            }
+            .fchip sup {
+                color: var(--red);
+                margin-left: 0.3em;
+                font-size: 0.72em;
+            }
+            .fchip:hover {
+                color: var(--paper);
+                border-color: var(--red);
+                transform: translateY(-1px);
+            }
+            .fchip.is-active {
+                background: var(--red);
+                color: var(--paper);
+                border-color: var(--red);
+                box-shadow: 0 6px 20px rgba(228, 60, 12, 0.3);
+            }
+            .fchip.is-active sup {
+                color: var(--paper);
+            }
 
-      /* big glowing number-facts */
-      .facts { display: flex; flex-wrap: wrap; gap: 1.2rem 1.8rem; margin: 0 0 1.3rem; }
-      .fact { display: flex; flex-direction: column; gap: 0.12rem; }
-      .fact-l { font-size: 0.54rem; letter-spacing: 0.18em; color: var(--paper-faint); }
-      .fact-n { font-family: var(--font-head); font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1; color: var(--cyan); text-shadow: 0 0 16px currentColor; }
-      .fact-q { font-size: 0.62rem; color: var(--paper-dim); letter-spacing: 0.01em; max-width: 18ch; }
-      .fact.t-verified .fact-n { color: var(--cyan); }
-      .fact.t-reported .fact-n { color: var(--gold); }
-      .fact.t-estimated .fact-n { color: var(--ember); }
+            .controls {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 1rem 0 0;
+                margin: 1.2rem 0 0;
+            }
+            .search {
+                flex: 1;
+                min-width: 240px;
+                background: rgba(20, 12, 17, 0.8);
+                border: 1px solid var(--line-strong);
+                color: var(--paper);
+                font-family: var(--font-mono);
+                font-size: 0.82rem;
+                letter-spacing: 0.04em;
+                padding: 0.8em 1em;
+                border-radius: 4px;
+            }
+            .search:focus {
+                border-color: var(--red);
+            }
+            .controls-right {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+            }
+            #count {
+                color: var(--paper-faint);
+            }
+            .clearbtn {
+                color: var(--red);
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            .synth {
+                color: var(--paper);
+                margin: 0.6rem 0 0;
+                letter-spacing: 0.06em;
+            }
 
-      .c-sum { color: var(--paper-dim); font-size: 0.95rem; line-height: 1.55; margin: 0 0 1.2rem; }
+            /* ---------------- THE DECK (horizontal scroll-snap) ---------------- */
+            .deckwrap {
+                position: relative;
+                margin-top: 1.6rem;
+            }
+            .deck-rail {
+                display: flex;
+                align-items: center;
+                gap: clamp(1rem, 3vw, 2.4rem);
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-snap-type: x mandatory;
+                scroll-behavior: smooth;
+                padding: 3.2rem max(1rem, calc((100% - min(1180px, 78vw)) / 2))
+                    3.4rem;
+                perspective: 1500px;
+                scrollbar-width: none;
+                position: relative;
+            }
+            .deck-rail::-webkit-scrollbar {
+                display: none;
+            }
+            .card.is-hidden {
+                display: none;
+            }
+            .card {
+                scroll-snap-align: center;
+                flex: 0 0 min(1180px, 78vw);
+                position: relative;
+                transform-style: preserve-3d;
+                background: linear-gradient(
+                    180deg,
+                    rgba(31, 18, 24, 0.97),
+                    rgba(12, 7, 9, 0.97)
+                );
+                border: 1px solid var(--line-strong);
+                border-radius: 12px;
+                padding: clamp(1.5rem, 2.6vw, 2.2rem);
+                box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+                transition:
+                    border-color 0.2s,
+                    box-shadow 0.25s;
+            }
+            /* perspective tilt: neighbours dim and rotate, the centred card is full */
+            @supports (animation-timeline: view()) {
+                .card {
+                    animation: deckfocus linear both;
+                    animation-timeline: view(inline);
+                }
+                @keyframes deckfocus {
+                    0% {
+                        opacity: 0.38;
+                        transform: scale(0.66) rotateY(-52deg);
+                    }
+                    44%,
+                    56% {
+                        opacity: 1;
+                        transform: scale(1) rotateY(0deg);
+                    }
+                    100% {
+                        opacity: 0.38;
+                        transform: scale(0.66) rotateY(52deg);
+                    }
+                }
+            }
+            /* 80s arcade neon glow on hover */
+            .card:hover {
+                border-color: var(--magenta);
+                box-shadow:
+                    0 0 0 1px var(--magenta),
+                    0 0 12px rgba(255, 46, 132, 0.7),
+                    0 0 34px rgba(228, 60, 12, 0.45),
+                    0 0 70px rgba(255, 46, 132, 0.25),
+                    0 22px 60px rgba(0, 0, 0, 0.55);
+            }
+            .card::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 12px;
+                pointer-events: none;
+                box-shadow:
+                    inset 0 0 22px rgba(255, 46, 132, 0.18),
+                    inset 0 0 1px var(--magenta);
+                opacity: 0;
+                transition: opacity 0.25s;
+            }
+            .card:hover::after {
+                opacity: 1;
+            }
 
-      /* Result | Cost juxtaposed */
-      .c-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 0 0 0.4rem; }
-      .c-cell { padding-left: 0.85rem; }
-      .c-result { border-left: 2px solid var(--red); }
-      .c-cost { border-left: 2px solid var(--ember); }
-      .c-result .lbl { color: var(--red); }
-      .c-cost .lbl { color: var(--ember); }
-      .c-cell p { margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--paper-dim); }
-      .c-result p { color: var(--paper); }
+            .c-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.6rem;
+                margin-bottom: 0.9rem;
+            }
+            .rno {
+                color: var(--paper-faint);
+            }
+            .c-track {
+                color: var(--paper-faint);
+                font-size: 0.58rem;
+                border: 1px solid var(--line);
+                padding: 0.3em 0.55em;
+                border-radius: 2px;
+            }
+            .ctitle {
+                font-family: var(--font-head);
+                font-size: clamp(1.45rem, 2.2vw, 2rem);
+                line-height: 1.12;
+                letter-spacing: 0.005em;
+                margin: 0 0 1.3rem;
+                color: var(--paper);
+                max-width: 30ch;
+            }
 
-      .c-when { font-size: 0.82rem; color: var(--paper-faint); margin: 1.2rem 0 0; line-height: 1.45; }
-      .c-when .lbl { color: var(--gold); }
+            /* two-column body: narrative left, the actionable play + numbers right */
+            .c-body {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: clamp(2rem, 4vw, 3.2rem);
+                align-items: stretch;
+            }
+            .c-col {
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            .c-col-r {
+                position: relative;
+            }
+            .c-col-r::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: calc(-1 * clamp(1rem, 2vw, 1.6rem));
+                width: 1px;
+                background: var(--line);
+            }
 
-      .c-foot { margin-top: 1.2rem; padding-top: 0.9rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 0.8rem; }
-      .rtags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-      .tag-mini { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.04em; color: var(--paper-faint); background: none; border: 1px solid var(--line); padding: 0.28em 0.5em; border-radius: 2px; cursor: pointer; transition: all .15s; }
-      .tag-mini:hover { color: var(--paper); border-color: var(--magenta); box-shadow: 0 0 10px rgba(255,46,132,0.4); }
-      .rsrc { white-space: nowrap; font-size: 0.62rem; }
-      .rsrc.dim { color: var(--paper-faint); }
+            /* ---- 80s HUD panels: Play / Result / Cost ---- */
+            .c-learn {
+                --ac: var(--red);
+                --ac-rgb: var(--red-rgb);
+                margin-bottom: 1.2rem;
+            }
+            .c-result {
+                --ac: var(--cyan);
+                --ac-rgb: var(--cyan-rgb);
+            }
+            .c-cost {
+                --ac: var(--ember);
+                --ac-rgb: var(--ember-rgb);
+            }
+            .c-learn,
+            .c-cell {
+                position: relative;
+                border: 1px solid rgba(var(--ac-rgb), 0.45);
+                border-radius: 4px;
+                padding: 1.25rem 1.05rem 1rem;
+                background: linear-gradient(
+                    180deg,
+                    rgba(var(--ac-rgb), 0.12),
+                    rgba(var(--ac-rgb), 0.02) 60%,
+                    transparent
+                );
+                box-shadow:
+                    0 0 13px rgba(var(--ac-rgb), 0.15),
+                    inset 0 0 20px rgba(var(--ac-rgb), 0.05);
+            }
+            /* corner tick, arcade-HUD detail */
+            .c-learn::after,
+            .c-cell::after {
+                content: "";
+                position: absolute;
+                right: 6px;
+                bottom: 6px;
+                width: 9px;
+                height: 9px;
+                border-right: 1px solid rgba(var(--ac-rgb), 0.7);
+                border-bottom: 1px solid rgba(var(--ac-rgb), 0.7);
+            }
+            /* legend tab sitting astride the top border */
+            .c-tab {
+                position: absolute;
+                top: 0;
+                left: 0.85rem;
+                transform: translateY(-52%);
+                padding: 0.18em 0.55em;
+                background: var(--panel-bg);
+                border: 1px solid rgba(var(--ac-rgb), 0.55);
+                border-radius: 2px;
+                font-size: 0.55rem;
+                letter-spacing: 0.24em;
+                text-transform: uppercase;
+                color: var(--ac);
+                text-shadow: 0 0 8px rgba(var(--ac-rgb), 0.9);
+            }
+            .lbl {
+                color: var(--red);
+                display: block;
+                margin-bottom: 0.3rem;
+                font-size: 0.58rem;
+            }
+            .c-learn p {
+                margin: 0;
+                font-size: 1.05rem;
+                line-height: 1.5;
+                color: var(--paper);
+            }
 
-      /* deck nav */
-      .deck-nav { display: flex; align-items: center; justify-content: center; gap: 1.4rem; margin-top: 0.4rem; }
-      .deck-arrow { font-family: var(--font-mono); font-size: 1.1rem; color: var(--paper-dim); background: rgba(20,12,17,0.7); border: 1px solid var(--line-strong); width: 2.6rem; height: 2.6rem; border-radius: 50%; cursor: pointer; transition: all .15s var(--ease); }
-      .deck-arrow:hover { color: var(--paper); border-color: var(--magenta); box-shadow: 0 0 14px rgba(255,46,132,0.5); }
-      #pos { color: var(--paper-faint); min-width: 5ch; text-align: center; }
+            .c-co {
+                color: var(--paper-faint);
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 0 0 1rem;
+            }
+            .c-co a {
+                color: var(--cyan);
+            }
+            .rgtm {
+                color: var(--paper-faint);
+                font-size: 0.92em;
+                padding: 0.1em 0.5em;
+                border: 1px solid var(--line);
+                border-radius: 2px;
+            }
 
-      .empty { text-align: center; color: var(--paper-dim); padding: 3rem 0 1rem; }
-      .caveat { text-align: center; color: var(--paper-faint); font-size: 0.85rem; margin-top: 1.5rem; font-style: italic; }
-      .cta-band { margin-top: 3.5rem; padding: 2.4rem; text-align: center; border: 1px solid var(--line-strong); border-radius: 10px; background: radial-gradient(120% 100% at 50% 0%, rgba(228,60,12,0.14), rgba(20,12,17,0.5)); }
-      .cta-band-h { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.2rem, 3vw, 1.7rem); letter-spacing: 0.03em; margin: 0 0 0.6rem; }
-      .cta-band-sub { color: var(--paper-dim); max-width: 46ch; margin: 0 auto 1.6rem; font-size: 0.98rem; }
-      .linklike { background: none; border: none; color: var(--red); cursor: pointer; font: inherit; text-decoration: underline; }
+            /* big glowing number-facts, pinned to the bottom of the left column */
+            .facts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.1rem 1.7rem;
+                margin-top: auto;
+                padding-top: 1.7rem;
+            }
+            .fact {
+                display: flex;
+                flex-direction: column;
+                gap: 0.18rem;
+            }
+            .fact-n {
+                font-family: var(--font-head);
+                font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+                line-height: 1;
+                color: var(--cyan);
+                text-shadow: 0 0 16px currentColor;
+            }
+            .fact-l {
+                font-size: 0.52rem;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--paper-faint);
+            }
+            .fact-q {
+                font-size: 0.6rem;
+                color: var(--paper-dim);
+                letter-spacing: 0.01em;
+                max-width: 18ch;
+            }
+            .fact.t-verified .fact-n {
+                color: var(--cyan);
+            }
+            .fact.t-reported .fact-n {
+                color: var(--gold);
+            }
+            .fact.t-estimated .fact-n {
+                color: var(--ember);
+            }
 
-      /* ---------------- TACTIC INDEX ---------------- */
-      .appendix { border-top: 1px solid var(--line); }
-      .appendix-lede { color: var(--paper-dim); margin: 0.8rem 0 2rem; max-width: 52ch; }
-      .tagcloud { display: flex; flex-wrap: wrap; gap: 0.55rem; }
-      .tagchip { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--paper-dim); background: rgba(20,12,17,0.7); border: 1px solid var(--line-strong); padding: 0.5em 0.8em; border-radius: 3px; cursor: pointer; transition: all .15s var(--ease); }
-      .tagchip sup { color: var(--red); margin-left: 0.3em; font-size: 0.7em; }
-      .tagchip:hover { color: var(--paper); border-color: var(--red); transform: translateY(-1px); }
-      .tagchip.is-active { background: var(--red); color: var(--paper); border-color: var(--red); }
-      .tagchip.is-active sup { color: var(--paper); }
+            .c-sum {
+                color: var(--paper-dim);
+                font-size: 0.95rem;
+                line-height: 1.55;
+                margin: 0 0 1.2rem;
+            }
 
-      /* ---------------- FOOTER ---------------- */
-      .foot { border-top: 1px solid var(--line-strong); padding-block: 3rem; background: var(--void); }
-      .foot-inner { display: flex; flex-wrap: wrap; gap: 1.6rem; justify-content: space-between; align-items: center; }
-      .foot-title { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.04em; margin: 0; }
-      .foot-sub { color: var(--paper-faint); margin: 0.3rem 0 0; font-size: 0.62rem; }
-      .foot-nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
-      .foot-nav a { color: var(--paper-dim); font-size: 0.7rem; }
-      .foot-nav a:hover { color: var(--red); }
-      .foot-mark { color: var(--paper-faint); font-size: 0.62rem; width: 100%; border-top: 1px solid var(--line); padding-top: 1.2rem; }
+            /* Result | Cost juxtaposed */
+            .c-split {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                margin: 0;
+            }
+            .c-cell p {
+                margin: 0;
+                font-size: 0.85rem;
+                line-height: 1.45;
+                color: var(--paper-dim);
+            }
+            .c-result p {
+                color: var(--paper);
+            }
 
-      @media (max-width: 760px) {
-        .fw-grid { grid-template-columns: 1fr; }
-        .stats { gap: 1.4rem; }
-        .frow { grid-template-columns: 1fr; gap: 0.4rem; }
-        .flabel { padding-top: 0; }
-        .c-split { grid-template-columns: 1fr; gap: 1rem; }
-      }
-      @media (max-width: 540px) {
-        .wrap { width: 90vw; }
-        .hero { padding: 6vh 0 7vh; }
-        .kicker { letter-spacing: 0.08em; font-size: 0.5rem; }
-        .ct-small { font-size: 0.95rem; letter-spacing: 0.08em; }
-        .ct-big { font-size: clamp(1.4rem, 7vw, 4rem); letter-spacing: -0.015em; }
-        .cover-sub { letter-spacing: 0.04em; font-size: 0.52rem; max-width: 32ch; margin-inline: auto; }
-        .stats { gap: 0.9rem; margin-top: 1.8rem; }
-        .snum { font-size: 1.55rem; }
-        .slabel { font-size: 0.5rem; letter-spacing: 0.1em; }
-        .cta { gap: 0.6rem; margin-top: 2rem; flex-direction: column; align-items: center; }
-        .btn { font-size: 0.66rem; padding: 0.9em 1.1em; letter-spacing: 0.08em; width: 100%; max-width: 300px; text-align: center; }
-        .cta-band { padding: 1.6rem 1.1rem; }
-        .cta-band-h { font-size: 1.05rem; }
-        .foot-nav { gap: 0.7rem 1rem; }
-        .foot-nav a { font-size: 0.62rem; }
-      }
-    </style>
-  </body>
+            .c-when {
+                font-size: 0.82rem;
+                color: var(--paper-faint);
+                margin: 1.2rem 0 0;
+                line-height: 1.45;
+            }
+            .c-when .lbl {
+                color: var(--gold);
+            }
+
+            .c-foot {
+                margin-top: 1.2rem;
+                padding-top: 0.9rem;
+                border-top: 1px solid var(--line);
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                gap: 0.8rem;
+            }
+            .rtags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.35rem;
+            }
+            .tag-mini {
+                font-family: var(--font-mono);
+                font-size: 0.58rem;
+                letter-spacing: 0.04em;
+                color: var(--paper-faint);
+                background: none;
+                border: 1px solid var(--line);
+                padding: 0.28em 0.5em;
+                border-radius: 2px;
+                cursor: pointer;
+                transition: all 0.15s;
+            }
+            .tag-mini:hover {
+                color: var(--paper);
+                border-color: var(--magenta);
+                box-shadow: 0 0 10px rgba(255, 46, 132, 0.4);
+            }
+            .rsrc {
+                white-space: nowrap;
+                font-size: 0.62rem;
+            }
+            .rsrc.dim {
+                color: var(--paper-faint);
+            }
+
+            /* deck nav */
+            .deck-nav {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1.4rem;
+                margin-top: 0.4rem;
+            }
+            .deck-arrow {
+                font-family: var(--font-mono);
+                font-size: 1.1rem;
+                line-height: 1;
+                color: var(--paper-dim);
+                background: rgba(20, 12, 17, 0.7);
+                border: 1px solid var(--line-strong);
+                width: 2.6rem;
+                height: 2.6rem;
+                padding: 0;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: all 0.15s var(--ease);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .deck-arrow:hover {
+                color: var(--paper);
+                border-color: var(--magenta);
+                box-shadow: 0 0 14px rgba(255, 46, 132, 0.5);
+            }
+            #pos {
+                color: var(--paper-faint);
+                min-width: 5ch;
+                text-align: center;
+            }
+            .deck-snd {
+                width: 2.6rem;
+                height: 2.6rem;
+                padding: 0;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 1rem;
+                line-height: 1;
+                color: var(--cyan);
+                background: rgba(20, 12, 17, 0.7);
+                border: 1px solid var(--line-strong);
+                text-shadow: 0 0 10px rgba(var(--cyan-rgb), 0.8);
+                transition: all 0.15s var(--ease);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .deck-snd:hover {
+                border-color: var(--cyan);
+                box-shadow: 0 0 14px rgba(var(--cyan-rgb), 0.5);
+            }
+            .deck-snd.is-off {
+                color: var(--paper-faint);
+                text-shadow: none;
+            }
+
+            .empty {
+                text-align: center;
+                color: var(--paper-dim);
+                padding: 3rem 0 1rem;
+            }
+            .caveat {
+                text-align: center;
+                color: var(--paper-faint);
+                font-size: 0.85rem;
+                margin-top: 1.5rem;
+                font-style: italic;
+            }
+            .cta-band {
+                margin-top: 3.5rem;
+                padding: 2.4rem;
+                text-align: center;
+                border: 1px solid var(--line-strong);
+                border-radius: 10px;
+                background: radial-gradient(
+                    120% 100% at 50% 0%,
+                    rgba(228, 60, 12, 0.14),
+                    rgba(20, 12, 17, 0.5)
+                );
+            }
+            .cta-band-h {
+                font-family: var(--font-head);
+                text-transform: uppercase;
+                font-size: clamp(1.2rem, 3vw, 1.7rem);
+                letter-spacing: 0.03em;
+                margin: 0 0 0.6rem;
+            }
+            .cta-band-sub {
+                color: var(--paper-dim);
+                max-width: 46ch;
+                margin: 0 auto 1.6rem;
+                font-size: 0.98rem;
+            }
+            .linklike {
+                background: none;
+                border: none;
+                color: var(--red);
+                cursor: pointer;
+                font: inherit;
+                text-decoration: underline;
+            }
+
+            /* ---------------- TACTIC INDEX ---------------- */
+            .appendix {
+                border-top: 1px solid var(--line);
+            }
+            .appendix-lede {
+                color: var(--paper-dim);
+                margin: 0.8rem 0 2rem;
+                max-width: 52ch;
+            }
+            .tagcloud {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.55rem;
+            }
+            .tagchip {
+                font-family: var(--font-mono);
+                font-size: 0.72rem;
+                letter-spacing: 0.06em;
+                color: var(--paper-dim);
+                background: rgba(20, 12, 17, 0.7);
+                border: 1px solid var(--line-strong);
+                padding: 0.5em 0.8em;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: all 0.15s var(--ease);
+            }
+            .tagchip sup {
+                color: var(--red);
+                margin-left: 0.3em;
+                font-size: 0.7em;
+            }
+            .tagchip:hover {
+                color: var(--paper);
+                border-color: var(--red);
+                transform: translateY(-1px);
+            }
+            .tagchip.is-active {
+                background: var(--red);
+                color: var(--paper);
+                border-color: var(--red);
+            }
+            .tagchip.is-active sup {
+                color: var(--paper);
+            }
+
+            /* ---------------- FOOTER ---------------- */
+            .foot {
+                border-top: 1px solid var(--line-strong);
+                padding-block: 3rem;
+                background: var(--void);
+            }
+            .foot-inner {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.6rem;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .foot-title {
+                font-family: var(--font-head);
+                text-transform: uppercase;
+                letter-spacing: 0.04em;
+                margin: 0;
+            }
+            .foot-sub {
+                color: var(--paper-faint);
+                margin: 0.3rem 0 0;
+                font-size: 0.62rem;
+            }
+            .foot-nav {
+                display: flex;
+                gap: 1.4rem;
+                flex-wrap: wrap;
+            }
+            .foot-nav a {
+                color: var(--paper-dim);
+                font-size: 0.7rem;
+            }
+            .foot-nav a:hover {
+                color: var(--red);
+            }
+            .foot-mark {
+                color: var(--paper-faint);
+                font-size: 0.62rem;
+                width: 100%;
+                border-top: 1px solid var(--line);
+                padding-top: 1.2rem;
+            }
+
+            @media (max-width: 860px) {
+                .c-body {
+                    grid-template-columns: 1fr;
+                    row-gap: 1.2rem;
+                }
+                .c-col-r::before {
+                    display: none;
+                }
+                .c-col-r {
+                    border-top: 1px solid var(--line);
+                    padding-top: 1.2rem;
+                }
+            }
+            @media (max-width: 760px) {
+                .fw-grid {
+                    grid-template-columns: 1fr;
+                }
+                .stats {
+                    gap: 1.4rem;
+                }
+                .frow {
+                    grid-template-columns: 1fr;
+                    gap: 0.4rem;
+                }
+                .flabel {
+                    padding-top: 0;
+                }
+                .c-split {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+            }
+            @media (max-width: 540px) {
+                .wrap {
+                    width: 90vw;
+                }
+                .hero {
+                    padding: 6vh 0 7vh;
+                }
+                .kicker {
+                    letter-spacing: 0.08em;
+                    font-size: 0.5rem;
+                }
+                .ct-small {
+                    font-size: 0.95rem;
+                    letter-spacing: 0.08em;
+                }
+                .ct-big {
+                    font-size: clamp(1.4rem, 7vw, 4rem);
+                    letter-spacing: -0.015em;
+                }
+                .cover-sub {
+                    letter-spacing: 0.04em;
+                    font-size: 0.52rem;
+                    max-width: 32ch;
+                    margin-inline: auto;
+                }
+                .stats {
+                    gap: 0.9rem;
+                    margin-top: 1.8rem;
+                }
+                .snum {
+                    font-size: 1.55rem;
+                }
+                .slabel {
+                    font-size: 0.5rem;
+                    letter-spacing: 0.1em;
+                }
+                .cta {
+                    gap: 0.6rem;
+                    margin-top: 2rem;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .btn {
+                    font-size: 0.66rem;
+                    padding: 0.9em 1.1em;
+                    letter-spacing: 0.08em;
+                    width: 100%;
+                    max-width: 300px;
+                    text-align: center;
+                }
+                .cta-band {
+                    padding: 1.6rem 1.1rem;
+                }
+                .cta-band-h {
+                    font-size: 1.05rem;
+                }
+                .foot-nav {
+                    gap: 0.7rem 1rem;
+                }
+                .foot-nav a {
+                    font-size: 0.62rem;
+                }
+            }
+        </style>
+    </body>
 </html>
