@@ -43,9 +43,15 @@ function trackOf(goal, play) {
 // reached the site). Show the highest-signal few, cleaned and tier-stamped.
 const METRIC_LABEL = { nrr: "NRR", free_to_paid: "Free→paid", retention: "Retention", ttfv: "TTFV", organic: "Organic", arr: "ARR" };
 const METRIC_PRIORITY = ["nrr", "free_to_paid", "retention", "ttfv", "organic", "arr"];
+// Headline figure: drop trailing parentheticals / alternates, but DON'T truncate.
 function cleanMetric(v) {
-  const s = String(v || "").split(/\s*[(/]/)[0].trim();
-  return s.length > 24 ? s.slice(0, 23) + "…" : s;
+  return String(v || "").split(/\s*[(/]/)[0].trim();
+}
+// Split "ARR $600M annualized run-rate" -> figure "$600M", qualifier "annualized run-rate"
+// so the card can render the number large and glowing with the rest small.
+function splitFigure(cleaned) {
+  const m = cleaned.match(/^(\S+)\s*(.*)$/);
+  return { figure: m ? m[1] : cleaned, qualifier: m ? m[2].trim() : "" };
 }
 function companyMetricStrip(metrics) {
   const by = {};
@@ -53,7 +59,10 @@ function companyMetricStrip(metrics) {
   const out = [];
   for (const f of METRIC_PRIORITY) {
     const m = by[f];
-    if (m && m.value && cleanMetric(m.value)) out.push({ label: METRIC_LABEL[f], value: cleanMetric(m.value), tier: m.tier });
+    if (m && m.value) {
+      const cleaned = cleanMetric(m.value);
+      if (cleaned) { const { figure, qualifier } = splitFigure(cleaned); out.push({ label: METRIC_LABEL[f], figure, qualifier, tier: m.tier }); }
+    }
     if (out.length >= 4) break;
   }
   return out;

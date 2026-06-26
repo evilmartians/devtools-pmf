@@ -2,25 +2,16 @@
 import "../styles/global.css";
 import data from "../data/cookbook.json";
 
-// The PMF Compass section on the Evil Martians homepage.
 const BENCHMARK_URL = "https://evilmartians.com/#pmf-compass";
 const CONTACT_URL = "https://evilmartians.com/contact-us";
 const REPO_URL = "https://github.com/evilmartians/devtools-pmf";
 const ISSUE_URL = `${REPO_URL}/issues/new?template=add-data-point.yml`;
-// Current deploy domain (must match `site` in astro.config.mjs). Switch to a
-// custom domain here + in astro.config + in Netlify when you set one up.
 const SITE_URL = "https://devtools-pmf.netlify.app";
-// Pre-launch: keep the preview out of search results. Flip to false at public launch.
 const NOINDEX = true;
 const OG_IMAGE = `${SITE_URL}/og.png`;
 
 const getUsers = data.tracks.filter((t) => t.group === "Get users");
 const grow = data.tracks.filter((t) => t.group === "Convert & grow");
-
-// Group the (track-sorted) recipes into track chapters.
-const chapters = data.tracks
-  .map((t) => ({ ...t, items: data.recipes.filter((r) => r.track === t.track) }))
-  .filter((c) => c.items.length);
 const tierClass = (t) => (t || "estimated").toLowerCase();
 ---
 
@@ -31,16 +22,16 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {NOINDEX && <meta name="robots" content="noindex, nofollow" />}
     <title>The DevTools Cookbook — what 67 devtools companies did to hit PMF</title>
-    <meta name="description" content="190 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians." />
+    <meta name="description" content="198 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians." />
     <link rel="canonical" href={SITE_URL + "/"} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={SITE_URL + "/"} />
     <meta property="og:title" content="The DevTools Cookbook" />
-    <meta property="og:description" content="190 sourced plays real devtools companies used to hit product-market fit. Filter by your goal." />
+    <meta property="og:description" content="198 sourced plays real devtools companies used to hit product-market fit. Filter by your goal." />
     <meta property="og:image" content={OG_IMAGE} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="The DevTools Cookbook" />
-    <meta name="twitter:description" content="190 sourced plays real devtools companies used to hit product-market fit." />
+    <meta name="twitter:description" content="198 sourced plays real devtools companies used to hit product-market fit." />
     <meta name="twitter:image" content={OG_IMAGE} />
     <link rel="preload" href="/fonts/grotesk-expanded-ultrablack.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/grotesk-regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -98,41 +89,33 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         </div>
       </section>
 
-      <!-- ====================== RECIPES (filter-first) ====================== -->
+      <!-- ====================== RECIPES (filter -> deck) ====================== -->
       <section id="recipes" class="recipes">
         <div class="wrap">
           <p class="kicker">The Recipes</p>
           <h2 class="section-title">Find your recipe</h2>
-          <p class="recipes-lede">Pick what you're trying to do, narrow by your specifics, and get the plays that moved it.</p>
+          <p class="recipes-lede">Pick what you're trying to do, narrow by your specifics, then flip through the matching plays.</p>
 
-          <div class="deck">
+          <div class="filterbar">
             <div class="frow">
               <span class="flabel mono">Get users</span>
               <div class="fchips">
-                {getUsers.map((t) => (
-                  <button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>
-                ))}
+                {getUsers.map((t) => (<button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>))}
               </div>
             </div>
             <div class="frow">
               <span class="flabel mono">Grow &amp; keep</span>
               <div class="fchips">
-                {grow.map((t) => (
-                  <button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>
-                ))}
+                {grow.map((t) => (<button class="fchip" data-facet="track" data-val={t.track} type="button">{t.track}<sup>{t.count}</sup></button>))}
               </div>
             </div>
             <div class="frow">
               <span class="flabel mono">Motion</span>
-              <div class="fchips">
-                {data.motions.map((m) => (<button class="fchip" data-facet="gtm" data-val={m} type="button">{m}</button>))}
-              </div>
+              <div class="fchips">{data.motions.map((m) => (<button class="fchip" data-facet="gtm" data-val={m} type="button">{m}</button>))}</div>
             </div>
             <div class="frow">
               <span class="flabel mono">Category</span>
-              <div class="fchips">
-                {data.categories.map((c) => (<button class="fchip" data-facet="cat" data-val={c.key} type="button">{c.label}</button>))}
-              </div>
+              <div class="fchips">{data.categories.map((c) => (<button class="fchip" data-facet="cat" data-val={c.key} type="button">{c.label}</button>))}</div>
             </div>
           </div>
 
@@ -144,62 +127,58 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
             </div>
           </div>
           <p id="synth" class="synth mono" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+        </div>
 
-          {chapters.map((ch) => (
-            <div class="catgroup" data-track={ch.track}>
-              <div class="catdivider">
-                <span class="cd-no mono">Chapter</span>
-                <span class="cd-label">{ch.track}</span>
-                <span class="cd-blurb">{ch.blurb}</span>
-                <span class="cd-count mono">{ch.items.length}</span>
-              </div>
-              <div class="grid-cards">
-                {ch.items.map((r) => (
-                  <article class="recipe" data-id={r.id} data-track={r.track} data-gtm={r.gtm} data-cat={r.sub_industry} data-tags={r.tags.join(" ")}>
-                    <div class="r-top">
-                      <span class="rno mono">No. {r.no}</span>
-                      <span class={`stamp ${tierClass(r.tier)}`}>{r.tier}</span>
-                    </div>
-                    <h3 class="rtitle">{r.title}</h3>
-                    {r.learning && (
-                      <div class="r-learn">
-                        <span class="r-learn-l mono">The play</span>
-                        <p>{r.learning}</p>
+        <div class="deckwrap">
+          <div class="deck-rail" id="deck-rail">
+            {data.recipes.map((r) => (
+              <article class="card" data-id={r.id} data-track={r.track} data-gtm={r.gtm} data-cat={r.sub_industry} data-tags={r.tags.join(" ")}>
+                <div class="c-top">
+                  <span class="rno mono">No. {r.no}</span>
+                  <span class="c-track mono">{r.track}</span>
+                  <span class={`stamp ${tierClass(r.tier)}`}>{r.tier}</span>
+                </div>
+                <h3 class="ctitle">{r.title}</h3>
+                {r.learning && (
+                  <div class="c-learn"><span class="lbl mono">The play</span><p>{r.learning}</p></div>
+                )}
+                <p class="c-co mono">How <a href={`https://${r.url}`} target="_blank" rel="noopener">{r.company}</a> did it<span class="rgtm">{r.gtm}</span></p>
+                {r.companyMetrics.length > 0 && (
+                  <div class="facts" aria-label="Company benchmarks">
+                    {r.companyMetrics.map((f) => (
+                      <div class={`fact t-${f.tier.toLowerCase()}`} title={f.tier}>
+                        <span class="fact-l mono">{f.label}</span>
+                        <span class="fact-n">{f.figure}</span>
+                        {f.qualifier && <span class="fact-q">{f.qualifier}</span>}
                       </div>
-                    )}
-                    <div class="r-proof">
-                      <p class="r-proof-l mono">How <a href={`https://${r.url}`} target="_blank" rel="noopener">{r.company}</a> did it<span class="rgtm">{r.gtm}</span></p>
-                      {r.companyMetrics.length > 0 && (
-                        <div class="r-stats" aria-label="Company benchmarks">
-                          {r.companyMetrics.map((m) => (
-                            <span class={`r-stat t-${m.tier.toLowerCase()}`} title={`${m.label} — ${m.tier}`}>{m.label} <b>{m.value}</b></span>
-                          ))}
-                        </div>
-                      )}
-                      <p class="rsum">{r.summary}</p>
-                      {r.result && (<p class="rres"><span class="rres-l mono">Result</span> {r.result}</p>)}
-                      {r.tradeoff && (<p class="rcost"><span class="rcost-l mono">The cost</span> {r.tradeoff}</p>)}
-                    </div>
-                    {r.when_it_works && (
-                      <p class="r-when"><span class="r-when-l mono">When it works</span> {r.when_it_works}</p>
-                    )}
-                    <div class="r-foot">
-                      <div class="rtags">
-                        {r.tags.map((t) => (<button class="tag-mini" data-tag={t} type="button">{t}</button>))}
-                      </div>
-                      {r.source_url
-                        ? <a class="rsrc mono" href={r.source_url} target="_blank" rel="noopener" title={r.attribution}>Source ↗</a>
-                        : <span class="rsrc mono dim" title={r.attribution}>no direct link</span>}
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          ))}
+                    ))}
+                  </div>
+                )}
+                <p class="c-sum">{r.summary}</p>
+                <div class="c-split">
+                  {r.result && (<div class="c-cell c-result"><span class="lbl mono">Result</span><p>{r.result}</p></div>)}
+                  {r.tradeoff && (<div class="c-cell c-cost"><span class="lbl mono">The cost</span><p>{r.tradeoff}</p></div>)}
+                </div>
+                {r.when_it_works && (<p class="c-when"><span class="lbl mono">When it works</span> {r.when_it_works}</p>)}
+                <div class="c-foot">
+                  <div class="rtags">{r.tags.map((t) => (<button class="tag-mini" data-tag={t} type="button">{t}</button>))}</div>
+                  {r.source_url
+                    ? <a class="rsrc mono" href={r.source_url} target="_blank" rel="noopener" title={r.attribution}>Source ↗</a>
+                    : <span class="rsrc mono dim" title={r.attribution}>no direct link</span>}
+                </div>
+              </article>
+            ))}
+          </div>
+          <div class="deck-nav">
+            <button id="prev" class="deck-arrow" type="button" aria-label="Previous play">←</button>
+            <span id="pos" class="mono" role="status" aria-live="polite"></span>
+            <button id="next" class="deck-arrow" type="button" aria-label="Next play">→</button>
+          </div>
+        </div>
 
+        <div class="wrap">
           <p id="empty" class="empty" hidden>No plays match that combination. <button id="empty-clear" class="linklike">Reset the filters.</button></p>
           <p class="caveat">These are plays that worked for these companies. Treat them as leads to test, not guarantees.</p>
-
           <div class="cta-band">
             <p class="cta-band-h">Stuck on one of these moves?</p>
             <p class="cta-band-sub">The Martians who compiled this cookbook work on developer-tools go-to-market for a living. Bring us your goal, we'll help you run the play.</p>
@@ -238,19 +217,18 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
     </footer>
 
     <script>
-      const recipes = Array.from(document.querySelectorAll(".recipe"));
-      // Build the search index from each card's text once, rather than shipping a
-      // duplicated data-text attribute on every card (~180KB of the HTML).
+      const cards = Array.from(document.querySelectorAll(".card"));
       const textIndex = new WeakMap();
-      for (const el of recipes) textIndex.set(el, el.textContent.toLowerCase());
-      const groups = Array.from(document.querySelectorAll(".catgroup"));
+      for (const el of cards) textIndex.set(el, el.textContent.toLowerCase());
       const facetBtns = Array.from(document.querySelectorAll("[data-facet]"));
       const search = document.getElementById("search");
       const countEl = document.getElementById("count");
       const synthEl = document.getElementById("synth");
       const clearBtn = document.getElementById("clear");
       const emptyEl = document.getElementById("empty");
-      const total = recipes.length;
+      const rail = document.getElementById("deck-rail");
+      const posEl = document.getElementById("pos");
+      const total = cards.length;
 
       const TRACK_VERB = {
         "Open-source": "drive open-source adoption",
@@ -263,7 +241,6 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         "Retention": "keep customers", "Expansion": "expand accounts", "Revenue": "grow revenue",
       };
       const CAT_LABEL = { tooling: "tooling", infra: "infrastructure", security: "security" };
-
       const state = { track: null, gtm: null, cat: null, tag: null };
       let query = "";
 
@@ -275,7 +252,6 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         if (query && !textIndex.get(el).includes(query)) return false;
         return true;
       }
-
       function sentence(n) {
         const verb = state.track ? TRACK_VERB[state.track] : null;
         let s = verb ? `${n} ${n === 1 ? "play" : "plays"} to ${verb}` : `${n} ${n === 1 ? "play" : "plays"}`;
@@ -286,42 +262,62 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         if (state.tag) s += ` · tactic: ${state.tag}`;
         return s;
       }
-
-      function apply() {
-        let visible = 0;
-        for (const el of recipes) {
-          const show = matches(el);
-          el.classList.toggle("is-hidden", !show);
-          if (show) visible++;
+      const visibleCards = () => cards.filter((c) => !c.classList.contains("is-hidden"));
+      function focusedIndex(vis) {
+        if (!vis.length) return -1;
+        const center = rail.scrollLeft + rail.clientWidth / 2;
+        let idx = 0, best = Infinity;
+        for (let i = 0; i < vis.length; i++) {
+          const c = vis[i], cc = c.offsetLeft + c.offsetWidth / 2, d = Math.abs(cc - center);
+          if (d < best) { best = d; idx = i; }
         }
-        for (const g of groups) g.classList.toggle("is-hidden", !g.querySelector(".recipe:not(.is-hidden)"));
-        for (const b of facetBtns) {
-          const on = state[b.dataset.facet] === b.dataset.val;
-          b.classList.toggle("is-active", on);
-          b.setAttribute("aria-pressed", String(on));
-        }
+        return idx;
+      }
+      function updatePos() {
+        const vis = visibleCards();
+        posEl.textContent = vis.length ? `${focusedIndex(vis) + 1} / ${vis.length}` : "";
+      }
+      function move(dir) {
+        const vis = visibleCards();
+        if (!vis.length) return;
+        const j = Math.max(0, Math.min(vis.length - 1, focusedIndex(vis) + dir));
+        vis[j].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+      function apply(scrollReset) {
+        let v = 0;
+        for (const el of cards) { const show = matches(el); el.classList.toggle("is-hidden", !show); if (show) v++; }
+        for (const b of facetBtns) { const on = state[b.dataset.facet] === b.dataset.val; b.classList.toggle("is-active", on); b.setAttribute("aria-pressed", String(on)); }
         const active = state.track || state.gtm || state.cat || state.tag || query;
-        countEl.textContent = active ? `${visible} / ${total}` : `${total} plays`;
+        countEl.textContent = active ? `${v} / ${total}` : `${total} plays`;
         clearBtn.hidden = !active;
         synthEl.hidden = !active;
-        synthEl.textContent = active ? "→ " + sentence(visible) : "";
-        emptyEl.hidden = visible !== 0;
+        synthEl.textContent = active ? "→ " + sentence(v) : "";
+        emptyEl.hidden = v !== 0;
+        if (scrollReset) rail.scrollLeft = 0;
+        updatePos();
       }
-
-      function setFacet(facet, val, scroll) {
+      function setFacet(facet, val) {
         state[facet] = state[facet] === val ? null : val;
-        apply();
-        if (scroll && state[facet]) document.getElementById("recipes").scrollIntoView({ behavior: "smooth", block: "start" });
+        apply(true);
+        document.getElementById("recipes").scrollIntoView({ behavior: "smooth", block: "start" });
       }
-
-      facetBtns.forEach((b) => b.addEventListener("click", () => setFacet(b.dataset.facet, b.dataset.val, b.dataset.facet === "track" || b.dataset.facet === "tag")));
-      document.querySelectorAll(".tag-mini").forEach((c) => c.addEventListener("click", () => setFacet("tag", c.dataset.tag, true)));
-      search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); apply(); });
-      function clearAll() { state.track = state.gtm = state.cat = state.tag = null; query = ""; search.value = ""; apply(); }
+      facetBtns.forEach((b) => b.addEventListener("click", () => setFacet(b.dataset.facet, b.dataset.val)));
+      document.querySelectorAll(".tag-mini").forEach((c) => c.addEventListener("click", () => setFacet("tag", c.dataset.tag)));
+      search.addEventListener("input", () => { query = search.value.trim().toLowerCase(); apply(true); });
+      function clearAll() { state.track = state.gtm = state.cat = state.tag = null; query = ""; search.value = ""; apply(true); }
       clearBtn.addEventListener("click", clearAll);
       document.getElementById("empty-clear").addEventListener("click", clearAll);
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape") clearAll(); });
-      apply();
+      document.getElementById("prev").addEventListener("click", () => move(-1));
+      document.getElementById("next").addEventListener("click", () => move(1));
+      rail.addEventListener("scroll", () => requestAnimationFrame(updatePos), { passive: true });
+      window.addEventListener("resize", () => requestAnimationFrame(updatePos), { passive: true });
+      document.addEventListener("keydown", (e) => {
+        if (e.target && e.target.tagName === "INPUT") return;
+        if (e.key === "ArrowRight") move(1);
+        else if (e.key === "ArrowLeft") move(-1);
+        else if (e.key === "Escape") clearAll();
+      });
+      apply(false);
     </script>
 
     <style>
@@ -399,10 +395,10 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
       .legend-row { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: center; margin-bottom: 0.85rem; font-size: 0.92rem; color: var(--paper-dim); }
       .legend-row .stamp { justify-self: start; }
 
-      /* ---------------- RECIPES + FILTER DECK ---------------- */
+      /* ---------------- RECIPES: FILTER BAR ---------------- */
       .recipes { border-top: 1px solid var(--line); }
       .recipes-lede { color: var(--paper-dim); margin: 0.8rem 0 2rem; max-width: 52ch; }
-      .deck { border: 1px solid var(--line-strong); border-radius: 8px; padding: 1.3rem 1.4rem; background: linear-gradient(180deg, rgba(29,17,23,0.6), rgba(12,7,9,0.5)); display: grid; gap: 0.9rem; }
+      .filterbar { border: 1px solid var(--line-strong); border-radius: 8px; padding: 1.3rem 1.4rem; background: linear-gradient(180deg, rgba(29,17,23,0.6), rgba(12,7,9,0.5)); display: grid; gap: 0.9rem; }
       .frow { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; align-items: start; }
       .flabel { color: var(--red); padding-top: 0.55em; }
       .fchips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -412,63 +408,113 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
       .fchip.is-active { background: var(--red); color: var(--paper); border-color: var(--red); box-shadow: 0 6px 20px rgba(228,60,12,.3); }
       .fchip.is-active sup { color: var(--paper); }
 
-      .controls { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; position: sticky; top: 0; z-index: 5; padding: 1rem 0; margin: 1.4rem 0 0.2rem; background: linear-gradient(var(--void), rgba(5,3,4,0.86)); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+      .controls { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 1rem 0 0; margin: 1.2rem 0 0; }
       .search { flex: 1; min-width: 240px; background: rgba(20,12,17,0.8); border: 1px solid var(--line-strong); color: var(--paper); font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.04em; padding: 0.8em 1em; border-radius: 4px; }
       .search:focus { border-color: var(--red); }
       .controls-right { display: flex; align-items: center; gap: 1rem; }
       #count { color: var(--paper-faint); }
       .clearbtn { color: var(--red); background: none; border: none; cursor: pointer; }
-      .synth { color: var(--paper); margin: 0.4rem 0 0; letter-spacing: 0.06em; }
+      .synth { color: var(--paper); margin: 0.6rem 0 0; letter-spacing: 0.06em; }
 
-      .catgroup { content-visibility: auto; contain-intrinsic-size: 1px 1200px; }
-      .catgroup.is-hidden, .recipe.is-hidden { display: none; }
-      .catdivider { display: flex; align-items: baseline; gap: 1rem; margin: 2.8rem 0 1.4rem; border-bottom: 1.5px solid var(--line-strong); padding-bottom: 0.7rem; flex-wrap: wrap; }
-      .cd-no { color: var(--red); }
-      .cd-label { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.3rem, 3vw, 2rem); letter-spacing: 0.04em; }
-      .cd-blurb { color: var(--paper-dim); font-size: 0.92rem; }
-      .cd-count { color: var(--paper-faint); margin-left: auto; }
+      /* ---------------- THE DECK (horizontal scroll-snap) ---------------- */
+      .deckwrap { position: relative; margin-top: 1.6rem; }
+      .deck-rail {
+        display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.4rem);
+        overflow-x: auto; overflow-y: hidden;
+        scroll-snap-type: x mandatory; scroll-behavior: smooth;
+        padding: 3.2rem max(1rem, calc((100% - min(620px, 86vw)) / 2)) 3.4rem;
+        perspective: 1600px; scrollbar-width: none;
+      }
+      .deck-rail::-webkit-scrollbar { display: none; }
+      .card.is-hidden { display: none; }
+      .card {
+        scroll-snap-align: center; flex: 0 0 min(620px, 86vw);
+        position: relative; transform-style: preserve-3d;
+        background: linear-gradient(180deg, rgba(31,18,24,0.97), rgba(12,7,9,0.97));
+        border: 1px solid var(--line-strong); border-radius: 12px;
+        padding: clamp(1.5rem, 2.6vw, 2.2rem);
+        box-shadow: 0 22px 60px rgba(0,0,0,0.55);
+        transition: border-color .2s, box-shadow .25s;
+      }
+      /* perspective tilt: neighbours dim and rotate, the centred card is full */
+      @supports (animation-timeline: view()) {
+        .card { animation: deckfocus linear both; animation-timeline: view(inline); }
+        @keyframes deckfocus {
+          0%   { opacity: 0.28; transform: scale(0.8) rotateY(-32deg); }
+          46%, 54% { opacity: 1; transform: scale(1) rotateY(0deg); }
+          100% { opacity: 0.28; transform: scale(0.8) rotateY(32deg); }
+        }
+      }
+      /* 80s arcade neon glow on hover */
+      .card:hover {
+        border-color: var(--magenta);
+        box-shadow:
+          0 0 0 1px var(--magenta),
+          0 0 12px rgba(255,46,132,0.7),
+          0 0 34px rgba(228,60,12,0.45),
+          0 0 70px rgba(255,46,132,0.25),
+          0 22px 60px rgba(0,0,0,0.55);
+      }
+      .card::after {
+        content: ""; position: absolute; inset: 0; border-radius: 12px; pointer-events: none;
+        box-shadow: inset 0 0 22px rgba(255,46,132,0.18), inset 0 0 1px var(--magenta);
+        opacity: 0; transition: opacity .25s;
+      }
+      .card:hover::after { opacity: 1; }
 
-      /* masonry so variable-height cards pack tightly */
-      .grid-cards { column-width: 350px; column-gap: 1.1rem; }
-      .recipe { break-inside: avoid; display: block; margin-bottom: 1.1rem; position: relative; background: linear-gradient(180deg, rgba(29,17,23,0.9), rgba(12,7,9,0.9)); border: 1px solid var(--line); border-radius: 8px; padding: 1.3rem; transition: border-color .18s, box-shadow .18s, transform .18s; }
-      .recipe::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, var(--red), var(--gold)); opacity: 0; transition: opacity .2s; border-radius: 8px 8px 0 0; }
-      .recipe:hover { border-color: var(--line-strong); box-shadow: 0 14px 40px rgba(0,0,0,0.5); transform: translateY(-2px); }
-      .recipe:hover::before { opacity: 1; }
-      .r-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
+      .c-top { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem; }
       .rno { color: var(--paper-faint); }
-      .rtitle { font-family: var(--font-head); font-size: 1.16rem; line-height: 1.12; margin: 0 0 0.9rem; text-transform: uppercase; letter-spacing: 0.01em; }
+      .c-track { color: var(--paper-faint); font-size: 0.58rem; border: 1px solid var(--line); padding: 0.3em 0.55em; border-radius: 2px; }
+      .ctitle { font-family: var(--font-head); font-size: clamp(1.3rem, 2.4vw, 1.8rem); line-height: 1.12; letter-spacing: 0.005em; margin: 0 0 1.1rem; color: var(--paper); }
 
-      .r-learn { border-left: 2px solid var(--red); background: rgba(228,60,12,0.07); padding: 0.7rem 0.9rem; border-radius: 0 4px 4px 0; margin-bottom: 1rem; }
-      .r-learn-l { color: var(--red); display: block; margin-bottom: 0.35rem; }
-      .r-learn p { margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--paper); }
+      .c-learn { border-left: 2px solid var(--red); background: rgba(228,60,12,0.08); padding: 0.8rem 1rem; border-radius: 0 5px 5px 0; margin-bottom: 1.1rem; }
+      .lbl { color: var(--red); display: block; margin-bottom: 0.3rem; font-size: 0.58rem; }
+      .c-learn p { margin: 0; font-size: 1.04rem; line-height: 1.5; color: var(--paper); }
 
-      .r-proof-l { color: var(--paper-faint); display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem; }
-      .r-proof-l a { color: var(--cyan); }
+      .c-co { color: var(--paper-faint); display: flex; align-items: center; gap: 0.5rem; margin: 0 0 1rem; }
+      .c-co a { color: var(--cyan); }
       .rgtm { color: var(--paper-faint); font-size: 0.92em; padding: 0.1em 0.5em; border: 1px solid var(--line); border-radius: 2px; }
-      .r-stats { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0 0 0.8rem; }
-      .r-stat { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.02em; color: var(--paper-faint); border: 1px solid var(--line); border-left-width: 3px; padding: 0.28em 0.5em; border-radius: 2px; }
-      .r-stat b { color: var(--paper); font-weight: 700; }
-      .r-stat.t-verified { border-left-color: var(--cyan); }
-      .r-stat.t-reported { border-left-color: var(--gold); }
-      .r-stat.t-estimated { border-left-color: var(--paper-faint); }
-      .rsum { color: var(--paper-dim); font-size: 0.9rem; margin: 0 0 0.7rem; }
-      .rres { font-size: 0.86rem; color: var(--paper); margin: 0; padding-left: 0.75rem; border-left: 2px solid var(--line-strong); }
-      .rres-l { color: var(--red); display: block; margin-bottom: 0.15rem; font-size: 0.58rem; }
-      .rcost { font-size: 0.84rem; color: var(--paper-dim); margin: 0.7rem 0 0; padding-left: 0.75rem; border-left: 2px solid var(--ember); }
-      .rcost-l { color: var(--ember); display: block; margin-bottom: 0.15rem; font-size: 0.58rem; }
 
-      .r-when { font-size: 0.82rem; color: var(--paper-faint); margin: 0.9rem 0 0; line-height: 1.45; }
-      .r-when-l { color: var(--gold); display: block; margin-bottom: 0.2rem; font-size: 0.58rem; }
+      /* big glowing number-facts */
+      .facts { display: flex; flex-wrap: wrap; gap: 1.2rem 1.8rem; margin: 0 0 1.3rem; }
+      .fact { display: flex; flex-direction: column; gap: 0.12rem; }
+      .fact-l { font-size: 0.54rem; letter-spacing: 0.18em; color: var(--paper-faint); }
+      .fact-n { font-family: var(--font-head); font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1; color: var(--cyan); text-shadow: 0 0 16px currentColor; }
+      .fact-q { font-size: 0.62rem; color: var(--paper-dim); letter-spacing: 0.01em; max-width: 18ch; }
+      .fact.t-verified .fact-n { color: var(--cyan); }
+      .fact.t-reported .fact-n { color: var(--gold); }
+      .fact.t-estimated .fact-n { color: var(--ember); }
 
-      .r-foot { margin-top: 1rem; padding-top: 0.9rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 0.8rem; }
+      .c-sum { color: var(--paper-dim); font-size: 0.95rem; line-height: 1.55; margin: 0 0 1.2rem; }
+
+      /* Result | Cost juxtaposed */
+      .c-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 0 0 0.4rem; }
+      .c-cell { padding-left: 0.85rem; }
+      .c-result { border-left: 2px solid var(--red); }
+      .c-cost { border-left: 2px solid var(--ember); }
+      .c-result .lbl { color: var(--red); }
+      .c-cost .lbl { color: var(--ember); }
+      .c-cell p { margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--paper-dim); }
+      .c-result p { color: var(--paper); }
+
+      .c-when { font-size: 0.82rem; color: var(--paper-faint); margin: 1.2rem 0 0; line-height: 1.45; }
+      .c-when .lbl { color: var(--gold); }
+
+      .c-foot { margin-top: 1.2rem; padding-top: 0.9rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; gap: 0.8rem; }
       .rtags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
       .tag-mini { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.04em; color: var(--paper-faint); background: none; border: 1px solid var(--line); padding: 0.28em 0.5em; border-radius: 2px; cursor: pointer; transition: all .15s; }
-      .tag-mini:hover { color: var(--paper); border-color: var(--red); }
+      .tag-mini:hover { color: var(--paper); border-color: var(--magenta); box-shadow: 0 0 10px rgba(255,46,132,0.4); }
       .rsrc { white-space: nowrap; font-size: 0.62rem; }
       .rsrc.dim { color: var(--paper-faint); }
 
-      .empty { text-align: center; color: var(--paper-dim); padding: 3rem 0; }
-      .caveat { text-align: center; color: var(--paper-faint); font-size: 0.85rem; margin-top: 3rem; font-style: italic; }
+      /* deck nav */
+      .deck-nav { display: flex; align-items: center; justify-content: center; gap: 1.4rem; margin-top: 0.4rem; }
+      .deck-arrow { font-family: var(--font-mono); font-size: 1.1rem; color: var(--paper-dim); background: rgba(20,12,17,0.7); border: 1px solid var(--line-strong); width: 2.6rem; height: 2.6rem; border-radius: 50%; cursor: pointer; transition: all .15s var(--ease); }
+      .deck-arrow:hover { color: var(--paper); border-color: var(--magenta); box-shadow: 0 0 14px rgba(255,46,132,0.5); }
+      #pos { color: var(--paper-faint); min-width: 5ch; text-align: center; }
+
+      .empty { text-align: center; color: var(--paper-dim); padding: 3rem 0 1rem; }
+      .caveat { text-align: center; color: var(--paper-faint); font-size: 0.85rem; margin-top: 1.5rem; font-style: italic; }
       .cta-band { margin-top: 3.5rem; padding: 2.4rem; text-align: center; border: 1px solid var(--line-strong); border-radius: 10px; background: radial-gradient(120% 100% at 50% 0%, rgba(228,60,12,0.14), rgba(20,12,17,0.5)); }
       .cta-band-h { font-family: var(--font-head); text-transform: uppercase; font-size: clamp(1.2rem, 3vw, 1.7rem); letter-spacing: 0.03em; margin: 0 0 0.6rem; }
       .cta-band-sub { color: var(--paper-dim); max-width: 46ch; margin: 0 auto 1.6rem; font-size: 0.98rem; }
@@ -499,9 +545,8 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         .stats { gap: 1.4rem; }
         .frow { grid-template-columns: 1fr; gap: 0.4rem; }
         .flabel { padding-top: 0; }
+        .c-split { grid-template-columns: 1fr; gap: 1rem; }
       }
-      /* Narrow phones: the long uppercase, letter-spaced lines need to shrink to fit
-         with comfortable side margin (the Expanded UltraBlack cut is very wide). */
       @media (max-width: 540px) {
         .wrap { width: 90vw; }
         .hero { padding: 6vh 0 7vh; }
@@ -518,8 +563,6 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         .cta-band-h { font-size: 1.05rem; }
         .foot-nav { gap: 0.7rem 1rem; }
         .foot-nav a { font-size: 0.62rem; }
-        .catdivider { gap: 0.5rem 0.8rem; }
-        .cd-blurb { font-size: 0.82rem; }
       }
     </style>
   </body>
