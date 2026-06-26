@@ -1948,6 +1948,31 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                     gap: 1rem;
                 }
             }
+            /* phones: each card is a full-screen, full-bleed panel (no 3D flip) */
+            @media (max-width: 640px) {
+                .deck-rail {
+                    gap: 0;
+                    padding: 0;
+                    perspective: none;
+                    align-items: flex-start;
+                }
+                .card {
+                    flex-basis: 100vw;
+                    min-height: calc(100svh - 4rem);
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 0;
+                    border-inline: 0;
+                    box-shadow: none;
+                    padding: 1.6rem 5vw 1.8rem;
+                    animation: none !important;
+                    transform: none !important;
+                    opacity: 1 !important;
+                }
+                .c-foot {
+                    margin-top: auto;
+                }
+            }
             @media (max-width: 540px) {
                 .wrap {
                     width: 90vw;
