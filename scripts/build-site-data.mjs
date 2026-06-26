@@ -53,6 +53,23 @@ function splitFigure(cleaned) {
   const m = cleaned.match(/^(\S+)\s*(.*)$/);
   return { figure: m ? m[1] : cleaned, qualifier: m ? m[2].trim() : "" };
 }
+// Round headline factoids for glanceability: whole numbers for M/K/% (>=1),
+// one decimal for B. Leave ranges, sub-1% values (meaningful precisely because
+// tiny), multipliers, durations, and plain counts untouched.
+function roundFigure(fig) {
+  if (!fig) return fig;
+  if (/[-–]/.test(fig)) return fig; // ranges like "$12M-$16M", "155-170%"
+  const m = fig.match(/^([^\d]*)([\d,]+(?:\.\d+)?)(.*)$/);
+  if (!m) return fig; // no number (e.g. "minutes", "instant")
+  const [, prefix, numStr, suffix] = m;
+  const num = parseFloat(numStr.replace(/,/g, ""));
+  if (!Number.isFinite(num)) return fig;
+  const commas = (n) => n.toLocaleString("en-US");
+  if (/^B/i.test(suffix)) return `${prefix}${num.toFixed(1)}${suffix}`; // billions: 1 decimal
+  if (/^%/.test(suffix)) return num < 1 ? fig : `${prefix}${commas(Math.round(num))}${suffix}`;
+  if (/^[MK]/i.test(suffix)) return `${prefix}${commas(Math.round(num))}${suffix}`;
+  return fig; // x-multipliers, ms, h, plain counts: leave as-is
+}
 function companyMetricStrip(metrics) {
   const by = {};
   for (const m of metrics || []) by[m.field] = m;
@@ -61,7 +78,7 @@ function companyMetricStrip(metrics) {
     const m = by[f];
     if (m && m.value) {
       const cleaned = cleanMetric(m.value);
-      if (cleaned) { const { figure, qualifier } = splitFigure(cleaned); out.push({ label: METRIC_LABEL[f], figure, qualifier, tier: m.tier }); }
+      if (cleaned) { const { figure, qualifier } = splitFigure(cleaned); out.push({ label: METRIC_LABEL[f], figure: roundFigure(figure), qualifier, tier: m.tier }); }
     }
     if (out.length >= 4) break;
   }

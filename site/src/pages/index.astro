@@ -732,12 +732,37 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 posEl.textContent = `${idx + 1} / ${vis.length}`;
                 syncHash(vis[idx].id);
             }
-            // center a card using layout coords (transform-independent, so no overshoot).
-            // Mandatory scroll-snap fights a programmatic smooth scroll (it retargets mid-flight
-            // and skips cards), so we suspend snapping for the duration and restore it on settle.
+            // Center a card using layout coords (transform-independent, so no overshoot).
+            // Native smooth scroll + mandatory scroll-snap fight each other (a premature
+            // scrollend restores snap mid-flight and yanks the rail back), so we animate
+            // scrollLeft ourselves with snap suspended and restore it only when we land.
             let focusIdx = 0,
                 programmatic = false,
-                settleTimer = null;
+                animId = null;
+            const easeOutCubic = (p) => 1 - Math.pow(1 - p, 3);
+            function animateScrollTo(target, done) {
+                cancelAnimationFrame(animId);
+                const start = rail.scrollLeft;
+                const dist = target - start;
+                if (Math.abs(dist) < 1) {
+                    rail.scrollLeft = target;
+                    done && done();
+                    return;
+                }
+                const dur = Math.min(560, 200 + Math.abs(dist) * 0.22);
+                let t0 = null;
+                function step(ts) {
+                    if (t0 === null) t0 = ts;
+                    const p = Math.min(1, (ts - t0) / dur);
+                    rail.scrollLeft = start + dist * easeOutCubic(p);
+                    if (p < 1) animId = requestAnimationFrame(step);
+                    else {
+                        rail.scrollLeft = target;
+                        done && done();
+                    }
+                }
+                animId = requestAnimationFrame(step);
+            }
             function centerCard(el, smooth) {
                 const target = Math.max(
                     0,
@@ -745,25 +770,20 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 );
                 if (smooth) {
                     programmatic = true;
-                    rail.style.scrollSnapType = "none";
-                    rail.scrollTo({ left: target, behavior: "smooth" });
-                    clearTimeout(settleTimer);
-                    settleTimer = setTimeout(endProgrammatic, 700); // fallback if scrollend never fires
+                    rail.style.scrollSnapType = "none"; // keep snap from fighting the animation
+                    animateScrollTo(target, () => {
+                        rail.style.scrollSnapType = ""; // restored exactly on a snap point: no jump
+                        programmatic = false;
+                    });
                 } else {
-                    rail.scrollTo({ left: target, behavior: "auto" });
+                    rail.scrollLeft = target;
                 }
             }
-            function endProgrammatic() {
-                clearTimeout(settleTimer);
-                rail.style.scrollSnapType = "";
-                programmatic = false;
-            }
+            // when the user scrolls manually, keep our index in sync for the next key press
             rail.addEventListener("scrollend", () => {
-                if (programmatic) endProgrammatic();
-                else {
-                    const vis = visibleCards();
-                    if (vis.length) focusIdx = focusedIndex(vis);
-                }
+                if (programmatic) return;
+                const vis = visibleCards();
+                if (vis.length) focusIdx = focusedIndex(vis);
             });
             // step from the in-flight target during rapid presses, not the mid-animation position
             function move(dir) {
@@ -772,6 +792,38 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 const base = programmatic ? focusIdx : focusedIndex(vis);
                 focusIdx = Math.max(0, Math.min(vis.length - 1, base + dir));
                 centerCard(vis[focusIdx], true);
+            }
+            // highlight the search term inside cards via the CSS Custom Highlight
+            // API (no DOM mutation, instant to clear; degrades gracefully if absent)
+            const canHighlight =
+                typeof Highlight !== "undefined" && "highlights" in CSS;
+            function highlightMatches() {
+                if (!canHighlight) return;
+                CSS.highlights.delete("search");
+                if (!query || query.length < 2) return;
+                const ranges = [];
+                for (const card of visibleCards()) {
+                    const walker = document.createTreeWalker(
+                        card,
+                        NodeFilter.SHOW_TEXT,
+                    );
+                    let node;
+                    while ((node = walker.nextNode())) {
+                        const text = node.nodeValue.toLowerCase();
+                        let from = 0,
+                            idx = text.indexOf(query);
+                        while (idx !== -1) {
+                            const r = document.createRange();
+                            r.setStart(node, idx);
+                            r.setEnd(node, idx + query.length);
+                            ranges.push(r);
+                            from = idx + query.length;
+                            idx = text.indexOf(query, from);
+                        }
+                    }
+                }
+                if (ranges.length)
+                    CSS.highlights.set("search", new Highlight(...ranges));
             }
             function apply(scrollReset) {
                 let v = 0;
@@ -799,6 +851,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                     focusIdx = 0;
                 }
                 updatePos();
+                highlightMatches();
                 // resync baselines so filtering/search doesn't fire a flip sound or misstep nav
                 const vis2 = visibleCards();
                 if (vis2.length) {
@@ -1715,6 +1768,17 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
             .deck-snd.is-off {
                 color: var(--paper-faint);
                 text-shadow: none;
+            }
+
+            /* search-term highlight (CSS Custom Highlight API): neon cyan glow */
+            ::highlight(search) {
+                background-color: rgba(var(--cyan-rgb), 0.32);
+                color: #ecfffe;
+                -webkit-text-stroke: 0.3px rgba(var(--cyan-rgb), 0.6);
+                text-shadow:
+                    0 0 4px rgba(var(--cyan-rgb), 1),
+                    0 0 11px rgba(var(--cyan-rgb), 0.95),
+                    0 0 22px rgba(var(--cyan-rgb), 0.6);
             }
 
             .empty {
