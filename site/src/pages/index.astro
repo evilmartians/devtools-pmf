@@ -772,8 +772,12 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
             }
 
             let lastHashId = "";
+            // Only mirror the deck position into the URL once the user actually
+            // engages the deck. Otherwise a bare landing would rewrite the URL to
+            // the first card (#company-001) and a refresh would jump into the deck.
+            let deckEngaged = false;
             function syncHash(id) {
-                if (!id || id === lastHashId) return;
+                if (!deckEngaged || !id || id === lastHashId) return;
                 lastHashId = id;
                 history.replaceState(null, "", "#" + id);
             }
@@ -839,10 +843,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                     rail.classList.add("snapping");
                     rail.style.scrollBehavior = "auto";
                     rail.style.scrollSnapType = "none";
-                    rail.scrollLeft = Math.max(
-                        0,
-                        el.offsetLeft - (rail.clientWidth - el.offsetWidth) / 2,
-                    );
+                    rail.scrollLeft = target;
                     void rail.offsetWidth; // settle at target before snap re-arms
                     rail.style.scrollSnapType = "";
                     rail.style.scrollBehavior = "";
@@ -863,6 +864,17 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 const base = programmatic ? focusIdx : focusedIndex(vis);
                 focusIdx = Math.max(0, Math.min(vis.length - 1, base + dir));
                 centerCard(vis[focusIdx], true);
+            }
+            // Jump focus to a specific card (deep link, leaderboard chip): centre it,
+            // resync our index and sound baseline, and optionally write the URL. The
+            // caller scrolls the deck into view first.
+            function centerAndTrack(el, writeHash) {
+                centerCard(el, false);
+                focusIdx = Math.max(0, visibleCards().indexOf(el));
+                soundFocusId = el.id;
+                lastHashId = el.id;
+                if (writeHash) history.replaceState(null, "", "#" + el.id);
+                requestAnimationFrame(updatePos);
             }
             // highlight the search term inside cards via the CSS Custom Highlight
             // API (no DOM mutation, instant to clear; degrades gracefully if absent)
@@ -924,10 +936,11 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 updatePos();
                 highlightMatches();
                 // resync baselines so filtering/search doesn't fire a flip sound or misstep nav
-                const vis2 = visibleCards();
-                if (vis2.length) {
-                    soundFocusId = vis2[focusedIndex(vis2)].id;
-                    if (!scrollReset) focusIdx = focusedIndex(vis2);
+                const vis = visibleCards();
+                if (vis.length) {
+                    const i = focusedIndex(vis);
+                    soundFocusId = vis[i].id;
+                    if (!scrollReset) focusIdx = i;
                 }
             }
             function setFacet(facet, val) {
@@ -971,11 +984,13 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 .addEventListener("click", () => move(1));
             rail.addEventListener(
                 "scroll",
-                () =>
+                () => {
+                    deckEngaged = true;
                     requestAnimationFrame(() => {
                         updatePos();
                         maybeFlipSound();
-                    }),
+                    });
+                },
                 { passive: true },
             );
             window.addEventListener(
@@ -1041,52 +1056,35 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
             // (which fires after that native scroll) to make our centring win.
             (function deepLink() {
                 const id = decodeURIComponent(location.hash.slice(1));
-                if (!id) return;
-                const el = cards.find(
-                    (c) => c.id === id && !c.classList.contains("is-hidden"),
-                );
+                const el =
+                    id &&
+                    cards.find(
+                        (c) => c.id === id && !c.classList.contains("is-hidden"),
+                    );
                 if (!el) return;
-                function center() {
-                    centerCard(el, false);
-                    const vis = visibleCards();
-                    focusIdx = Math.max(0, vis.indexOf(el));
-                    requestAnimationFrame(updatePos);
-                }
-                function land() {
-                    document
-                        .querySelector(".deckwrap")
-                        .scrollIntoView({ block: "start" });
-                    center();
-                    soundFocusId = el.id;
-                    lastHashId = id;
-                }
-                requestAnimationFrame(land);
-                if (document.fonts && document.fonts.ready)
-                    document.fonts.ready.then(() => requestAnimationFrame(center));
-                window.addEventListener("load", () => requestAnimationFrame(center), {
-                    once: true,
-                });
+                document
+                    .querySelector(".deckwrap")
+                    .scrollIntoView({ block: "start" });
+                const recentre = () => centerAndTrack(el, false);
+                requestAnimationFrame(recentre);
+                document.fonts?.ready?.then(() => requestAnimationFrame(recentre));
+                window.addEventListener(
+                    "load",
+                    () => requestAnimationFrame(recentre),
+                    { once: true },
+                );
             })();
-            // leaderboard play-cards jump to and center their card in the deck
+            // leaderboard play-cards jump to and centre their card in the deck
             document.querySelectorAll(".play-chip").forEach((a) => {
                 a.addEventListener("click", (e) => {
-                    const id = a.getAttribute("data-anchor");
-                    const el = id && document.getElementById(id);
+                    const el = document.getElementById(a.dataset.anchor);
                     if (!el) return; // fall back to default hash navigation
                     e.preventDefault();
                     clearAll(); // make sure the card isn't filtered out
                     document
                         .querySelector(".deckwrap")
                         .scrollIntoView({ behavior: "smooth", block: "start" });
-                    requestAnimationFrame(() => {
-                        const vis = visibleCards();
-                        focusIdx = Math.max(0, vis.indexOf(el));
-                        centerCard(el, false);
-                        soundFocusId = el.id;
-                        lastHashId = id;
-                        history.replaceState(null, "", "#" + id);
-                        requestAnimationFrame(updatePos);
-                    });
+                    requestAnimationFrame(() => centerAndTrack(el, true));
                 });
             });
         </script>
