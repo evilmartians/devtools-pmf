@@ -26,7 +26,7 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         </title>
         <meta
             name="description"
-            content="198 sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians."
+            content={`${data.stats.recipes} sourced, source-checked plays real developer-tools, infrastructure, and security companies used to reach product-market fit. Filter by your goal; each is a transferable lesson. By Evil Martians.`}
         />
         <link rel="canonical" href={SITE_URL + "/"} />
         <meta property="og:type" content="website" />
@@ -34,14 +34,14 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
         <meta property="og:title" content="The DevTools Cookbook" />
         <meta
             property="og:description"
-            content="198 sourced plays real devtools companies used to hit product-market fit. Filter by your goal."
+            content={`${data.stats.recipes} sourced plays real devtools companies used to hit product-market fit. Filter by your goal.`}
         />
         <meta property="og:image" content={OG_IMAGE} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="The DevTools Cookbook" />
         <meta
             name="twitter:description"
-            content="198 sourced plays real devtools companies used to hit product-market fit."
+            content={`${data.stats.recipes} sourced plays real devtools companies used to hit product-market fit.`}
         />
         <meta name="twitter:image" content={OG_IMAGE} />
         <link
@@ -160,6 +160,58 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                                 single primary link.</span
                             >
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ====================== RECORDS & BENCHMARKS ====================== -->
+            <section class="board wrap" id="leaderboard">
+                <p class="kicker">Leaderboard</p>
+                <h2 class="section-title">Records &amp; benchmarks</h2>
+                <p class="appendix-lede">
+                    Where the verified numbers land. The numbered cards link to
+                    the plays that produced each figure.
+                </p>
+                <div class="boards">
+                    <div class="board-col">
+                        <h3 class="board-h mono">{data.leaderboards.nrr.label}</h3>
+                        <ol class="board-list">
+                            {data.leaderboards.nrr.rows.map((row) => (
+                                <li class="board-row">
+                                    <span class="board-rank mono">
+                                        {String(row.rank).padStart(2, "0")}
+                                    </span>
+                                    <span class="board-co">{row.company}</span>
+                                    <span class="board-tags mono">
+                                        {row.gtm} · {row.cat}
+                                    </span>
+                                    <span
+                                        class={`board-fig t-${row.tier.toLowerCase()}`}
+                                        title={row.value}
+                                    >
+                                        {row.figure}
+                                    </span>
+                                    {row.period && (
+                                        <span class="board-period mono">{row.period}</span>
+                                    )}
+                                    {row.cards.length > 0 && (
+                                        <span class="board-cards">
+                                            {row.cards.map((c) => (
+                                                <a
+                                                    class="play-chip"
+                                                    href={`#${c.anchor}`}
+                                                    data-anchor={c.anchor}
+                                                    title={`#${c.no} · ${c.track} — ${c.title}`}
+                                                >
+                                                    {c.no}
+                                                </a>
+                                            ))}
+                                        </span>
+                                    )}
+                                </li>
+                            ))}
+                        </ol>
+                        <p class="board-note">{data.leaderboards.nrr.note}</p>
                     </div>
                 </div>
             </section>
@@ -466,6 +518,9 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                             aria-label="Toggle flip sound"
                             title="Flip sound">♪</button
                         >
+                    </div>
+                    <div class="swipe-hint" id="swipe-hint" aria-hidden="true">
+                        Swipe <span class="arrows">→</span>
                     </div>
                 </div>
 
@@ -776,7 +831,23 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                         programmatic = false;
                     });
                 } else {
-                    rail.scrollLeft = target;
+                    // Land exactly on centre. Two things fight a plain assignment here:
+                    // CSS scroll-behavior:smooth would animate it, and the cards' scroll-
+                    // driven scale/rotate animation means mandatory snap reads a half-scaled
+                    // box and lands on the wrong neighbour. Freeze the transform, suspend
+                    // smooth + snap, set the layout centre, then restore (snap now agrees).
+                    rail.classList.add("snapping");
+                    rail.style.scrollBehavior = "auto";
+                    rail.style.scrollSnapType = "none";
+                    rail.scrollLeft = Math.max(
+                        0,
+                        el.offsetLeft - (rail.clientWidth - el.offsetWidth) / 2,
+                    );
+                    void rail.offsetWidth; // settle at target before snap re-arms
+                    rail.style.scrollSnapType = "";
+                    rail.style.scrollBehavior = "";
+                    void rail.offsetWidth;
+                    rail.classList.remove("snapping");
                 }
             }
             // when the user scrolls manually, keep our index in sync for the next key press
@@ -926,7 +997,48 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 else if (e.key === "Escape") clearAll();
             });
             apply(false);
-            // deep-link: if the URL names a card, center it on load
+            // mobile-only one-time swipe hint: appears when the deck scrolls into
+            // view, dismisses on the first swipe (or after a few seconds), remembered
+            (function swipeHintSetup() {
+                const hint = document.getElementById("swipe-hint");
+                if (
+                    !hint ||
+                    !window.matchMedia("(max-width: 640px)").matches ||
+                    localStorage.getItem("deckSwipeHint") === "seen" ||
+                    !("IntersectionObserver" in window)
+                )
+                    return;
+                // reparent to <body> so position:fixed always pins to the viewport,
+                // regardless of any transformed/filtered ancestor in the deck
+                document.body.appendChild(hint);
+                let timer = null;
+                const dismiss = () => {
+                    hint.classList.remove("is-on");
+                    localStorage.setItem("deckSwipeHint", "seen");
+                    clearTimeout(timer);
+                };
+                const io = new IntersectionObserver(
+                    (entries) => {
+                        if (entries.some((e) => e.isIntersecting)) {
+                            hint.classList.add("is-on");
+                            rail.addEventListener("scroll", dismiss, {
+                                once: true,
+                                passive: true,
+                            });
+                            timer = setTimeout(dismiss, 6000);
+                            io.disconnect();
+                        }
+                    },
+                    // the rail is taller than the viewport, so 0.5 can never be
+                    // reached; 0.2 fires once the deck is well into view
+                    { threshold: 0.2 },
+                );
+                io.observe(rail);
+            })();
+            // deep-link: if the URL names a card, center it on load. The browser's
+            // own fragment scroll lands the card at a snap edge and runs after this
+            // script, so we re-centre on the next frame, after fonts, and on load
+            // (which fires after that native scroll) to make our centring win.
             (function deepLink() {
                 const id = decodeURIComponent(location.hash.slice(1));
                 if (!id) return;
@@ -934,16 +1046,49 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                     (c) => c.id === id && !c.classList.contains("is-hidden"),
                 );
                 if (!el) return;
-                document
-                    .getElementById("recipes")
-                    .scrollIntoView({ block: "start" });
-                centerCard(el, false);
-                const vis = visibleCards();
-                focusIdx = Math.max(0, vis.indexOf(el));
-                soundFocusId = el.id;
-                lastHashId = id;
-                requestAnimationFrame(updatePos);
+                function center() {
+                    centerCard(el, false);
+                    const vis = visibleCards();
+                    focusIdx = Math.max(0, vis.indexOf(el));
+                    requestAnimationFrame(updatePos);
+                }
+                function land() {
+                    document
+                        .querySelector(".deckwrap")
+                        .scrollIntoView({ block: "start" });
+                    center();
+                    soundFocusId = el.id;
+                    lastHashId = id;
+                }
+                requestAnimationFrame(land);
+                if (document.fonts && document.fonts.ready)
+                    document.fonts.ready.then(() => requestAnimationFrame(center));
+                window.addEventListener("load", () => requestAnimationFrame(center), {
+                    once: true,
+                });
             })();
+            // leaderboard play-cards jump to and center their card in the deck
+            document.querySelectorAll(".play-chip").forEach((a) => {
+                a.addEventListener("click", (e) => {
+                    const id = a.getAttribute("data-anchor");
+                    const el = id && document.getElementById(id);
+                    if (!el) return; // fall back to default hash navigation
+                    e.preventDefault();
+                    clearAll(); // make sure the card isn't filtered out
+                    document
+                        .querySelector(".deckwrap")
+                        .scrollIntoView({ behavior: "smooth", block: "start" });
+                    requestAnimationFrame(() => {
+                        const vis = visibleCards();
+                        focusIdx = Math.max(0, vis.indexOf(el));
+                        centerCard(el, false);
+                        soundFocusId = el.id;
+                        lastHashId = id;
+                        history.replaceState(null, "", "#" + id);
+                        requestAnimationFrame(updatePos);
+                    });
+                });
+            });
         </script>
 
         <style>
@@ -1427,6 +1572,13 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                     }
                 }
             }
+            /* While we programmatically centre a card, freeze the scroll-driven
+               scale/rotate so mandatory snap reads the true layout box, not a
+               half-scaled one, and lands on the right card. */
+            .deck-rail.snapping .card {
+                animation: none !important;
+                transform: none !important;
+            }
             /* 80s arcade neon glow on hover */
             .card:hover {
                 border-color: var(--magenta);
@@ -1872,6 +2024,139 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 color: var(--paper);
             }
 
+            /* ---------------- RECORDS & BENCHMARKS ---------------- */
+            .board {
+                border-top: 1px solid var(--line);
+            }
+            .boards {
+                display: grid;
+                grid-template-columns: 1fr;
+                max-width: 36rem;
+                margin: 1.8rem auto 0;
+            }
+            .board-h {
+                color: var(--paper-faint);
+                font-size: 0.62rem;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                margin: 0 0 0.6rem;
+            }
+            .board-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            .board-row {
+                border-bottom: 1px solid var(--line);
+                display: grid;
+                grid-template-columns: 2rem 1fr auto auto;
+                column-gap: 0.8rem;
+                align-items: center;
+                padding: 0.7rem 0.3rem;
+            }
+            .board-rank {
+                grid-row: 1 / 3;
+                color: var(--paper-faint);
+                font-size: 0.82rem;
+                text-align: right;
+            }
+            .board-row:nth-child(-n + 3) .board-rank {
+                color: var(--gold);
+                text-shadow: 0 0 9px rgba(246, 196, 84, 0.8);
+            }
+            .board-co {
+                grid-column: 2;
+                grid-row: 1;
+                color: var(--paper);
+                font-size: 0.98rem;
+            }
+            .board-tags {
+                grid-column: 2;
+                grid-row: 2;
+                color: var(--paper-faint);
+                font-size: 0.54rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+            }
+            .board-fig {
+                grid-column: 4;
+                grid-row: 1;
+                align-self: end;
+                text-align: right;
+                font-family: var(--font-head);
+                font-size: 1.2rem;
+                line-height: 1;
+                color: var(--cyan);
+                text-shadow: 0 0 13px currentColor;
+            }
+            .board-period {
+                grid-column: 4;
+                grid-row: 2;
+                align-self: start;
+                text-align: right;
+                color: var(--paper-faint);
+                font-size: 0.54rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+            }
+            /* relevant plays as little numbered cards in their own column */
+            .board-cards {
+                grid-column: 3;
+                grid-row: 1 / 3;
+                align-self: center;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                gap: 0.4rem;
+                margin-left: 0.4rem;
+            }
+            .play-chip {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 2.3rem;
+                height: 1.55rem;
+                padding: 0 0.35rem;
+                border: 1px solid var(--line-strong);
+                border-radius: 3px;
+                background: linear-gradient(
+                    180deg,
+                    rgba(var(--cyan-rgb), 0.08),
+                    rgba(var(--cyan-rgb), 0.02)
+                );
+                box-shadow: inset 0 1px 0 rgba(246, 236, 226, 0.06);
+                font-family: var(--font-mono);
+                font-size: 0.6rem;
+                font-weight: 700;
+                letter-spacing: 0.06em;
+                color: var(--paper-dim);
+                transition:
+                    color 0.15s,
+                    border-color 0.15s,
+                    box-shadow 0.15s,
+                    transform 0.15s;
+            }
+            .play-chip:hover {
+                color: var(--cyan);
+                border-color: rgba(var(--cyan-rgb), 0.65);
+                box-shadow: 0 0 14px rgba(var(--cyan-rgb), 0.4);
+                transform: translateY(-1px);
+                text-decoration: none;
+            }
+            .board-note {
+                color: var(--paper-faint);
+                font-size: 0.72rem;
+                line-height: 1.45;
+                font-style: italic;
+                margin: 0.9rem 0 0;
+            }
+            @media (max-width: 640px) {
+                .boards {
+                    grid-template-columns: 1fr;
+                    gap: 2.2rem;
+                }
+            }
+
             /* ---------------- FOOTER ---------------- */
             .foot {
                 border-top: 1px solid var(--line-strong);
@@ -1946,6 +2231,65 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 .c-split {
                     grid-template-columns: 1fr;
                     gap: 1rem;
+                }
+            }
+            /* mobile swipe hint: hidden on desktop, shown briefly on phones */
+            .swipe-hint {
+                display: none;
+            }
+            @media (max-width: 640px) {
+                .swipe-hint {
+                    position: fixed;
+                    left: 50%;
+                    bottom: 1.5rem;
+                    transform: translateX(-50%);
+                    z-index: 40;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    padding: 0.6rem 1rem;
+                    font-family: var(--font-mono);
+                    font-size: 0.62rem;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--paper);
+                    background: rgba(20, 12, 17, 0.82);
+                    -webkit-backdrop-filter: blur(6px);
+                    backdrop-filter: blur(6px);
+                    border: 1px solid var(--cyan);
+                    border-radius: 999px;
+                    box-shadow:
+                        0 0 14px rgba(var(--cyan-rgb), 0.5),
+                        0 6px 22px rgba(0, 0, 0, 0.55);
+                    opacity: 0;
+                    transition: opacity 0.45s var(--ease);
+                    pointer-events: none;
+                }
+                .swipe-hint.is-on {
+                    opacity: 1;
+                }
+                .swipe-hint .arrows {
+                    color: var(--cyan);
+                    font-size: 0.95rem;
+                    line-height: 1;
+                    text-shadow: 0 0 9px rgba(var(--cyan-rgb), 0.95);
+                    animation: swipenudge 1.3s var(--ease) infinite;
+                }
+                @keyframes swipenudge {
+                    0%,
+                    100% {
+                        transform: translateX(0);
+                        opacity: 0.55;
+                    }
+                    50% {
+                        transform: translateX(6px);
+                        opacity: 1;
+                    }
+                }
+                @media (prefers-reduced-motion: reduce) {
+                    .swipe-hint .arrows {
+                        animation: none;
+                    }
                 }
             }
             /* phones: each card is a full-screen, full-bleed panel (no 3D flip) */

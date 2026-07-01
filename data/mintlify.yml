@@ -39,7 +39,7 @@ metrics:
     note: "REFUTED as Reported-tier: the 150% NRR figure is single-sourced to Sacra. Independent checks (Mintlify's own 2025 Year in Review blog, GetLatka, Growth with Gary) disclose ARR direction, customer counts, and ACV multiples but NONE state any NRR figure. Sacra says 'the company reports' 150% but provides no primary link, and the company's own publications do not publish an NRR number. Every other web mention of Mintlify 150% NRR traces back to Sacra. Downgraded Reported -> Estimate pending a primary source."
 plays:
   - title: "Do the migration before you pitch the migration"
-    summary: "With no brand or sales team, Mintlify's founders picked target companies, spent hours rebuilding each one's documentation on Mintlify, and only then sent a cold email leading with the revamped, ready-to-ship docs as the pitch. The prospect saw a working before/after instead of a feature list, so the only decision left was to switch on what already existed. They ran this from customer 10 to past 1,000 before the manual build became infeasible."
+    summary: "With no brand or sales team, Mintlify's founders picked target companies, spent hours rebuilding each one's documentation on Mintlify, and only then sent a cold email leading with the revamped, ready-to-ship docs as the pitch. The prospect saw a working before/after, so the only decision left was to switch on what already existed. They ran this from customer 10 to past 1,000 before the manual build became infeasible."
     goal: "Acquisition"
     track: "Word-of-mouth & outbound"
     learning: "For a switching-cost product, rebuild the prospect's own asset on your tool first, then cold-email them the finished before/after so they evaluate a working result and switching costs them nothing. Run it founder-led."
@@ -74,7 +74,7 @@ plays:
       - "onboarding-redesign"
       - "do-things-that-dont-scale"
   - title: "Turn every customer deployment into a node in your distribution network"
-    summary: "As AI coding assistants became the new discovery surface, Mintlify made each customer's hosted docs generate a Model Context Protocol (MCP) server, so AI tools can search the docs and call the customer's API in real time, and the server gets listed in AI registries (Cursor.directory, Windsurf.run, mcp.run, OpenTools). Mintlify then launched its own curated registry, mcpt, aggregating those customer servers in one place. Every docs site Mintlify hosts becomes a distribution node inside the AI ecosystem, reframing docs from a cost center into the highest-intent surface in the customer's funnel."
+    summary: "As AI coding assistants became the new discovery surface, Mintlify made each customer's hosted docs generate a Model Context Protocol (MCP) server, so AI tools can search the docs and call the customer's API in real time, and the server gets listed in AI registries (Cursor.directory, Windsurf.run, mcp.run, OpenTools). Mintlify then launched its own curated registry, mcpt, to aggregate those customer servers. Every docs site it hosts becomes a distribution node inside the AI ecosystem, reframing docs into the highest-intent surface in the customer's funnel."
     goal: "Acquisition"
     track: "Integrations & ecosystem"
     learning: "Ship a default-on feature that converts each customer's deployment into a listing in the registries where your buyers' buyers now search, AI tool directories and MCP registries, so your install base compounds into distribution you never have to staff. Pair it with your own curated registry to own the aggregation layer."

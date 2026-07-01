@@ -50,7 +50,7 @@ plays:
       - "community-led"
       - "land-and-expand"
   - title: "Ship a drop-in replacement the week the incumbent breaks"
-    summary: "In early 2024 NIST's National Vulnerability Database stalled (>90% of new CVEs unanalyzed by May) and its NVD 2.0 API began timing out and returning 503s under strict rate limits. On March 14, 2024 VulnCheck shipped NVD++: a free, stable, high-performance drop-in for the exact same NVD data via API and downloadable JSON, with CEO Anthony Bettini explicitly framing it as cutting the industry's reliance on a failing government source. Because it was a true API-compatible swap launched at the moment of pain, thousands of organizations adopted it and it seeded the community funnel."
+    summary: "In early 2024 NIST's National Vulnerability Database stalled (>90% of new CVEs unanalyzed by May) and its NVD 2.0 API began timing out and returning 503s under strict rate limits. On March 14, 2024 VulnCheck shipped NVD++: a free, stable drop-in for the same NVD data via API and downloadable JSON, with CEO Anthony Bettini framing it as cutting the industry's reliance on a failing government source. Because it was a true API-compatible swap launched at the moment of pain, thousands of organizations adopted it and it seeded the community funnel."
     goal: "Acquisition"
     track: "Launches & build-in-public"
     learning: "When a dependency your buyers rely on visibly degrades, ship an API-compatible mirror within days and name the failure by name. Matching the interface makes adoption a config swap, and the outage supplies the urgency you would otherwise have to manufacture."

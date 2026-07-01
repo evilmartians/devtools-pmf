@@ -31,7 +31,7 @@ metrics:
     note: "Confirmed directly from the SEC 424B4 prospectus: 'subscription dollar-based net retention rate was 133% as of January 31, 2024.' The 150% figure was a prior period, not the Jan 2024 value. Upgraded from secondary Mostly Metrics source (which was graded Reported because the SEC URL had returned 403); retrieved the primary filing via curl and verified the exact wording."
 plays:
   - title: "Rename your category to bill against a bigger budget"
-    summary: "Rubrik sold backup-and-recovery, a price-pressured IT-infrastructure commodity. In 2016 a customer hit by one of the first ransomware attacks recovered all systems in hours using Rubrik's immutable backups, which CEO Bipul Sinha called 'a huge eye opener.' They built a ransomware detection-and-recovery product that customers initially didn't want (they gave it away free), then waited for the threat to spread and rebranded the entire data-protection install base as 'cyber resilience,' the neglected recovery half of zero-trust. This moved the same product out of the backup market and into the ~$200B security budget owned by CISOs."
+    summary: "Rubrik sold backup-and-recovery, a price-pressured IT commodity. In 2016 a customer hit by one of the first ransomware attacks recovered all systems in hours on Rubrik's immutable backups, which CEO Bipul Sinha called 'a huge eye opener.' Rubrik built a ransomware detection-and-recovery product customers initially didn't want (it gave it away free), waited for the threat to spread, then rebranded its entire data-protection install base as 'cyber resilience,' the neglected recovery half of zero-trust. That moved the same product from the backup market into the ~$200B security budget owned by CISOs."
     goal: "Revenue"
     learning: "When your commodity sits on mission-critical data, find the disaster where you're the only thing that saves the customer, then rebrand the category around that scenario so you move from a cost-cutting line item into a high-priority one. Give the new capability away free until the threat makes it undeniable."
     when_it_works: "Works when an external shift (a new threat, regulation, or failure mode) suddenly makes your existing capability mission-critical to a buyer with a much larger budget than your original buyer."
@@ -53,7 +53,7 @@ plays:
     when_it_works: "Works when a senior buyer (CISO, CFO, CRO) already cares about the outcome your product produces but doesn't yet know your category is the lever for it."
     metric_moved: "arr"
     result: "CEO: '100% of my conversations in the UK have been with CISOs and CIOs. Five years ago it was IT Operations,' alongside ~$129K average contract value (FY24 S-1) and 1,742 customers over $100K growing ~45% YoY."
-    tradeoff: "Selling to the CISO instead of IT Operations trades a fast, low-stakes buyer for longer, more political deal cycles with a steeper proof burden, and that higher-stakes relationship is harder to keep expanding (subscription NRR slid from 133% in FY24 toward 120%+ by FY26)."
+    tradeoff: "Selling to the CISO trades a fast, low-stakes IT Operations buyer for longer, more political deal cycles with a steeper proof burden, and that higher-stakes relationship is harder to keep expanding (subscription NRR slid from 133% in FY24 toward 120%+ by FY26)."
     tier: "Reported"
     source_type: "journalism"
     source_url: "https://www.thestack.technology/the-big-interview-rubrik-ceo-bipol-sinha/"

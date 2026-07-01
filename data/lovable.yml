@@ -54,7 +54,7 @@ plays:
     when_it_works: "When your core capability is demonstrable in a standalone CLI/library that developers will star and share."
     metric_moved: "organic signups / launch-day ARR"
     result: "52,000+ GitHub stars and a 27,000-person waitlist converted into a #1 Product Hunt / #1 Hacker News launch and $4M ARR in 4 weeks."
-    tradeoff: "By open-sourcing the core engine to win 52K stars, you give away the very capability you later charge for, so the hosted product must out-convenience a tool anyone can self-host or fork, and you must abandon the GPT Engineer brand and OSS community you built the audience on to rebrand as a closed paid product."
+    tradeoff: "Open-sourcing the core engine to win 52K stars gives away the very capability you later charge for, so the hosted product must out-convenience a tool anyone can self-host or fork, and you must abandon the GPT Engineer brand and OSS community that built your audience to rebrand as a closed paid product."
     tier: "Reported"
     source_type: "journalism"
     source_url: "https://catalaize.substack.com/p/lovables-path-from-open-source-to"

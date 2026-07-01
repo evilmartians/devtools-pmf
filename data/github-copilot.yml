@@ -65,7 +65,7 @@ plays:
       - "bottom-up-plg"
       - "distribution-leverage"
   - title: "Gate a risky new product behind a waitlist until usage data hands you the price"
-    summary: "Instead of a cold public launch, GitHub released Copilot as an invite-gated technical preview in June 2021 and ran it for a full year before charging. The waitlist made access a scarce status object developers shared and clamored to join, while the year of real usage gave GitHub the telemetry to harden the product and the proof points to justify a price. By general availability in June 2022, demand and credibility were already built."
+    summary: "GitHub released Copilot as an invite-gated technical preview in June 2021 and ran it for a full year before charging. The waitlist made access a scarce status object developers shared and clamored to join, while the year of real usage gave GitHub telemetry to harden the product and proof points to justify a price. By general availability in June 2022, demand and credibility were already built."
     goal: "Acquisition"
     track: "Launches & build-in-public"
     learning: "Launch a novel, technically risky product invite-only and run it long enough to harvest one hard usage number that sells the paid version. The waitlist manufactures demand while the telemetry hardens the product and gives you proof to justify charging."

@@ -76,7 +76,7 @@ plays:
       - "bottom-up-plg"
       - "developer-advocacy"
   - title: "Give away your strongest paid feature on a fixed annual date"
-    summary: "Cloudflare's Birthday Week began by accident in 2011 when TechCrunch Disrupt asked them to announce something on their anniversary; packaging a routine IPv6 launch around that date drew outsized attention and started the tradition. The crystallizing move came in 2014, when for their third birthday they took Universal SSL, the single biggest differentiator between free and paid, and gave it away free to the whole Internet. Concentrating gift-style launches into one annual, anticipated week manufactures a predictable press and signup spike instead of dribbling releases out."
+    summary: "Cloudflare's Birthday Week began by accident in 2011 when TechCrunch Disrupt asked them to announce something on their anniversary; packaging a routine IPv6 launch around that date drew outsized attention and started the tradition. The crystallizing move came in 2014: for their third birthday they took Universal SSL, the biggest differentiator between free and paid, and gave it away free to the whole Internet. Concentrating gift-style launches into one annual, anticipated week manufactures a predictable press and signup spike."
     goal: "Acquisition"
     track: "Launches & build-in-public"
     learning: "Pick a recurring calendar anchor and headline it by giving away the feature that was your best paid differentiator. The generosity earns the coverage, the fixed date trains press and developers to show up, and scattered releases compound into one annual spike."

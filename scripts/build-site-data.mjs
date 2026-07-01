@@ -86,9 +86,11 @@ function companyMetricStrip(metrics) {
 }
 
 const recipes = [];
+const companyRecords = [];
 for (const f of fs.readdirSync(dataDir).filter((f) => f.endsWith(".yml") || f.endsWith(".yaml"))) {
   const doc = yaml.load(fs.readFileSync(path.join(dataDir, f), "utf8"));
   const companyMetrics = companyMetricStrip(doc.metrics);
+  companyRecords.push({ company: doc.company, sub_industry: doc.sub_industry, gtm: doc.gtm, metrics: doc.metrics || [] });
   for (const p of doc.plays || []) {
     const goal = p.goal || "Acquisition";
     recipes.push({
@@ -122,6 +124,56 @@ recipes.sort((a, b) =>
 );
 recipes.forEach((r, i) => { r.id = `r${i + 1}`; r.no = String(i + 1).padStart(3, "0"); });
 
+// ---- Records & Benchmarks leaderboards (Verified-tier disclosures only) ----
+const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+// For each company, the plays that explain an NRR figure: Expansion (the
+// upsell/cross-sell that drives NRR up), Retention, and Revenue. Shown on the
+// leaderboard as little numbered cards that link to the real card.
+const NRR_TRACKS = ["Expansion", "Retention", "Revenue"];
+const explainCards = {};
+for (const r of recipes) {
+  if (!NRR_TRACKS.includes(r.track)) continue;
+  (explainCards[r.company] = explainCards[r.company] || []).push({ no: r.no, anchor: `${slugify(r.company)}-${r.no}`, track: r.track, title: r.title });
+}
+for (const co in explainCards) explainCards[co].sort((a, b) => NRR_TRACKS.indexOf(a.track) - NRR_TRACKS.indexOf(b.track) || a.no.localeCompare(b.no));
+const parsePct = (v) => { const m = String(v).match(/(\d+(?:\.\d+)?)/); return m ? parseFloat(m[1]) : null; };
+// Show the reporting period per row so a "ranked by current" board stays honest
+// (some disclosures are years old). "2025-03" -> "Mar 2025"; bare year stays.
+const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const fmtPeriod = (s) => {
+  if (!s) return "";
+  const ym = String(s).match(/^(\d{4})-(\d{2})/);
+  if (ym) return `${MON[+ym[2] - 1]} ${ym[1]}`;
+  const y = String(s).match(/^\d{4}/);
+  return y ? y[0] : String(s);
+};
+// A few companies disclose a historical PEAK first in the value string; rank by
+// the CURRENT figure instead so the board reflects where they are now, not 2019.
+const NRR_CURRENT = { CrowdStrike: 115, Datadog: 120, Honeycomb: 138 };
+// A "current" board shouldn't rank stale disclosures. Drop anything older than
+// this year (e.g. Twilio's 2016 NRR) and log what was removed.
+const MIN_YEAR = 2022;
+function buildBoard(field, parse, fmt, max, overrides = {}) {
+  const rows = [];
+  const stale = [];
+  for (const c of companyRecords) {
+    const m = (c.metrics || []).find((x) => x.field === field && x.tier === "Verified" && x.value);
+    if (!m) continue;
+    let num = parse(m.value);
+    if (overrides[c.company] != null) num = overrides[c.company];
+    if (num == null) continue;
+    const yr = (String(m.as_of).match(/\d{4}/) || [])[0];
+    if (yr && +yr < MIN_YEAR) { stale.push(`${c.company} (${m.as_of})`); continue; }
+    rows.push({ company: c.company, value: m.value, figure: fmt(num), num, as_of: m.as_of || "", period: fmtPeriod(m.as_of), tier: m.tier, cat: CAT[c.sub_industry] || c.sub_industry, gtm: c.gtm, source_url: m.source_url || "", cards: explainCards[c.company] || [] });
+  }
+  if (stale.length) console.log(`  ${field} board: dropped ${stale.length} stale (<${MIN_YEAR}): ${stale.join(", ")}`);
+  rows.sort((a, b) => b.num - a.num);
+  return rows.slice(0, max).map((r, i) => ({ rank: i + 1, ...r }));
+}
+const leaderboards = {
+  nrr: { label: "Highest net revenue retention", note: "Ranked by each company's current Verified disclosure. NRR varies by GTM model and reporting period, read alongside the date and source.", rows: buildBoard("nrr", parsePct, (n) => `${Math.round(n)}%`, 12, NRR_CURRENT) },
+};
+
 // The review let agents invent free-form tags, fragmenting the taxonomy.
 // Keep only tags used by >= MIN_TAG recipes; drop the long tail from display.
 const MIN_TAG = 3;
@@ -142,6 +194,7 @@ const out = {
   motions: ["PLG", "Sales-assisted", "Enterprise"].filter((m) => gtmCounts[m]),
   categories: Object.entries(CAT).map(([key, label]) => ({ key, label })),
   tags,
+  leaderboards,
   recipes,
 };
 

@@ -31,7 +31,7 @@ metrics:
     note: "Illustrates the open-source monetization gap (PLG/self-serve adoption vastly exceeds paid conversion). Row stated '1B+ downloads'; company's own current figure is now 3B+, which lowers the implied conversion ratio from 0.00007% to ~0.00002%."
 plays:
   - title: "Win the maintainers who own the default slot"
-    summary: "MariaDB was a MySQL fork with no installed base of its own. Instead of fighting for individual installs, it courted Linux distribution maintainers who were anxious about Oracle's stewardship of MySQL after the 2010 Sun acquisition, positioning itself as the safe, community-governed successor. openSUSE 12.3 and Fedora 19 made it the default in 2013, then CentOS 7 and RHEL 7 (June 2014), SUSE Linux Enterprise, Arch, Mageia, Manjaro, and Debian 9 (2017). Every fresh server install now shipped MariaDB instead of MySQL, with no per-user marketing spend."
+    summary: "MariaDB was a MySQL fork with no installed base of its own. It courted the Linux distribution maintainers who were anxious about Oracle's stewardship of MySQL after the 2010 Sun acquisition, positioning itself as the safe, community-governed successor. openSUSE 12.3 and Fedora 19 made it the default in 2013, then CentOS 7 and RHEL 7 (June 2014), SUSE Linux Enterprise, Arch, Mageia, Manjaro, and Debian 9 (2017). Every fresh server install now shipped MariaDB in place of MySQL, with no per-user marketing spend."
     goal: "Acquisition"
     track: "Integrations & ecosystem"
     learning: "When a packaging layer (Linux distros, package managers, app stores, framework defaults) sits between you and end users, sell to the handful of maintainers who control the default slot: one integration converts into millions of zero-CAC installs."
@@ -49,7 +49,7 @@ plays:
       - "distribution"
       - "bottom-up-plg"
   - title: "Encode your drop-in promise where users already look"
-    summary: "To pull users off MySQL, MariaDB kept the same binary protocol, file structures, and APIs so migration was a near-zero-change swap. The non-obvious move: it deliberately numbered its early releases 5.1, 5.2, 5.3, 5.5 to match MySQL's exact version numbers, using the version string itself as a promise of byte-for-byte drop-in compatibility. Once it had earned trust and installed base, it jumped to a 10.x series in 2014 to signal it was now developing independently."
+    summary: "To pull users off MySQL, MariaDB kept the same binary protocol, file structures, and APIs so migration was a near-zero-change swap. The non-obvious move: it numbered its early releases 5.1, 5.2, 5.3, 5.5 to match MySQL's exact version numbers, using the version string itself as a promise of byte-for-byte drop-in compatibility. Once it had earned trust and installed base, it jumped to a 10.x series in 2014 to signal independent development."
     goal: "Acquisition"
     track: "Open-source"
     learning: "Launching as a drop-in replacement? Bake the compatibility promise into surfaces buyers read before they test: match the incumbent's version numbers, mirror its CLI flags, ingest its config file unchanged, so the swap reads as risk-free up front. Once you have trust and installed base, rebrand the versioning to claim your own roadmap."

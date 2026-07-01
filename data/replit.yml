@@ -84,7 +84,7 @@ plays:
       - "freemium"
       - "monetization"
   - title: "A flat per-action fee subsidizes your most expensive users"
-    summary: "Replit Agent first charged a flat $0.25 per 'checkpoint,' which overcharged trivial edits and undercharged heavy multi-step builds, distorting both sides. In mid-2026 it switched to effort-based pricing where the charge scales with the time and computation each request actually consumes, bundling related work into a single priced unit. Simple runs now cost as little as $0.06 while complex jobs can run several dollars, and users can dial effort up per request via 'high power model' and 'extended thinking' toggles."
+    summary: "Replit Agent first charged a flat $0.25 per 'checkpoint,' which overcharged trivial edits and undercharged heavy multi-step builds, distorting both sides. In mid-2026 it switched to effort-based pricing where the charge scales with the time and computation each request actually consumes, bundling related work into a single priced unit. Cheap runs now cost as little as $0.06 while complex jobs can run several dollars, and users can dial effort up per request via 'high power model' and 'extended thinking' toggles."
     goal: "Revenue"
     learning: "When actions vary 10x in cost to serve, swap the flat per-action fee for the actual effort consumed and bundle related steps into one priced unit. Cheap tasks stay cheap enough to remain habit-forming while you recover the margin the heavy jobs were quietly eating."
     when_it_works: "Works when you can measure the underlying effort (compute/time) reliably enough to bill it transparently."
