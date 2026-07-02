@@ -170,8 +170,32 @@ function buildBoard(field, parse, fmt, max, overrides = {}) {
   rows.sort((a, b) => b.num - a.num);
   return rows.slice(0, max).map((r, i) => ({ rank: i + 1, ...r }));
 }
+// ---- Editor's Choice (curated top 10, in order; method and full ballots
+// live in ../editors-choice-scorecard.md). Each pick must match a play by
+// exact (company, title) or it is dropped with a warning, so retitling a
+// play in data/ surfaces here at build time.
+const EDITORS_CHOICE = [
+  { company: "Zscaler", title: "Your account is the person who deployed you, and they take it to their next job" },
+  { company: "PlanetScale", title: "Kill free when free subsidizes users who will never pay" },
+  { company: "Render", title: "Be the one-sentence answer LLMs give to 'where do I deploy this?'" },
+  { company: "Neon", title: "Make your primitive cheap enough for agents to spawn" },
+  { company: "CodeRabbit", title: "Give the full paid tier away on public work" },
+  { company: "Railway", title: "Win switchers on the incumbent's broken promise, then meter the abuse" },
+  { company: "Tailscale", title: "Hold the bottom of the market, because moving down later is far harder than moving up" },
+  { company: "Elastic", title: "Developers Google 'open source X' and source-available falls off the list" },
+  { company: "Datadog", title: "Three-year contracts let you lie to yourself about churn" },
+  { company: "PostHog", title: "Bundle products until ripping you out is too painful" },
+];
+const editorsRows = [];
+for (const pick of EDITORS_CHOICE) {
+  const r = recipes.find((x) => x.company === pick.company && x.title === pick.title);
+  if (!r) { console.warn(`  editors board: no play matched "${pick.company} — ${pick.title}"`); continue; }
+  editorsRows.push({ rank: editorsRows.length + 1, company: r.company, title: r.title, track: r.track, no: r.no, anchor: `${slugify(r.company)}-${r.no}` });
+}
+
 const leaderboards = {
   nrr: { label: "Highest net revenue retention", note: "Ranked by each company's current Verified disclosure. NRR varies by GTM model and reporting period, read alongside the date and source.", rows: buildBoard("nrr", parsePct, (n) => `${Math.round(n)}%`, 12, NRR_CURRENT) },
+  editors: { label: "Editor's Choice", note: "The plays that most surprised us across the whole dataset: funnels changing shape, pricing heresies that worked, and mechanisms nobody else discloses.", rows: editorsRows },
 };
 
 // The review let agents invent free-form tags, fragmenting the taxonomy.

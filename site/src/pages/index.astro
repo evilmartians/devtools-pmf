@@ -169,8 +169,8 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 <p class="kicker">Leaderboard</p>
                 <h2 class="section-title">Records &amp; benchmarks</h2>
                 <p class="appendix-lede">
-                    Where the verified numbers land. The numbered cards link to
-                    the plays that produced each figure.
+                    Where the verified numbers land, and the plays we rate
+                    highest. The numbered cards link to the full play.
                 </p>
                 <div class="boards">
                     <div class="board-col">
@@ -212,6 +212,33 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                             ))}
                         </ol>
                         <p class="board-note">{data.leaderboards.nrr.note}</p>
+                    </div>
+                    <div class="board-col">
+                        <h3 class="board-h mono">{data.leaderboards.editors.label}</h3>
+                        <ol class="board-list">
+                            {data.leaderboards.editors.rows.map((row) => (
+                                <li class="board-row">
+                                    <span class="board-rank mono">
+                                        {String(row.rank).padStart(2, "0")}
+                                    </span>
+                                    <span class="board-co board-play">{row.title}</span>
+                                    <span class="board-tags mono">
+                                        {row.company} · {row.track}
+                                    </span>
+                                    <span class="board-cards">
+                                        <a
+                                            class="play-chip"
+                                            href={`#${row.anchor}`}
+                                            data-anchor={row.anchor}
+                                            title={`#${row.no} · ${row.track} — ${row.title}`}
+                                        >
+                                            {row.no}
+                                        </a>
+                                    </span>
+                                </li>
+                            ))}
+                        </ol>
+                        <p class="board-note">{data.leaderboards.editors.note}</p>
                     </div>
                 </div>
             </section>
@@ -2028,9 +2055,16 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
             }
             .boards {
                 display: grid;
-                grid-template-columns: 1fr;
-                max-width: 36rem;
+                grid-template-columns: 1fr 1fr;
+                gap: 3.5rem;
+                max-width: 74rem;
                 margin: 1.8rem auto 0;
+            }
+            /* Editor's Choice rows lead with the play title, not the company */
+            .board-play {
+                font-size: 0.8rem;
+                line-height: 1.35;
+                padding-right: 0.2rem;
             }
             .board-h {
                 color: var(--paper-faint);
@@ -2148,10 +2182,11 @@ const tierClass = (t) => (t || "estimated").toLowerCase();
                 font-style: italic;
                 margin: 0.9rem 0 0;
             }
-            @media (max-width: 640px) {
+            @media (max-width: 860px) {
                 .boards {
                     grid-template-columns: 1fr;
                     gap: 2.2rem;
+                    max-width: 36rem;
                 }
             }
 
