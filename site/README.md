@@ -22,4 +22,4 @@ The `prebuild`/`predev` step runs `../scripts/build-site-data.mjs`, which compil
 
 - Fonts are Evil Martians' open-source **Martian Mono** and **Martian Grotesk** (`public/fonts/`).
 - Brand red is `#E43C0C`.
-- The "Test your company" CTA points to a placeholder in `src/pages/index.astro` (`BENCHMARK_URL`); set it to the real PMF Compass URL on evilmartians.com.
+- The "Test your company" CTA points to the PMF Compass on evilmartians.com through `BENCHMARK_URL` in `src/pages/index.astro`.
